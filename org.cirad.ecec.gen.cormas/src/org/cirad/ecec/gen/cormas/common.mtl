@@ -1,0 +1,16 @@
+[module common('http://www.cirad.org/dsl/ecec')]
+[template public getModelParameters(m : Model)]
+[m.eAllContents("ModelParameters")/]
+[/template]
+
+[template public getAllClasses(m : Model)]
+[m.eAllContents("Class")/]
+[/template]
+
+[template public getEnviromment(m : Model)]
+[m.eAllContents("Enviromment")/]
+[/template]
+
+[template public getProtocol(m : Model)]
+[m.eAllContents("Protocol")/]
+[/template]

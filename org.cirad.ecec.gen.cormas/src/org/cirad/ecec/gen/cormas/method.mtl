@@ -1,0 +1,125 @@
+[module method('http://www.cirad.org/dsl/ecec')]
+[import org::cirad::ecec::gen::cormas::common/]
+
+[template public generateAcessingIntanceVar(m : Model)]
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.eContents(Class).Name/]</class-id> <category>accessing</category>
+[for (att : Attribute | m.eContents(Class).eAllContents(Attribute))]
+	[if (att.InstanceType = 'Yes')]
+	
+	<body package="[m.parameters.ModelName/]" selector="[att.Name/]">[att.Name/]
+	"Getter accessor of attribute [att.Name/] with default Value TODO!!" </body>
+	^[att.Name/] ifNil:['['/][att.Name/] := [att.Value/][']'/]
+	
+	[if (att.NotifyObservers='Yes')]
+    <body package="[m.parameters.ModelName/]" selector="[att.Name/]:">[att.Name/]: anObject
+	"Setter accessor of attribute [att.Name/]"
+	[att.Name/] = anObject ifTrue:['['/]^nil[']'/].   "for optimization"
+	[att.Name/] := anObject.
+	self changed</body>
+	[/if]
+	[if (att.NotifyObservers='No')]	
+	<body package="[m.parameters.ModelName/]" selector="[att.Name/]:">[att.Name/]: anObject
+	"Setter accessor of attribute [att.Name/]"</body>
+	[att.Name/] := anObject.
+	[/if]
+				
+	[/if]	
+[/for]
+</methods>
+[/template]
+
+[template public generateAcessingClassVar(m : Model)]
+
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.eContents(Class).Name/] class</class-id> <category>accessing</category>
+[for (att : Attribute | m.eContents(Class).eAllContents(Attribute))]
+	[if (att.InstanceType = 'No')]
+	
+	<body package="[m.parameters.ModelName/]" selector="[att.Name/]">[att.Name/]
+	"Getter accessor of attribute [att.Name/] with [att.Value/]" </body>
+	^[att.Name/] ifNil:['['/]biomass := [att.Value/]
+	
+	<body package="[m.parameters.ModelName/]" selector="[att.Name/]:">[att.Name/]: anObject
+	"Setter accessor of attribute [att.Name/]"</body>
+		
+	[/if]	
+[/for]
+
+</methods>
+[/template]
+
+[template public generateDefaultValues(m : Model)]
+[if (m.eContents(Class).attributes->size() > 0)]
+
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.eContents(Class).Name/] class</class-id> <category>- default Value</category>
+[for (att : Attribute | m.eContents(Class).eAllContents(Attribute))]
+		[if (att.InstanceType = 'No')]
+	
+	<body package="[m.parameters.ModelName/]" selector="[att.Name/]_default">[att.Name/]_default 
+	"Return the default Value of [att.Name/] attribute"	
+	^[att.Value/]</body>
+	
+		[/if]
+[/for]
+</methods>
+[/if]
+[/template]
+
+[template public generateCustomProtocol(m : Model)]
+[for (p : CustomProtocol | m.eAllContents(CustomProtocol))]
+
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.eContents(Class).Name/]</class-id> <category>[p.ProtocolName/]</category>
+	[for (me : Method | p.eAllContents(Method))]
+	
+	<body package="[m.parameters.ModelName/]" selector="[me.Name/]">[current("Method").Name/]
+	"The [current("Method").Name/] method"</body>
+	[/for]
+		
+</methods>
+[/for]
+[/template]
+
+[template public generateInfo(m : Model)]
+[comment ]
+
+[for (eAllContents().filter("Custom")){]
+
+<methods>
+<class-id>[m.parameters.ModelName].[current("Class").Name]</class-id> <category>* info</category>
+	[for (current("Custom").eAllContents("Method")){]
+	
+	<body package="[m.parameters.ModelName]" selector="TO-DO : Include an info buttom GMF Node!">
+	"TO DO!! "</body>
+	[}]
+	
+</methods>
+[}]
+[/comment]
+[/template]
+[template public generatePov(m : Model)]
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.eContents(Class).Name/]</class-id> <category>* pov</category>
+
+<body package="[m.parameters.ModelName/]" selector="TO DO - PUT POV on GMF">povBiomass
+"return a symbol of a color Value"
+	^#aSymbol</body>
+</methods
+[/template]
+
+[template public generatePovSymbols(m : Model)]
+[comment ]
+
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[current("Class").Name/] class</class-id> <category>pov symbols</category>
+
+<body package="ECEC" selector="VectorialPOV_[current("Class").Name]">VectorialPOV_[current("Class").Name]
+"Returns an array containing the settings of a Situated entity vectorial pov symbol in the following order:
+(color red) (color green) (color blue) (lineColor red) (lineColor green) (lineColor blue) lineWidth sizeratio position (array of outline vertices)"
+^#(0.833354 0.833354 0.833354 0.0 0.0 0.0 1 0.6 #center #(0@-17 15@-9 15@9 0@17 -15@9 -15@-9 0@-17))</body>
+</methods>
+[/comment]
+
+[/template]

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<plugin>
+
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <package 
+       uri = "http://www.cirad.org/dsl/ecec/xtext/Ecec" 
+       class = "org.cirad.dsl.ecec.xtext.ecec.EcecPackage"
+       genModel = "model/generated/Ecec.genmodel" /> 
+	
+  </extension>
+
+
+
+</plugin>

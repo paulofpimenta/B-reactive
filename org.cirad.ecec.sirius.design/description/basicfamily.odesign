@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="BasicFamily" version="8.1.0">
+  <ownedViewpoints name="Basic Family" modelFileExtension="basicfamily">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Family Diagram Init" domainClass="basicfamily.Family">
+      <defaultLayer name="Default">
+        <nodeMappings name="ManNode" semanticCandidatesExpression="[members/]" domainClass="basicfamily.Man">
+          <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="WomanNode" semanticCandidatesExpression="[members/]" domainClass="basicfamily.Woman">
+          <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="FatherEdge" sourceMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%20Init']/@defaultLayer/@nodeMappings[name='ManNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%20Init']/@defaultLayer/@nodeMappings[name='WomanNode']" targetMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%20Init']/@defaultLayer/@nodeMappings[name='ManNode']" targetFinderExpression="[father/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="MotherEdge" sourceMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%20Init']/@defaultLayer/@nodeMappings[name='ManNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%20Init']/@defaultLayer/@nodeMappings[name='WomanNode']" targetMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%20Init']/@defaultLayer/@nodeMappings[name='WomanNode']" targetFinderExpression="[mother/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Family Diagram" domainClass="basicfamily.Family">
+      <defaultLayer name="Default">
+        <nodeMappings name="ManNode" labelDirectEdit="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="[members/]" doubleClickDescription="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DoubleClickPerson']" domainClass="basicfamily.Man">
+          <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="WomanNode" labelDirectEdit="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="[members/]" doubleClickDescription="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='DoubleClickPerson']" domainClass="basicfamily.Woman">
+          <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="FatherEdge" deletionDescription="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UnsetFather']" sourceMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='ManNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='WomanNode']" targetMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='ManNode']" targetFinderExpression="[father/]" reconnections="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectFather']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="MotherEdge" deletionDescription="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='UnsetMother']" sourceMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='ManNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='WomanNode']" targetMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='WomanNode']" targetFinderExpression="[mother/]" reconnections="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='ReconnectMother']">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <toolSections name="Tools">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateMan" nodeMappings="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='ManNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="basicfamily.Man" referenceName="members">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[sysout('coucou')/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="CreateWoman" nodeMappings="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='WomanNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="basicfamily.Woman" referenceName="members">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="[sysout('coucou')/]"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SetFather" edgeMappings="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@edgeMappings[name='FatherEdge']" iconPath="/org.eclipse.sirius.sample.basicfamily.design/icons/father.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="father" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SetMother" edgeMappings="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@edgeMappings[name='MotherEdge']" iconPath="/org.eclipse.sirius.sample.basicfamily.design/icons/mother.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="mother" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectFather">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="father" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ReconnectEdgeDescription" name="ReconnectMother">
+            <source name="source"/>
+            <target name="target"/>
+            <sourceView name="sourceView"/>
+            <targetView name="targetView"/>
+            <element name="element"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="mother" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+            <edgeView name="edgeView"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="EditName">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="SelectFather" precondition="[container.oclIsKindOf(Person)/]" candidatesExpression="[container.eContainer(Family).members->filter(Man)/]" rootExpression="[container.eContainer(Family).members->filter(Man)->select(father.oclIsUndefined())/]" childrenExpression="[children/]">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="father" valueExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="SelectMother" precondition="[container.oclIsKindOf(Person)/]" candidatesExpression="[container.eContainer(Family).members->filter(Woman)/]" tree="true" rootExpression="service:getMembersWithoutMother()" childrenExpression="[children/]">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="mother" valueExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DoubleClickDescription" name="DoubleClickPerson" mappings="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='ManNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@nodeMappings[name='WomanNode']">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:Navigation" createIfNotExistent="true" diagramDescription="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="UnsetFather">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="father" elementExpression="feature:father"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="UnsetMother">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="mother" valueExpression="[null/]"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Person Diagram" titleExpression="[name+' Diagram'/]" domainClass="basicfamily.Person">
+      <defaultLayer name="Default">
+        <nodeMappings name="PersonNode" labelDirectEdit="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='EditName']" semanticCandidatesExpression="var:self" domainClass="basicfamily.Person">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.basicfamily.design/icons/man64.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[oclIsTypeOf(Woman)/]">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.basicfamily.design/icons/woman64.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="ChildrenNode" semanticCandidatesExpression="[children/]" domainClass="basicfamily.Person">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.basicfamily.design/icons/man16.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[oclIsTypeOf(Woman)/]">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.basicfamily.design/icons/woman16.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <nodeMappings name="ParentNode" semanticCandidatesExpression="[parents/]" domainClass="basicfamily.Person">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.basicfamily.design/icons/man32.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+          <conditionnalStyles predicateExpression="[oclIsTypeOf(Woman)/]">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.eclipse.sirius.sample.basicfamily.design/icons/woman32.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </conditionnalStyles>
+        </nodeMappings>
+        <edgeMappings name="FatherEdge" sourceMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='PersonNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='ChildrenNode']" targetMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='PersonNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='ParentNode']" targetFinderExpression="[father/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="MotherEdge" sourceMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='PersonNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='ChildrenNode']" targetMapping="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='PersonNode'] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Person%20Diagram']/@defaultLayer/@nodeMappings[name='ParentNode']" targetFinderExpression="[mother/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Family Diagram 2" domainClass="basicfamily.Family">
+      <defaultLayer name="Default">
+        <containerMappings semanticCandidatesExpression="feature:members" domainClass="basicfamily.Person" dropDescriptions="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%202']/@defaultLayer/@toolSections.0/@ownedTools[name='DropPerson']" childrenPresentation="List">
+          <subNodeMappings name="Children Node" semanticCandidatesExpression="feature:children" domainClass="basicfamily.Person">
+            <style xsi:type="style:SquareDescription" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+          </style>
+        </containerMappings>
+        <toolSections>
+          <ownedTools xsi:type="tool:ContainerDropDescription" name="DropPerson" mappings="//@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%202']/@defaultLayer/@containerMappings[name=''] //@ownedViewpoints[name='Basic%20Family']/@ownedRepresentations[name='Family%20Diagram%202']/@defaultLayer/@containerMappings[name='']/@subNodeMappings[name='Children%20Node']" dragSource="BOTH">
+            <oldContainer name="oldSemanticContainer"/>
+            <newContainer name="newSemanticContainer"/>
+            <element name="element"/>
+            <newViewContainer name="newContainerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[newSemanticContainer.oclIsTypeOf(Man)/]">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="father" valueExpression="var:newSemanticContainer"/>
+                </subModelOperations>
+                <subModelOperations xsi:type="tool_1:If" conditionExpression="[newSemanticContainer.oclIsTypeOf(Woman)/]">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="mother" valueExpression="var:newSemanticContainer"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="org.eclipse.sirius.sample.basicfamily.services.FamilyServices"/>
+  </ownedViewpoints>
+</description:Group>

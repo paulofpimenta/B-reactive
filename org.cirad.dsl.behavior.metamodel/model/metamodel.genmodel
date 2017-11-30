@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.cirad.dsl.behavior.metamodel/src" modelPluginID="org.cirad.dsl.behavior.metamodel"
+    modelName="Metamodel" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>metamodel.ecore</foreignModel>
+  <genPackages prefix="Metamodel" disposableProviderFactory="true" ecorePackage="metamodel.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="metamodel.ecore#//TypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/string"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/integer"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/float"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/location"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/locationset"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/entity"/>
+      <genEnumLiterals ecoreEnumLiteral="metamodel.ecore#//TypeEnum/entityset"/>
+    </genEnums>
+    <genClasses ecoreClass="metamodel.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Entity/behavior"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Entity/name"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Entity/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Behavior">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Behavior/parameters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Behavior/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Behavior/localvariable"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//EquationBehavior">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//EquationBehavior/equation"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ActivityDiagramBehavior">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//ActivityDiagramBehavior/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//ActivityDiagramBehavior/elements"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//VariableClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//VariableClass/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//VariableClass/type"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//InitSpace"/>
+    <genClasses ecoreClass="metamodel.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Type/type"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Expression"/>
+    <genClasses ecoreClass="metamodel.ecore#//ParameterClass"/>
+    <genClasses ecoreClass="metamodel.ecore#//AttributeClass"/>
+    <genClasses ecoreClass="metamodel.ecore#//LocalVariable">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//LocalVariable/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ConstantExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//ConstantExpression/value"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//FunctionCallExpression">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//FunctionCallExpression/arguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//FunctionCallExpression/function"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Function/domain"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Function/codomain"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//NamedFunction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//NamedFunction/name"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//AnonymousFunction">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//AnonymousFunction/expression"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//AnonymousFunction/parameters"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Equation">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Equation/left"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Equation/right"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Element/name"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Edge">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Edge/target_node"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Node">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Node/outcome_edge"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//UnconditionedEdge"/>
+    <genClasses ecoreClass="metamodel.ecore#//IfTrueEdge"/>
+    <genClasses ecoreClass="metamodel.ecore#//IfFalseEdge"/>
+    <genClasses ecoreClass="metamodel.ecore#//ControlNode"/>
+    <genClasses ecoreClass="metamodel.ecore#//ExecutableNode"/>
+    <genClasses ecoreClass="metamodel.ecore#//Start"/>
+    <genClasses ecoreClass="metamodel.ecore#//End"/>
+    <genClasses ecoreClass="metamodel.ecore#//Decision">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Decision/booleanexpression"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Fork"/>
+    <genClasses ecoreClass="metamodel.ecore#//Merge"/>
+    <genClasses ecoreClass="metamodel.ecore#//Join"/>
+    <genClasses ecoreClass="metamodel.ecore#//Move">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Move/locationexpression"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Die"/>
+    <genClasses ecoreClass="metamodel.ecore#//Reproduce">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Reproduce/offspring_quantity"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Reproduce/initial_location"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Reproduce/declaredattributes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Reproduce/occupiedExpression"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Add">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Add/toAttribute"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Add/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Remove">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Remove/from"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Remove/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//ActivityBehavior">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//ActivityBehavior/primitiveaactivities"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//PrimitiveActivities"/>
+    <genClasses ecoreClass="metamodel.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/entities"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//Model/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/init"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Model/mainBehavior"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//DeclaredLocalVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DeclaredLocalVariable/localvariable"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//DeclaredParameter">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DeclaredParameter/parameterclass"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//DeclaredAttributes">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DeclaredAttributes/attributeclass"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//DeclaredEntities">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DeclaredEntities/entity"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//DeclaredVariable">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DeclaredVariable/variableclass"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//DeclaredBehavior">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//DeclaredBehavior/behavior"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//InitEntity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//InitEntity/initialLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute metamodel.ecore#//InitEntity/initName"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Assignment">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Assignment/variable"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Assignment/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//Init">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Init/assingnments"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference metamodel.ecore#//Init/entity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//Init/initFunctionCall"/>
+    </genClasses>
+    <genClasses ecoreClass="metamodel.ecore#//SetVariable">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference metamodel.ecore#//SetVariable/assignment"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

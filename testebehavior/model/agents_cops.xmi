@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="ASCII"?>
+<behaviorMetamodel:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviorMetamodel="http://www.cirad.org/dsl/BehaviorMetamodel" name="AgentsAndCops">
+  <entities name="agent">
+    <behavior xsi:type="behaviorMetamodel:EquationBehavior" name="estimateArrestProbability">
+      <parameters name="k" type="float"/>
+      <localvariable name="c">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.1"/>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="neighborhood"/>
+            </arguments>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="count"/>
+        </expression>
+      </localvariable>
+      <localvariable name="a">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.0"/>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="neighborhood"/>
+            </arguments>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.0"/>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="get"/>
+            </arguments>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="count"/>
+        </expression>
+      </localvariable>
+      <equation>
+        <left attributeclass="//@entities.0/@attributes.3"/>
+        <right xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.0/@parameters.0"/>
+              </arguments>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                  <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                    <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.0/@localvariable.0"/>
+                  </arguments>
+                  <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                    <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                      <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.0/@localvariable.1"/>
+                    </arguments>
+                    <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                      <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+                    </arguments>
+                    <function xsi:type="behaviorMetamodel:NamedFunction" name="+"/>
+                  </arguments>
+                  <function xsi:type="behaviorMetamodel:NamedFunction" name="/"/>
+                </arguments>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="floor"/>
+              </arguments>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="*"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="exp"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="-"/>
+        </right>
+      </equation>
+    </behavior>
+    <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="DetermineBehavior">
+      <localvariable name="test">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.4"/>
+            </arguments>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.5"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="-"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.3"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="*"/>
+        </expression>
+      </localvariable>
+      <start name="Start">
+        <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+          <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+            <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+              <target_node xsi:type="behaviorMetamodel:SetVariable" name="Set">
+                <assignment>
+                  <variable variableclass="//@entities.0/@attributes.0"/>
+                  <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                    <function xsi:type="behaviorMetamodel:NamedFunction" name="true"/>
+                  </expression>
+                </assignment>
+              </target_node>
+            </outcome_edge>
+            <outcome_edge xsi:type="behaviorMetamodel:IfFalseEdge" name="else">
+              <target_node xsi:type="behaviorMetamodel:SetVariable" name="Set">
+                <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                  <target_node xsi:type="behaviorMetamodel:End" name="End"/>
+                </outcome_edge>
+                <assignment>
+                  <variable variableclass="//@entities.0/@attributes.0"/>
+                  <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                    <function xsi:type="behaviorMetamodel:NamedFunction" name="false"/>
+                  </expression>
+                </assignment>
+              </target_node>
+            </outcome_edge>
+            <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.1/@localvariable.0"/>
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.1/@behavior.0/@parameters.1"/>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name=">"/>
+            </booleanexpression>
+          </target_node>
+        </outcome_edge>
+      </start>
+    </behavior>
+    <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="MoveAgent">
+      <localvariable name="targets">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="neighborhood"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="neighborhood"/>
+              </arguments>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="NOT"/>
+              </arguments>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.1"/>
+                <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                  <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+                </arguments>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="any"/>
+              </arguments>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="occupied"/>
+            </arguments>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.0"/>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+              </arguments>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.2"/>
+                <arguments xsi:type="behaviorMetamodel:ConstantExpression"/>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name=">"/>
+              </arguments>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="all"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="AND"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="select location"/>
+        </expression>
+      </localvariable>
+      <localvariable name="numtargets">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.2/@localvariable.0"/>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="count"/>
+        </expression>
+      </localvariable>
+      <start name="Start">
+        <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+          <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+            <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+              <target_node xsi:type="behaviorMetamodel:Move" name="Move to ">
+                <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                  <target_node xsi:type="behaviorMetamodel:End" name="End"/>
+                </outcome_edge>
+                <locationexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                  <arguments xsi:type="behaviorMetamodel:DeclaredLocalVariable" localvariable="//@entities.0/@behavior.2/@localvariable.0"/>
+                  <function xsi:type="behaviorMetamodel:NamedFunction" name="one-of"/>
+                </locationexpression>
+              </target_node>
+            </outcome_edge>
+            <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.2/@localvariable.1"/>
+              <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name=">="/>
+            </booleanexpression>
+          </target_node>
+        </outcome_edge>
+      </start>
+    </behavior>
+    <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="ReduceJailTerm">
+      <start name="Start">
+        <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+          <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+            <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+              <target_node xsi:type="behaviorMetamodel:Remove" name="Remove">
+                <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                  <target_node xsi:type="behaviorMetamodel:End" name="End"/>
+                </outcome_edge>
+                <from xsi:type="behaviorMetamodel:DeclaredAttributes" attributeclass="//@entities.0/@attributes.2"/>
+                <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                  <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+                </expression>
+              </target_node>
+            </outcome_edge>
+            <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.2"/>
+              <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name=">"/>
+            </booleanexpression>
+          </target_node>
+        </outcome_edge>
+      </start>
+    </behavior>
+    <attributes name="active" type="boolean"/>
+    <attributes name="movement" type="boolean"/>
+    <attributes name="jailterm" type="integer"/>
+    <attributes name="arrestProbability" type="float"/>
+    <attributes name="grievance" type="float"/>
+    <attributes name="riskAversion" type="float"/>
+    <attributes name="perceivedhardship" type="float"/>
+    <attributes name="governmentlegitimacy" type="float"/>
+  </entities>
+  <entities name="cop">
+    <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="enforce">
+      <parameters name="maxJailTerm" type="float"/>
+      <parameters name="threshold" type="float"/>
+      <localvariable name="suspect">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.0"/>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="neighborhood"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.0"/>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="get"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="one-of"/>
+        </expression>
+      </localvariable>
+      <localvariable name="numsuspect">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.1/@behavior.0/@localvariable.0"/>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="count"/>
+        </expression>
+      </localvariable>
+      <start name="Start">
+        <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+          <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+            <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+              <target_node xsi:type="behaviorMetamodel:SetVariable" name="Set">
+                <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                  <target_node xsi:type="behaviorMetamodel:SetVariable" name="Set">
+                    <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                      <target_node xsi:type="behaviorMetamodel:Move" name="Move to ">
+                        <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                          <target_node xsi:type="behaviorMetamodel:End" name="End"/>
+                        </outcome_edge>
+                        <locationexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                          <arguments xsi:type="behaviorMetamodel:DeclaredLocalVariable" localvariable="//@entities.1/@behavior.0/@localvariable.0"/>
+                          <function xsi:type="behaviorMetamodel:NamedFunction" name="one-of"/>
+                        </locationexpression>
+                      </target_node>
+                    </outcome_edge>
+                    <assignment>
+                      <variable variableclass="//@entities.0/@attributes.2"/>
+                      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                        <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                          <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.1/@behavior.0/@parameters.0"/>
+                        </arguments>
+                        <function xsi:type="behaviorMetamodel:NamedFunction" name="random"/>
+                      </expression>
+                    </assignment>
+                  </target_node>
+                </outcome_edge>
+                <assignment>
+                  <variable variableclass="//@entities.0/@attributes.0"/>
+                  <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                    <function xsi:type="behaviorMetamodel:NamedFunction" name="false"/>
+                  </expression>
+                </assignment>
+              </target_node>
+            </outcome_edge>
+            <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.1/@behavior.0/@localvariable.1"/>
+              <arguments xsi:type="behaviorMetamodel:ConstantExpression"/>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name=">"/>
+            </booleanexpression>
+          </target_node>
+        </outcome_edge>
+      </start>
+    </behavior>
+    <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="MoveCops">
+      <localvariable name="targets">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="neighborhood"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="neighborhood"/>
+              </arguments>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="NOT"/>
+              </arguments>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.1"/>
+                <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                  <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+                </arguments>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="any"/>
+              </arguments>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="occupied"/>
+            </arguments>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.0"/>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+              </arguments>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.2"/>
+                <arguments xsi:type="behaviorMetamodel:ConstantExpression"/>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name=">"/>
+              </arguments>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="all"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="AND"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="select location"/>
+        </expression>
+      </localvariable>
+      <localvariable name="numtargets">
+        <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.2/@localvariable.0"/>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="count"/>
+        </expression>
+      </localvariable>
+      <start name="Start">
+        <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+          <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+            <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+              <target_node xsi:type="behaviorMetamodel:Move" name="Move to ">
+                <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                  <target_node xsi:type="behaviorMetamodel:End" name="End"/>
+                </outcome_edge>
+                <locationexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                  <arguments xsi:type="behaviorMetamodel:DeclaredLocalVariable" localvariable="//@entities.0/@behavior.2/@localvariable.0"/>
+                  <function xsi:type="behaviorMetamodel:NamedFunction" name="one-of"/>
+                </locationexpression>
+              </target_node>
+            </outcome_edge>
+            <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@behavior.2/@localvariable.1"/>
+              <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name=">="/>
+            </booleanexpression>
+          </target_node>
+        </outcome_edge>
+      </start>
+    </behavior>
+  </entities>
+  <entities name="cell"/>
+  <init xsi:type="behaviorMetamodel:InitEntity" entity="//@entities.0" initName="prisonerAgent">
+    <assingnments>
+      <variable variableclass="//@entities.0/@attributes.5"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+      </expression>
+    </assingnments>
+    <assingnments>
+      <variable variableclass="//@entities.0/@attributes.6"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+      </expression>
+    </assingnments>
+    <assingnments>
+      <variable variableclass="//@entities.0/@attributes.2"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:ConstantExpression"/>
+      </expression>
+    </assingnments>
+    <assingnments>
+      <variable variableclass="//@entities.0/@attributes.7"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="0.83"/>
+      </expression>
+    </assingnments>
+    <assingnments>
+      <variable variableclass="//@entities.0/@attributes.0"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <function xsi:type="behaviorMetamodel:NamedFunction" name="false"/>
+      </expression>
+    </assingnments>
+    <assingnments>
+      <variable variableclass="//@entities.0/@behavior.0/@parameters.0"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="2.3"/>
+      </expression>
+    </assingnments>
+    <assingnments>
+      <variable variableclass="//@entities.1/@behavior.0/@parameters.1"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="0.1"/>
+      </expression>
+    </assingnments>
+    <assingnments>
+      <variable variableclass="//@entities.0/@attributes.4"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.6"/>
+        </arguments>
+        <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredVariable" variableclass="//@entities.0/@attributes.7"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="-"/>
+        </arguments>
+        <function xsi:type="behaviorMetamodel:NamedFunction" name="*"/>
+      </expression>
+    </assingnments>
+    <initFunctionCall xsi:type="behaviorMetamodel:FunctionCallExpression">
+      <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.0"/>
+      <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="20.0"/>
+      <function xsi:type="behaviorMetamodel:NamedFunction" name="Create "/>
+    </initFunctionCall>
+    <initialLocation xsi:type="behaviorMetamodel:FunctionCallExpression">
+      <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="grid"/>
+        </arguments>
+        <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="grid"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="NOT"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.0"/>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="any"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.1"/>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="any"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="occupied"/>
+        </arguments>
+        <function xsi:type="behaviorMetamodel:NamedFunction" name="select location"/>
+      </arguments>
+      <function xsi:type="behaviorMetamodel:NamedFunction" name="one-of"/>
+    </initialLocation>
+  </init>
+  <init xsi:type="behaviorMetamodel:InitEntity" entity="//@entities.1" initName="copAgent">
+    <assingnments>
+      <variable variableclass="//@entities.1/@behavior.0/@parameters.0"/>
+      <expression xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="30.0"/>
+      </expression>
+    </assingnments>
+    <initFunctionCall xsi:type="behaviorMetamodel:FunctionCallExpression">
+      <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.1"/>
+      <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="20.0"/>
+      <function xsi:type="behaviorMetamodel:NamedFunction" name="Create "/>
+    </initFunctionCall>
+    <initialLocation xsi:type="behaviorMetamodel:FunctionCallExpression">
+      <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+        <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="grid"/>
+        </arguments>
+        <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="grid"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="NOT"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.0"/>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="any"/>
+          </arguments>
+          <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.1"/>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="here"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="any"/>
+          </arguments>
+          <function xsi:type="behaviorMetamodel:NamedFunction" name="occupied"/>
+        </arguments>
+        <function xsi:type="behaviorMetamodel:NamedFunction" name="select location"/>
+      </arguments>
+      <function xsi:type="behaviorMetamodel:NamedFunction" name="one-of"/>
+    </initialLocation>
+  </init>
+  <init xsi:type="behaviorMetamodel:InitSpace" entity="//@entities.2">
+    <initFunctionCall xsi:type="behaviorMetamodel:FunctionCallExpression">
+      <arguments xsi:type="behaviorMetamodel:DeclaredEntities" entity="//@entities.2"/>
+      <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="20.0"/>
+      <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="20.0"/>
+      <function xsi:type="behaviorMetamodel:NamedFunction" name="Create grid"/>
+    </initFunctionCall>
+  </init>
+  <mainBehavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="MainAgentsAndCops">
+    <start name="Start">
+      <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+        <target_node xsi:type="behaviorMetamodel:DeclaredBehavior" behavior="//@entities.0/@behavior.0">
+          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+            <target_node xsi:type="behaviorMetamodel:DeclaredBehavior" behavior="//@entities.0/@behavior.2">
+              <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                <target_node xsi:type="behaviorMetamodel:DeclaredBehavior" behavior="//@entities.0/@behavior.1">
+                  <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                    <target_node xsi:type="behaviorMetamodel:DeclaredBehavior" behavior="//@entities.0/@behavior.3">
+                      <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                        <target_node xsi:type="behaviorMetamodel:DeclaredBehavior" behavior="//@entities.1/@behavior.1">
+                          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                            <target_node xsi:type="behaviorMetamodel:DeclaredBehavior" behavior="//@entities.1/@behavior.0">
+                              <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                                <target_node xsi:type="behaviorMetamodel:End" name="End"/>
+                              </outcome_edge>
+                            </target_node>
+                          </outcome_edge>
+                        </target_node>
+                      </outcome_edge>
+                    </target_node>
+                  </outcome_edge>
+                </target_node>
+              </outcome_edge>
+            </target_node>
+          </outcome_edge>
+        </target_node>
+      </outcome_edge>
+    </start>
+  </mainBehavior>
+</behaviorMetamodel:Model>

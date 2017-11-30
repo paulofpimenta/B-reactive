@@ -1,0 +1,7 @@
+# Tracing options for the org.cirad.dsl.ecec.gmf.diagram plug-in
+
+# Common issues
+org.cirad.dsl.ecec.gmf.diagram/debug=false
+
+# Visual IDs
+org.cirad.dsl.ecec.gmf.diagram/debug/visualID=false

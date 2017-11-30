@@ -1,0 +1,192 @@
+[module generateMainClass('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::gen::cormas::common::generateMainMethods/]
+[import org::cirad::dsl::gen::cormas::common::generateExpressions /]
+[import org::cirad::dsl::gen::cormas::services::numberservices /]
+[import org::cirad::dsl::gen::cormas::services::stringservices /]
+[template public generateMainClass(m : Model)]
+<class>
+<Name>[m.name.toUpper()/]</Name>
+<environment>CormasNS.Models.[m.name.toUpper()/]</environment>
+<super>CormasNS.Kernel.CormasModel</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>[generateInstVariablesforMainClass(m)/][generateProbesNamesforMainClass(m)/] </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>[m.name.toUpper()/]Category</category>
+<attributes>
+<package>[m.name.toUpper()/]</package>
+</attributes>
+</class>
+[/template]
+[template public generateAccessingMainClass(m : Model)]
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toUpper()/].[m.name.toUpper()/]</class-id> <category>accessing</category>
+[for (create : InitEntity | m.eAllContents(InitEntity)->asSet())]
+
+<body package="[m.name.toUpper()/]" selector="[create.initName/]InitialNumber">[create.initName/]InitialNumber
+	"Getter accessor with default value = [create.initFunctionCall.oclAsType(FunctionCallExpression).generateInitialAgentNumbers()/]"
+	^[create.initName/]InitialNumber : ifNil:['['/][create.initName/]InitialNumber := [create.initFunctionCall.oclAsType(FunctionCallExpression).generateInitialAgentNumbers()/][ ']' /]</body>
+
+<body package="[m.name.toUpper()/]" selector="[create.initName.toLowerFirst()/]InitialNumber">[create.initName.toLowerFirst()/]InitialNumber: anObject
+	"Setter accessor of attribute [create.initName/]InitialNumber"
+	[create.initName/]InitialNumber :=anObject</body>
+
+<body package="[m.name.toUpper()/]" selector="the[create.initName/]">the[create.initName/]
+^ self the[create.initName/]s isEmpty ifTrue:['['/]nil[']'/]  ifFalse: ['['/]self the[create.initName/]s first[']'/]</body>
+
+<body package="[m.name.toUpper()/]" selector="the[create.initName.toLowerFirst()/]s">the[create.initName/]s
+^the[create.initName/]s ifNil:['['/]the[create.initName/]s := IndexedSet new[']'/]</body>
+
+<body package="[m.name.toUpper()/]" selector="the[create.initName/]s:">the[create.initName/]s: x
+the[create.initName/]s := x</body>
+[/for]
+[for (entities : Entity | m.eAllContents(InitEntity).entity->asSet())]
+
+<body package="[m.name.toUpper()/]" selector="the[entities.name.toUpperFirst()/]">theForagers
+	"Returns a collection of all the instances of aClass (and sub classes) collected by cormasModel"
+   ^self allTheEntities: [entities.name.toUpperFirst()/]</body>
+[/for]
+</methods>
+[/template]
+[template public generateControlMainClass(model : Model)]
+
+<methods>
+<class-id>CormasNS.Models.[model.name.toUpper()/].[model.name.toUpper()/]</class-id> <category>control</category>
+<body package="[model.name.toUpper()/]" selector="step:">step: t
+[for (initSpace : InitSpace | model.eAllContents(InitSpace))]
+	self stepEntities: self the[initSpace.initFunctionCall.oclAsType(FunctionCallExpression).arguments->first().generateArithimeticExpressions().toUpperFirst()/]s.
+[/for]
+[for (initEntity : InitEntity | model.eContents(InitEntity)->asSet())]
+	self askRandom: [initEntity.initFunctionCall.oclAsType(FunctionCallExpression).arguments->first().generateArithimeticExpressions().toUpperFirst()/] toDo: #step</body>
+[/for]
+</methods>
+[/template]
+
+[template public generateInitMainClass(model : Model)]
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC</class-id> <category>init</category>
+
+<body package="[model.name.toUpper()/]" selector="fragmentedEnv">fragmentedEnv
+	"initialize an fragmented space (from fragmented.env file)"
+	self spaceModel loadEnvironmentFromFile: 'fragmented.env'.
+	self initAgents</body>
+
+<body package="[model.name.toUpper()/]" selector="homogeneousEnv">homogeneousEnv
+	"initialize an homogeneous space (from poor.env file) "
+	self spaceModel loadEnvironmentFromFile: 'poor.env'.
+	self initAgents</body>
+
+<body package="[model.name.toUpper()/]" selector="noAgent">noAgent
+	"initialize the space (from poor.env file) without agent"
+	self spaceModel loadEnvironmentFromFile: 'poor.env' </body>
+</methods>
+[/template]
+[template public generateInstanceCreationMainClass(model : Model)]
+<methods>
+<class-id>CormasNS.Models.[model.name.toUpper()/].[model.name.toUpper()/]</class-id> <category>instance-creation</category>
+
+<body package="[model.name.toUpper()/]" selector="homogeneousEnv2">homogeneousEnv2
+self spaceModel initializeRegularX: [model.eAllContents(InitSpace).initFunctionCall.oclAsType(FunctionCallExpression).arguments->at(2).generateArithimeticExpressions()/] Y: [model.eAllContents(InitSpace).initFunctionCall.oclAsType(FunctionCallExpression).arguments->at(3).generateArithimeticExpressions()/] shape: #squared nbNeighbours: #eight boundaries: #toroidal.
+[for (assign : Assignment | model.eAllContents(InitSpace).assingnments)]
+[if (assign.variable.variableclass.oclIsTypeOf(AttributeClass))]
+self the[model.eAllContents(InitSpace).entity.name/]s do:['['/]: cell | cell initRandom[assign.variable.variableclass.generateArithimeticExpressions().toUpperFirst()/][']'/].
+[/if]
+[/for]
+self initAgents
+</body>
+
+<body package="[model.name.toUpper()/]" selector="initAgents">initAgents
+[for (initEntity : InitEntity | model.eAllContents(InitEntity)) separator('\n')]
+[if (initEntity.initName.oclIsUndefined())] 
+self createN: self [initEntity.entity.name.toLower()/]InitialNumber randomlyLocatedAloneEntities[initEntity.entity.name.toUpperFirst()/][else]
+self createN: self [initEntity.initName.toLower()/]InitialNumber randomlyLocatedAloneEntities:[initEntity.initName.toUpperFirst()/] 
+[/if]
+[/for]
+</body>
+</methods>
+[/template]
+[template public generateProbesMainClass(model : Model)]
+
+<methods>
+<class-id>CormasNS.Models.[model.name.toUpper()/].[model.name.toUpper()/]</class-id> <category>probes</category>
+[for (initEntity : InitEntity | model.eAllContents(InitEntity)->asSet())]
+[if (initEntity.initName.oclIsUndefined())] 
+<body package="[model.name.toUpper()/]" selector="[initEntity.entity.name.toLower()/]Size">[initEntity.entity.name.toUpperFirst()/]Size
+^self the[initEntity.entity.name.toUpperFirst()/]s size
+</body>[else]
+<body package="[model.name.toUpper()/]" selector="[initEntity.initName.toLower()/]Size">[initEntity.initName.toUpperFirst()/]Size
+^self the[initEntity.initName.toUpperFirst()/]s size
+</body>
+[/if]
+[/for]
+
+[for (initSpace : InitSpace | model.eAllContents(InitSpace)->asSet())]
+[for (att : AttributeClass | initSpace.entity.attributes)]
+<body package="[model.name.toUpper()/]" selector="[initSpace.entity.name.toLower()/][att.name.toUpperFirst()/]">[initSpace.entity.name.toLower()/][att.name.toUpperFirst()/]
+^self the[initSpace.entity.name.toUpperFirst()/]s size
+</body>
+[/for]
+[/for]
+</methods>
+[/template]
+
+[template public generateDescriptionMainClassClass(model : Model)]
+	
+<methods>
+<class-id>CormasNS.Models.[model.name.toUpper()/].[model.name.toUpper()/] class</class-id> <category>description</category>
+
+<body package="ECEC" selector="authors">authors
+^ 'Mr. Robot'	</body>
+
+<body package="ECEC" selector="comments">comments
+^ 'This model was automatic generated'	</body>
+
+<body package="ECEC" selector="cormasCompatibleVersion">cormasCompatibleVersion
+^ #(2013 2 16 12 38 55)</body>
+
+<body package="ECEC" selector="creationDate">creationDate
+^ '[now()/]'	</body>
+
+<body package="ECEC" selector="currentDeveloperName">currentDeveloperName
+^ 'Alonzo Church'	</body>
+
+<body package="ECEC" selector="emails">emails
+^ 'church@entscheidungsproblem.com'	</body>
+
+<body package="ECEC" selector="lastUpdate">lastUpdate
+^ '[now()/]'	</body>
+
+<body package="ECEC" selector="version">version
+^ '[model.name.toUpper()/].pcl'	</body>
+
+<body package="ECEC" selector="versionComments">versionComments
+^ 
+'<body package="[model.name.toUpper()/]" selector="vwCompatibleVersion">vwCompatibleVersion
+^ '7.6'	</body>
+</methods>
+[/template]
+
+[template public generateDefaultValueMainClassClass(model : Model)]
+
+<methods>
+<class-id>CormasNS.Models.[model.name.toUpper()/].[model.name.toUpper()/] class</class-id> <category>- default value</category>
+[for (initEntity : InitEntity | model.eAllContents(InitEntity))]
+	<body package="[model.name.toUpper()/]" selector="[initEntity.initFunctionCall.oclAsType(FunctionCallExpression).arguments->first().generateArithimeticExpressions().toLower()/]InitialNumber_default">[initEntity.initFunctionCall.oclAsType(FunctionCallExpression).arguments->first().generateArithimeticExpressions().toLower()/]InitialNumber_default 
+	"Return the default value of [initEntity.initFunctionCall.oclAsType(FunctionCallExpression).arguments->first().generateArithimeticExpressions().toLower()/]InitialNumber attribute"	
+	^[initEntity.initFunctionCall.oclAsType(FunctionCallExpression).arguments->last().generateArithimeticExpressions()/]</body>
+[/for]
+</methods>
+[/template]
+[template public generateProbesColorMainClassClass(model : Model)]
+
+<methods>
+<class-id>CormasNS.Models.[model.name.toUpper()/].[model.name.toUpper()/] class</class-id> <category>- probes</category>
+[for (entities : Entity | model.eAllContents(Entity))]
+	<body package="[model.name.toUpper()/]" selector="colorOfProbe_[entities.name.toLower()/]Size">colorOfProbe_[entities.name.toLower()/]Size
+  	^ (ColorValue red: [getRandomDouble()/] green: [getRandomDouble()/] blue: [getRandomDouble()/])</body>
+[/for]
+</methods>
+[/template]

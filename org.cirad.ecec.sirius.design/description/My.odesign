@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="My" version="8.1.0">
+  <ownedViewpoints name="CormasDsl">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Model Structure" domainClass="ecec_cormas.Model">
+      <metamodel href="http://www.cirad.org/dsl/ecec#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="Probe" domainClass="ecec_cormas.Probe">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[Name/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ProbeDslElement" domainClass="ProbeOnDslAtt">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[Name/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="Relation" semanticCandidatesExpression="feature:relations" sourceMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']" targetMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']" targetFinderExpression="[to/]" sourceFinderExpression="[from/]" domainClass="ecec_cormas.Relation" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[Name/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ProbeOnAttribute" deletionDescription="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@toolSections.2/@ownedTools[name='UnsetProbeOnAttribute']" sourceMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@nodeMappings[name='Probe']" targetMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']" targetFinderExpression="[self.attributes/]">
+          <style lineStyle="dash" sizeComputationExpression="3">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[Name + ' normal'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+          <conditionnalStyles predicateExpression="[self.classes->oclIsTypeOf(Class) = false/]">
+            <style sizeComputationExpression="2">
+              <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              <centerLabelStyleDescription>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </centerLabelStyleDescription>
+            </style>
+          </conditionnalStyles>
+        </edgeMappings>
+        <edgeMappings name="ProbeOnClass" deletionDescription="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@toolSections.2/@ownedTools[name='UnsetProbeOnClass']" sourceMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@nodeMappings[name='Probe']" targetMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']" targetFinderExpression="[self.classes/]">
+          <style sizeComputationExpression="3">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="['the' + self.classes.Name.toUpperFirst() + 's'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ProbeOnDslAttribute" sourceMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@nodeMappings[name='ProbeDslElement']" targetMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='k'] //@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='r'] //@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='biomass']" targetFinderExpression="[self.dslAttributes/]">
+          <style lineStyle="dash" sizeComputationExpression="3">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Classes" domainClass="ecec_cormas.Class">
+          <subNodeMappings name="Attribute" semanticCandidatesExpression="[attributes/]" domainClass="ecec_cormas.Attribute">
+            <style xsi:type="style:DotDescription" labelExpression="['  ' + Name + ' : ' + Value/]" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+            <conditionnalStyles predicateExpression="[InstanceType.toString()='No'/]">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="['  ' + Name + ' : ' + Value/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_class.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+            <conditionnalStyles predicateExpression="[InstanceType.toString()='Yes'/]">
+              <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="['  ' + Name + ' : ' + Value/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute.png">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              </style>
+            </conditionnalStyles>
+          </subNodeMappings>
+          <subContainerMappings name="ControlClass" semanticCandidatesExpression="[protocols/]" domainClass="Control">
+            <subContainerMappings name="Method" semanticCandidatesExpression="[methods/]" domainClass="ecec_cormas.Method">
+              <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[Name + '( )'/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/methods_tools.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[eClass().name/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Orange.png" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="InitClass" semanticCandidatesExpression="[protocols/]" domainClass="Init">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[eClass().name + ' Protocol'/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+            </style>
+          </subContainerMappings>
+          <subContainerMappings name="CustomProtocolClass" semanticCandidatesExpression="[protocols/]" domainClass="CustomProtocol">
+            <subContainerMappings name="Method" semanticCandidatesExpression="[methods/]" domainClass="ecec_cormas.Method">
+              <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[Name + '( )'/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/methods_tools.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+                <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+              </style>
+            </subContainerMappings>
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[eClass().name.toString() + ' ' +self.lineSeparator() + ProtocolName/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subContainerMappings>
+          <conditionnalStyles predicateExpression="[self.Type.toString()='AgentLocation' and self.oclIsTypeOf(Class)/]">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[Name.toString() + ' ' + Type.toString()/]" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.Type.toString()='SpatialEntityCell' and self.oclIsTypeOf(Class)/]">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[Name.toString() + ' ' + Type.toString()/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/spatial_entity.png" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(VegetationUnit)/]">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" borderSizeComputationExpression="2" labelExpression="[Name/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/tree32.png" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+          <conditionnalStyles predicateExpression="[self.oclIsTypeOf(Forager)/]">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" borderSizeComputationExpression="2" labelExpression="[Name/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/Sheep_tool.png" roundedCorner="true">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </conditionnalStyles>
+        </containerMappings>
+        <containerMappings name="VegetationUnit" domainClass="VegetationUnit">
+          <subNodeMappings name="k" semanticElements="[k/]" domainClass="ecec_cormas.VegetationUnit">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="['   k ' + self.k/]" labelAlignment="RIGHT" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="r" domainClass="VegetationUnit">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="['   r ' + self.r/]" labelAlignment="RIGHT" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='yellow']"/>
+            </style>
+          </subNodeMappings>
+          <subNodeMappings name="biomass" domainClass="VegetationUnit">
+            <style xsi:type="style:SquareDescription" showIcon="false" labelExpression="['   biomass ' + self.bioBiomass/]" sizeComputationExpression="0" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_purple']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" borderSizeComputationExpression="2" labelExpression="[Name/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/tree32.png" roundedCorner="true">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Cormas Elements">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ProbeAdd" label="Probe" nodeMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@nodeMappings[name='Probe']" iconPath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Probe" referenceName="elements"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="AttributeNodeClass" label="Attribute" nodeMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']" iconPath="/org.cirad.ecec.sirius.design/icons/png/attribute.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Attribute" referenceName="attributes"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Class" containerMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']" iconPath="/org.cirad.ecec.sirius.design/icons/png/control_small.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Class" referenceName="elements"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Protocols">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="InitClass" label="Init" precondition="[container.eContents()->filter(Init)->size()=0/]" containerMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='InitClass']" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Init" referenceName="protocols"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="CustomProtocolClass" label="CustomProtocol" containerMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="CustomProtocol" referenceName="protocols"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="ControlClass" label="Control" precondition="[container.eContents()->filter(Control)->size()=0/]" containerMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='ControlClass']" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Orange.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Control" referenceName="protocols"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Class Relations" edgeMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@edgeMappings[name='Relation']" iconPath="/org.cirad.ecec.sirius.design/icons/png/normal_arrow_noir.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="relations" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddProbeonClass" label="Probe on Class" edgeMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@edgeMappings[name='ProbeOnClass']" iconPath="/org.cirad.ecec.sirius.design/icons/png/normal_arrow_dark_blue.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="classes" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddProbeOnAttr" label="Probe on Attribute" edgeMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@edgeMappings[name='ProbeOnAttribute'] //@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@edgeMappings[name='ProbeOnDslAttribute']" iconPath="/org.cirad.ecec.sirius.design/icons/png/dashed_arrow_dark_blue.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:Switch">
+                  <cases conditionExpression="[target.oclIsTypeOf(Attribute)/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="attributes" valueExpression="var:target"/>
+                  </cases>
+                  <cases conditionExpression="[target.oclIsTypeOf(Class) = false/]">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="dslAttributes" valueExpression="var:target"/>
+                  </cases>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="UnsetProbeOnClass">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="classes" elementExpression="feature:classes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="UnsetProbeOnAttribute">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="attributes" elementExpression="feature:attributes"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:SelectionWizardDescription" name="SelectLabelWizard" precondition="[container.oclIsKindOf(Class)/]" candidatesExpression="[container.eContents(VegetationUnit).eClass().eAllAttributes/]" rootExpression="[container.eContainer(Family).members->filter(Man)->select(father.oclIsUndefined())/]">
+            <element name="element"/>
+            <containerView name="containerView"/>
+            <container name="container"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="dslAttributes" valueExpression="var:element"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Ecec">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Forager" containerMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']" iconPath="/org.cirad.ecec.sirius.design/icons/png/Sheep_tool.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ecec_cormas.Forager" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="VegetationUnit" containerMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']" iconPath="/org.cirad.ecec.sirius.design/icons/png/tree32.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ecec_cormas.VegetationUnit" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ProbeAdd" label="Ecec Probe" nodeMappings="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@nodeMappings[name='ProbeDslElement']" iconPath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="Probe" referenceName="elements"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+  <ownedViewpoints name="Methods"/>
+  <ownedViewpoints name="Initialization">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Model Initialization" domainClass="ecec_cormas.Model">
+      <metamodel href="http://www.cirad.org/dsl/ecec#/"/>
+      <defaultLayer name="Default">
+        <nodeMappings name="ModelParameters" domainClass="ecec_cormas.ModelParameters">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[eClass().name/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/Model.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Enviromment" domainClass="ecec_cormas.Enviromment">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[Name/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/enviro32.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="Attribute" semanticCandidatesExpression="[elements/]" domainClass="Attribute">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[Name + ' : ' + Value/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <nodeMappings name="ProbeInit" label="ProbeInit" domainClass="ecec_cormas.ProbeInit">
+          <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[Name/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          </style>
+        </nodeMappings>
+        <edgeMappings name="InitializeModel" deletionDescription="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@toolSections.2/@ownedTools[name='UnsetInitModel']" sourceMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Scheduler']" targetMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@nodeMappings[name='ModelParameters']" targetFinderExpression="[InitModel/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription labelSize="9" labelFormat="italic" showIcon="false" labelExpression="['Init ' + InitModel.ModelName + ' model'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="EnvirommentEdge" deletionDescription="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@toolSections.2/@ownedTools[name='UnsetEnviroment']" labelDirectEdit="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@toolSections.2/@ownedTools[name='PathEnviroment']" sourceMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@nodeMappings[name='Enviromment']" targetMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Init']" targetFinderExpression="[LoadEnviroment/]">
+          <style lineStyle="dash" sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='dark_green']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[Path + '.env'/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="UseAttributes" sourceMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Init']/@subContainerMappings[name='Method']" targetMapping="//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Model%20Structure']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']" targetFinderExpression="[useAttributes/]">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ProbeOnAttributeInit" deletionDescription="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@toolSections.2/@ownedTools[name='UnsetProbeOnAtt']" sourceMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@nodeMappings[name='ProbeInit']" targetMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']" targetFinderExpression="[probeInitAtt/]">
+          <style lineStyle="dash" sizeComputationExpression="3">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[self.Name/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="ProbeOnInitInstantiation" deletionDescription="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@toolSections.2/@ownedTools[name='unsetProbeOnInitalInstantiation']" sourceMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@nodeMappings[name='ProbeInit']" targetMapping="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Scheduler']" targetFinderExpression="[probeInitScheduler/]">
+          <style sizeComputationExpression="3">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='blue']"/>
+            <centerLabelStyleDescription showIcon="false" labelExpression="[self.Name/]">
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="Scheduler" domainClass="ecec_cormas.Scheduler">
+          <subNodeMappings name="InitialInstationsAttribute" label="InitialInstationsAttribute" preconditionExpression="[self.eContainer(Scheduler).Attributes->size() >0/]" semanticCandidatesExpression="[Attributes/]" domainClass="ecec_cormas.Attribute">
+            <style xsi:type="style:WorkspaceImageDescription" showIcon="false" labelExpression="[Name + ' : ' + Value/]" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_scheduler.png">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="['Initial Instantiation'/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/flag.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='purple']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Init" semanticCandidatesExpression="[elements/]" domainClass="Init">
+          <subContainerMappings name="Method" semanticCandidatesExpression="[/]" domainClass="ecec_cormas.Method">
+            <style xsi:type="style:FlatContainerStyleDescription">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[eClass().name.toString()/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Custom Protocol" semanticCandidatesExpression="[elements/]" domainClass="CustomProtocol">
+          <subContainerMappings name="Method" semanticCandidatesExpression="[methods/]" domainClass="ecec_cormas.Method" childrenPresentation="List">
+            <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[Name + '( )'/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/methods_tools.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[eClass().name.toString() + ' ' +self.lineSeparator() + ProtocolName /]" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+          </style>
+        </containerMappings>
+        <containerMappings name="Control" semanticCandidatesExpression="[elements/]" domainClass="Control">
+          <subContainerMappings name="Method" semanticCandidatesExpression="[/]" domainClass="ecec_cormas.Method">
+            <style xsi:type="style:FlatContainerStyleDescription">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
+            </style>
+          </subContainerMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" arcWidth="20" arcHeight="20" labelExpression="[eClass().name.toString() + 'teste'/]" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Orange.png" roundedCorner="true" backgroundStyle="GradientTopToBottom">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_orange']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="Cormas Initialization">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Enviromment" nodeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@nodeMappings[name='Enviromment']" iconPath="/org.cirad.ecec.sirius.design/icons/png/enviro32.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="ecec_cormas.Enviromment" referenceName="elements"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Scheduler" containerMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Scheduler']" iconPath="/org.cirad.ecec.sirius.design/icons/png/scheduler32.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="[eClass()->size() = 0/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Scheduler" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Scheduler Attribute" label="Init Attribute" nodeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']" iconPath="/org.cirad.ecec.sirius.design/icons/png/attribute_scheduler.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="ecec_cormas.Attribute" referenceName="Attributes"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="Model" nodeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@nodeMappings[name='ModelParameters']" iconPath="/org.cirad.ecec.sirius.design/icons/png/gear.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="[true/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ecec_cormas.ModelParameters" referenceName="parameters"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="SchedullerAttributes">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="Name" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="ProbeAdd" label="Probe" nodeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@nodeMappings[name='ProbeInit']" iconPath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="ecec_cormas.ProbeInit" referenceName="elements"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Protocols">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Init" containerMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Init']" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="[eClass()->size() = 0/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="Init" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Custom" containerMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Custom%20Protocol']" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="CustomProtocol" referenceName="elements"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Control" containerMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@containerMappings[name='Control']" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Orange.png">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:If" conditionExpression="[thisEObject.eContents(Control)->size() = 0/]">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="ecec_cormas.Control" referenceName="elements"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="Init Relations">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="SetEnviroment" label="Set enviromment" edgeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']" iconPath="/org.cirad.ecec.sirius.design/icons/png/normal_arrow_green.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="LoadEnviroment" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="InitModelEdge" label="Init Model" edgeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@edgeMappings[name='InitializeModel']" iconPath="/org.cirad.ecec.sirius.design/icons/png/normal_arrow_grey.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="InitModel" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="UnsetEnviroment">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="LoadEnviroment" elementExpression="feature:LoadEnviroment"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="UnsetInitModel">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="InitModel" elementExpression="feature:InitModel"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="PathEnviroment">
+            <mask mask="{0}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="Path" valueExpression="var:0"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddProbeOnInititalInstantiation" label="Probe on Init" edgeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@edgeMappings[name='ProbeOnInitInstantiation']" iconPath="/org.cirad.ecec.sirius.design/icons/png/normal_arrow_dark_blue.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="probeInitScheduler" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="AddProbeOnAttrInit" label="Probe on Attribute" edgeMappings="//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Model%20Initialization']/@defaultLayer/@edgeMappings[name='ProbeOnAttributeInit']" iconPath="/org.cirad.ecec.sirius.design/icons/png/dashed_arrow_dark_blue.png">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:source">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="probeInitAtt" valueExpression="var:target"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="UnsetProbeOnAtt">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="probeInitAtt" elementExpression="feature:probeInitAtt"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DeleteElementDescription" name="unsetProbeOnInitalInstantiation">
+            <element name="element"/>
+            <elementView name="elementView"/>
+            <containerView name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:element">
+                <subModelOperations xsi:type="tool_1:Unset" featureName="probeInitScheduler" elementExpression="feature:probeInitScheduler"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+  </ownedViewpoints>
+</description:Group>

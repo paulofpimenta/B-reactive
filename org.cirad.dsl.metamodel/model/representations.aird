@@ -1,0 +1,1847 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecec_cormas="http://www.cirad.org/dsl/ecec" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style" xmi:id="_HVLzoEWFEeSP_7EeqcKY1g" selectedViews="_Bv484EfnEeSaXP3PsmE1tw _z6ruQFACEeSo_O-itLx1KQ _z67l4FACEeSo_O-itLx1KQ" version="8.1.1">
+  <models xmi:type="ecec_cormas:Model" href="sample.ecec_cormas#/"/>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_XSmAoEWHEeSAx9zsUGIAVA" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_a18yoEWHEeSAx9zsUGIAVA" name="Diagram">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_a2VNIEWHEeSAx9zsUGIAVA" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_a2VNIUWHEeSAx9zsUGIAVA" type="Sirius" element="_a18yoEWHEeSAx9zsUGIAVA" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_fY0g4EWHEeSAx9zsUGIAVA" type="2001" element="_fYiNAEWHEeSAx9zsUGIAVA">
+            <children xmi:type="notation:Node" xmi:id="_fY6ngEWHEeSAx9zsUGIAVA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_fY6ngUWHEeSAx9zsUGIAVA" x="31"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fY6ngkWHEeSAx9zsUGIAVA" type="3016" element="_fYuaQEWHEeSAx9zsUGIAVA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_fY6ng0WHEeSAx9zsUGIAVA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fY6nhEWHEeSAx9zsUGIAVA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fY0g4UWHEeSAx9zsUGIAVA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fY0g4kWHEeSAx9zsUGIAVA" x="140" y="50" width="30" height="30"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_a2VNIkWHEeSAx9zsUGIAVA"/>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_fYiNAEWHEeSAx9zsUGIAVA" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Class" href="teste.ecec_cormas#//@elements.0"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="teste.ecec_cormas#//@elements.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Ellipse" xmi:id="_fYuaQEWHEeSAx9zsUGIAVA">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fYuaQUWHEeSAx9zsUGIAVA"/>
+          <description xmi:type="style:EllipseNodeDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/ecec.odesign#//@ownedViewpoints[name='Cormas']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='Class']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fYuaQkWHEeSAx9zsUGIAVA"/>
+          <color xmi:type="viewpoint:RGBValues" xmi:id="_fYuaQ0WHEeSAx9zsUGIAVA" red="136" green="136" blue="136"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/ecec.odesign#//@ownedViewpoints[name='Cormas']/@ownedRepresentations[name='Diagram']/@defaultLayer/@nodeMappings[name='Class']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/ecec.odesign#//@ownedViewpoints[name='Cormas']/@ownedRepresentations[name='Diagram']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_a18yoUWHEeSAx9zsUGIAVA"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.cirad.ecec.sirius.design/description/ecec.odesign#//@ownedViewpoints[name='Cormas']/@ownedRepresentations[name='Diagram']/@defaultLayer"/>
+      <target xmi:type="ecec_cormas:Model" href="teste.ecec_cormas#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.cirad.ecec.sirius.design/description/ecec.odesign#//@ownedViewpoints[name='Cormas']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_NIDNUEWJEeSZlOOiScL6tw" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Entities']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_H4L2QEc2EeSNb9drnaYohQ" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_T9mI4Ec2EeSNb9drnaYohQ" name="CormasClass">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_T95D0Ec2EeSNb9drnaYohQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_T95D0Uc2EeSNb9drnaYohQ" type="Sirius" element="_T9mI4Ec2EeSNb9drnaYohQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_f5mykEggEeSoEeYGnJpumQ" type="2002" element="_f3Eb8EggEeSoEeYGnJpumQ">
+            <children xmi:type="notation:Node" xmi:id="_f5myk0ggEeSoEeYGnJpumQ" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_f5mylEggEeSoEeYGnJpumQ" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_f5myrEggEeSoEeYGnJpumQ" type="3007" element="_f3qR0EggEeSoEeYGnJpumQ">
+                <children xmi:type="notation:Node" xmi:id="_f5myr0ggEeSoEeYGnJpumQ" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f5mysEggEeSoEeYGnJpumQ" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_7RVy0EpcEeSue4u5Vs8fpQ" type="3005" element="_7Pf_wEpcEeSue4u5Vs8fpQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_7RVy0UpcEeSue4u5Vs8fpQ" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7RVy0kpcEeSue4u5Vs8fpQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_f5myrUggEeSoEeYGnJpumQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5myrkggEeSoEeYGnJpumQ" x="20" y="44" width="27" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_f5v8gEggEeSoEeYGnJpumQ" type="3007" element="_f30C00ggEeSoEeYGnJpumQ">
+                <children xmi:type="notation:Node" xmi:id="_f5v8g0ggEeSoEeYGnJpumQ" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f5v8hEggEeSoEeYGnJpumQ" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_4NRYgEglEeSoEeYGnJpumQ" type="3005" element="_4NHngEglEeSoEeYGnJpumQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_4NRYgUglEeSoEeYGnJpumQ" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4NRYgkglEeSoEeYGnJpumQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_f5v8gUggEeSoEeYGnJpumQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5v8gkggEeSoEeYGnJpumQ" x="25" y="84" width="27" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_dQENsE4kEeSlNcwbyG72XA" type="3007" element="_dPZfUE4kEeSlNcwbyG72XA">
+                <children xmi:type="notation:Node" xmi:id="_dQENs04kEeSlNcwbyG72XA" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_dQENtE4kEeSlNcwbyG72XA" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_po3WYE4kEeSlNcwbyG72XA" type="3005" element="_porJIE4kEeSlNcwbyG72XA">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_po3WYU4kEeSlNcwbyG72XA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_po3WYk4kEeSlNcwbyG72XA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_dQENsU4kEeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dQENsk4kEeSlNcwbyG72XA" x="105" y="66" width="27" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_-sb_gE8kEeS9O_V4vToN2g" type="3008" element="_-r-FcE8kEeS9O_V4vToN2g">
+                <children xmi:type="notation:Node" xmi:id="_-sd0sE8kEeS9O_V4vToN2g" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_-sd0sU8kEeS9O_V4vToN2g" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_-sd0sk8kEeS9O_V4vToN2g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_-sd0s08kEeS9O_V4vToN2g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_-sb_gU8kEeS9O_V4vToN2g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-sb_gk8kEeS9O_V4vToN2g" x="260" y="56"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="__cu0AE8kEeS9O_V4vToN2g" type="3008" element="__cNPkE8kEeS9O_V4vToN2g">
+                <children xmi:type="notation:Node" xmi:id="__cvbEE8kEeS9O_V4vToN2g" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="__cwCIE8kEeS9O_V4vToN2g" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="__cwCIU8kEeS9O_V4vToN2g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="__cwCIk8kEeS9O_V4vToN2g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="__cu0AU8kEeS9O_V4vToN2g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__cu0Ak8kEeS9O_V4vToN2g" x="77" y="99"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_f5mylUggEeSoEeYGnJpumQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_f5mylkggEeSoEeYGnJpumQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_f5mykUggEeSoEeYGnJpumQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5mykkggEeSoEeYGnJpumQ" x="480" y="10" width="478" height="238"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_f5myl0ggEeSoEeYGnJpumQ" type="2002" element="_f3OM9UggEeSoEeYGnJpumQ">
+            <children xmi:type="notation:Node" xmi:id="_f5mymkggEeSoEeYGnJpumQ" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_f5mym0ggEeSoEeYGnJpumQ" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_f5v8kkggEeSoEeYGnJpumQ" type="3007" element="_f4afxUggEeSoEeYGnJpumQ">
+                <children xmi:type="notation:Node" xmi:id="_f5v8lUggEeSoEeYGnJpumQ" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_f5v8lkggEeSoEeYGnJpumQ" x="28" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_DJAGQ0gmEeSoEeYGnJpumQ" type="3005" element="_DI2VQEgmEeSoEeYGnJpumQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_DJAGREgmEeSoEeYGnJpumQ" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DJAGRUgmEeSoEeYGnJpumQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_f5v8k0ggEeSoEeYGnJpumQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5v8lEggEeSoEeYGnJpumQ" x="20" y="29" width="27" height="27"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_f5mynEggEeSoEeYGnJpumQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_f5mynUggEeSoEeYGnJpumQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_f5mymEggEeSoEeYGnJpumQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5mymUggEeSoEeYGnJpumQ" x="5" y="-30" width="373" height="233"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eRN30ErmEeScKsGbyBvDsQ" type="2002" element="_ePk5EErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_eRN300rmEeScKsGbyBvDsQ" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_eRN31ErmEeScKsGbyBvDsQ" type="7001">
+              <children xmi:type="notation:Node" xmi:id="__cxQQE8kEeS9O_V4vToN2g" type="3008" element="__cb5EE8kEeS9O_V4vToN2g">
+                <children xmi:type="notation:Node" xmi:id="__cx3UE8kEeS9O_V4vToN2g" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="__cyeYE8kEeS9O_V4vToN2g" type="7002">
+                  <children xmi:type="notation:Node" xmi:id="__cyeY08kEeS9O_V4vToN2g" type="3008" element="__ceVUE8kEeS9O_V4vToN2g">
+                    <children xmi:type="notation:Node" xmi:id="__czsgE8kEeS9O_V4vToN2g" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="__czsgU8kEeS9O_V4vToN2g" type="7002">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="__czsgk8kEeS9O_V4vToN2g"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="__czsg08kEeS9O_V4vToN2g"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="__cyeZE8kEeS9O_V4vToN2g" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__czFcE8kEeS9O_V4vToN2g" x="30" y="58"/>
+                  </children>
+                  <styles xmi:type="notation:SortingStyle" xmi:id="__cyeYU8kEeS9O_V4vToN2g"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="__cyeYk8kEeS9O_V4vToN2g"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="__cxQQU8kEeS9O_V4vToN2g" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="__cxQQk8kEeS9O_V4vToN2g" x="30" y="34"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_R4KEEFACEeSo_O-itLx1KQ" type="3008" element="_R3adMFACEeSo_O-itLx1KQ">
+                <children xmi:type="notation:Node" xmi:id="_R4KrIFACEeSo_O-itLx1KQ" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_R4KrIVACEeSo_O-itLx1KQ" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_R4KrIlACEeSo_O-itLx1KQ"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_R4KrI1ACEeSo_O-itLx1KQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_R4KEEVACEeSo_O-itLx1KQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_R4KEElACEeSo_O-itLx1KQ" x="271" y="55"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_eRN31UrmEeScKsGbyBvDsQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_eRN31krmEeScKsGbyBvDsQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eRN30UrmEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eRN30krmEeScKsGbyBvDsQ" x="5" y="225" width="448" height="243"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8A28ME42EeSlNcwbyG72XA" type="2001" element="_8Aqu8E42EeSlNcwbyG72XA">
+            <children xmi:type="notation:Node" xmi:id="_8A28M042EeSlNcwbyG72XA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8A28NE42EeSlNcwbyG72XA" x="33"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8A28Ok42EeSlNcwbyG72XA" type="3005" element="_8Aqu8U42EeSlNcwbyG72XA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_8A28O042EeSlNcwbyG72XA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A28PE42EeSlNcwbyG72XA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8A28MU42EeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A28Mk42EeSlNcwbyG72XA" x="550" y="315" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8A28NU42EeSlNcwbyG72XA" type="2001" element="_8Aqu9E42EeSlNcwbyG72XA">
+            <children xmi:type="notation:Node" xmi:id="_8A28OE42EeSlNcwbyG72XA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8A28OU42EeSlNcwbyG72XA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8A28PU42EeSlNcwbyG72XA" type="3005" element="_8Aqu9U42EeSlNcwbyG72XA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_8A28Pk42EeSlNcwbyG72XA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A28P042EeSlNcwbyG72XA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8A28Nk42EeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A28N042EeSlNcwbyG72XA" x="795" y="305" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="__NqOQE_JEeSN2_Gs9XLhdQ" type="2001" element="__LXvQE_JEeSN2_Gs9XLhdQ">
+            <children xmi:type="notation:Node" xmi:id="__NqOQ0_JEeSN2_Gs9XLhdQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__NqORE_JEeSN2_Gs9XLhdQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__Nq1UE_JEeSN2_Gs9XLhdQ" type="3005" element="__Lec8E_JEeSN2_Gs9XLhdQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="__Nq1UU_JEeSN2_Gs9XLhdQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="__Nq1Uk_JEeSN2_Gs9XLhdQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="__NqOQU_JEeSN2_Gs9XLhdQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="__NqOQk_JEeSN2_Gs9XLhdQ" x="555" y="365" width="32" height="32"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_T95D0kc2EeSNb9drnaYohQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="_f5v8mkggEeSoEeYGnJpumQ" type="4001" element="_f4tasEggEeSoEeYGnJpumQ" source="_f5myl0ggEeSoEeYGnJpumQ" target="_f5mykEggEeSoEeYGnJpumQ">
+            <children xmi:type="notation:Node" xmi:id="_f5v8nkggEeSoEeYGnJpumQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5v8n0ggEeSoEeYGnJpumQ" x="8" y="-19"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f5v8oEggEeSoEeYGnJpumQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5v8oUggEeSoEeYGnJpumQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_f5v8okggEeSoEeYGnJpumQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_f5v8o0ggEeSoEeYGnJpumQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_f5v8m0ggEeSoEeYGnJpumQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_f5v8nEggEeSoEeYGnJpumQ" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f5v8nUggEeSoEeYGnJpumQ" points="[14, 1, -219, -12]$[218, 12, -15, -1]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f5v8pEggEeSoEeYGnJpumQ" id="(0.9487179487179487,0.2896174863387978)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f5v8pUggEeSoEeYGnJpumQ" id="(0.01507537688442211,0.25961538461538464)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_obf7tUsAEeScKsGbyBvDsQ" type="4001" element="_obf7sEsAEeScKsGbyBvDsQ" source="_f5myl0ggEeSoEeYGnJpumQ" target="_f5mykEggEeSoEeYGnJpumQ">
+            <children xmi:type="notation:Node" xmi:id="_obpssEsAEeScKsGbyBvDsQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_obpssUsAEeScKsGbyBvDsQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_obpssksAEeScKsGbyBvDsQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_obpss0sAEeScKsGbyBvDsQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_obpstEsAEeScKsGbyBvDsQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_obpstUsAEeScKsGbyBvDsQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_obf7tksAEeScKsGbyBvDsQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_obf7t0sAEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_obf7uEsAEeScKsGbyBvDsQ" points="[0, 20, 0, 20]$[305, 15, 305, 15]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_obpstksAEeScKsGbyBvDsQ" id="(0.4981684981684982,0.4972677595628415)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_obpst0sAEeScKsGbyBvDsQ" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_8A28QE42EeSlNcwbyG72XA" type="4001" element="_8Aqu-E42EeSlNcwbyG72XA" source="_8A28ME42EeSlNcwbyG72XA" target="_f5v8gEggEeSoEeYGnJpumQ">
+            <children xmi:type="notation:Node" xmi:id="_8A28RE42EeSlNcwbyG72XA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A28RU42EeSlNcwbyG72XA" x="-42" y="-30"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8A28Rk42EeSlNcwbyG72XA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A28R042EeSlNcwbyG72XA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8A28SE42EeSlNcwbyG72XA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A28SU42EeSlNcwbyG72XA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_8A28QU42EeSlNcwbyG72XA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_8A28Qk42EeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8A28Q042EeSlNcwbyG72XA" points="[0, 0, 0, 0]$[430, 99, 430, 99]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8A9C0E42EeSlNcwbyG72XA" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8A9C0U42EeSlNcwbyG72XA" id="(0.48148148148148145,0.48148148148148145)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_8A9C0k42EeSlNcwbyG72XA" type="4001" element="_8Aw1lE42EeSlNcwbyG72XA" source="_8A28NU42EeSlNcwbyG72XA" target="_f5mykEggEeSoEeYGnJpumQ">
+            <children xmi:type="notation:Node" xmi:id="_8A9C1k42EeSlNcwbyG72XA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A9C1042EeSlNcwbyG72XA" x="-28" y="32"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8A9C2E42EeSlNcwbyG72XA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A9C2U42EeSlNcwbyG72XA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8A9C2k42EeSlNcwbyG72XA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8A9C2042EeSlNcwbyG72XA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_8A9C0042EeSlNcwbyG72XA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_8A9C1E42EeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8A9C1U42EeSlNcwbyG72XA" points="[0, 0, 0, 60]$[0, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8A9C3E42EeSlNcwbyG72XA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8A9C3U42EeSlNcwbyG72XA" id="(0.5,1.0)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_AXzGIE_KEeSN2_Gs9XLhdQ" type="4001" element="_AVupkE_KEeSN2_Gs9XLhdQ" source="__NqOQE_JEeSN2_Gs9XLhdQ" target="_eRN30ErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_AXztME_KEeSN2_Gs9XLhdQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AXztMU_KEeSN2_Gs9XLhdQ" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AX0UQE_KEeSN2_Gs9XLhdQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AX0UQU_KEeSN2_Gs9XLhdQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_AX0UQk_KEeSN2_Gs9XLhdQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AX0UQ0_KEeSN2_Gs9XLhdQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_AXzGIU_KEeSN2_Gs9XLhdQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_AXzGIk_KEeSN2_Gs9XLhdQ" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_AXzGI0_KEeSN2_Gs9XLhdQ" points="[-16, -3, 141, 22]$[-155, 83, 2, 108]"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_AX07UE_KEeSN2_Gs9XLhdQ" id="(0.8616071428571429,0.5555555555555556)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_f3Eb8EggEeSoEeYGnJpumQ" name="c2 SpatialEntityCell" incomingEdges="_f4tasEggEeSoEeYGnJpumQ _obf7sEsAEeScKsGbyBvDsQ _8Aw1lE42EeSlNcwbyG72XA">
+        <target xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.0"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_f3OM8EggEeSoEeYGnJpumQ">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM8UggEeSoEeYGnJpumQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM8kggEeSoEeYGnJpumQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM80ggEeSoEeYGnJpumQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM9EggEeSoEeYGnJpumQ" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_f3qR0EggEeSoEeYGnJpumQ" name="  a : 10" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.0"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_7Pf_wEpcEeSue4u5Vs8fpQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_7Pf_wUpcEeSue4u5Vs8fpQ"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_7Pf_wkpcEeSue4u5Vs8fpQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_f30C00ggEeSoEeYGnJpumQ" name="  b : 23" incomingEdges="_8Aqu-E42EeSlNcwbyG72XA" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.1"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_4NHngEglEeSoEeYGnJpumQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_4NHngUglEeSoEeYGnJpumQ"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_4NHngkglEeSoEeYGnJpumQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_dPZfUE4kEeSlNcwbyG72XA" name="  y : 47" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.2"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.2"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_porJIE4kEeSlNcwbyG72XA" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_class.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_porJIU4kEeSlNcwbyG72XA"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.0/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_porJIk4kEeSlNcwbyG72XA"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_-r-FcE8kEeS9O_V4vToN2g" name="Init Protocol">
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_-r_TkE8kEeS9O_V4vToN2g" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_-r_TkU8kEeS9O_V4vToN2g"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='InitClass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_-r_Tkk8kEeS9O_V4vToN2g"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_-r_Tk08kEeS9O_V4vToN2g" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_-r_TlE8kEeS9O_V4vToN2g" red="204" green="242" blue="166"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='InitClass']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="__cNPkE8kEeS9O_V4vToN2g" name="CustomProtocol &#xD;&#xA;myClassCustomProtocol">
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="__cOdsE8kEeS9O_V4vToN2g" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__cOdsU8kEeS9O_V4vToN2g"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__cOdsk8kEeS9O_V4vToN2g"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="__cOds08kEeS9O_V4vToN2g" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="__cOdtE8kEeS9O_V4vToN2g" red="194" green="239" blue="255"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_f3OM9UggEeSoEeYGnJpumQ" name="c1 AgentLocation" outgoingEdges="_f4tasEggEeSoEeYGnJpumQ _obf7sEsAEeScKsGbyBvDsQ">
+        <target xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.1"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_f3OM9kggEeSoEeYGnJpumQ">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM90ggEeSoEeYGnJpumQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM-EggEeSoEeYGnJpumQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM-UggEeSoEeYGnJpumQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_f3OM-kggEeSoEeYGnJpumQ" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_f4afxUggEeSoEeYGnJpumQ" name="  z : 90" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.1/@attributes.0"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.1/@attributes.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_DI2VQEgmEeSoEeYGnJpumQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_class.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_DI2VQUgmEeSoEeYGnJpumQ"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.0/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_DI2VQkgmEeSoEeYGnJpumQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_f4tasEggEeSoEeYGnJpumQ" name="eat" sourceNode="_f3OM9UggEeSoEeYGnJpumQ" targetNode="_f3Eb8EggEeSoEeYGnJpumQ">
+        <target xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.0"/>
+        <semanticElements xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_f4tasUggEeSoEeYGnJpumQ" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_f4taskggEeSoEeYGnJpumQ" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_f4tas0ggEeSoEeYGnJpumQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_f4tatEggEeSoEeYGnJpumQ"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_ePk5EErmEeScKsGbyBvDsQ" name="c3 Initializator" incomingEdges="_AVupkE_KEeSN2_Gs9XLhdQ">
+        <target xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.5"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.5"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_ePk5EUrmEeScKsGbyBvDsQ">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ePk5EkrmEeScKsGbyBvDsQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_ePk5E0rmEeScKsGbyBvDsQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_ePk5FErmEeScKsGbyBvDsQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_ePk5FUrmEeScKsGbyBvDsQ" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="__cb5EE8kEeS9O_V4vToN2g" name="CustomProtocol &#xD;&#xA;MyCustom">
+          <target xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.5/@protocols.0"/>
+          <semanticElements xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.5/@protocols.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="__ccgIE8kEeS9O_V4vToN2g" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__ccgIU8kEeS9O_V4vToN2g"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__ccgIk8kEeS9O_V4vToN2g"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="__cdHME8kEeS9O_V4vToN2g" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="__cdHMU8kEeS9O_V4vToN2g" red="194" green="239" blue="255"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="__ceVUE8kEeS9O_V4vToN2g" name="testeeewewe( )">
+            <target xmi:type="ecec_cormas:Method" href="sample.ecec_cormas#//@elements.5/@protocols.0/@methods.0"/>
+            <semanticElements xmi:type="ecec_cormas:Method" href="sample.ecec_cormas#//@elements.5/@protocols.0/@methods.0"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="__ce8YE8kEeS9O_V4vToN2g" iconPath="/org.cirad.ecec.sirius.design/icons/png/methods_tools.png" backgroundStyle="GradientTopToBottom">
+              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__ce8YU8kEeS9O_V4vToN2g"/>
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']/@subContainerMappings[name='Method']/@style"/>
+              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__ce8Yk8kEeS9O_V4vToN2g"/>
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="__ce8Y08kEeS9O_V4vToN2g" red="255" green="255" blue="255"/>
+              <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="__ce8ZE8kEeS9O_V4vToN2g" red="209" green="209" blue="209"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']/@subContainerMappings[name='Method']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_R3adMFACEeSo_O-itLx1KQ" name="Init Protocol">
+          <target xmi:type="ecec_cormas:Init" href="sample.ecec_cormas#//@elements.5/@protocols.1"/>
+          <semanticElements xmi:type="ecec_cormas:Init" href="sample.ecec_cormas#//@elements.5/@protocols.1"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_R3bEQFACEeSo_O-itLx1KQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_R3bEQVACEeSo_O-itLx1KQ"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='InitClass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_R3bEQlACEeSo_O-itLx1KQ"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_R3bEQ1ACEeSo_O-itLx1KQ" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_R3bERFACEeSo_O-itLx1KQ" red="204" green="242" blue="166"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='InitClass']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_obf7sEsAEeScKsGbyBvDsQ" name="teste" sourceNode="_f3OM9UggEeSoEeYGnJpumQ" targetNode="_f3Eb8EggEeSoEeYGnJpumQ">
+        <target xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.1"/>
+        <semanticElements xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_obf7sUsAEeScKsGbyBvDsQ" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_obf7sksAEeScKsGbyBvDsQ" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_obf7s0sAEeScKsGbyBvDsQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_obf7tEsAEeScKsGbyBvDsQ"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8Aqu8E42EeSlNcwbyG72XA" name="teste4" outgoingEdges="_8Aqu-E42EeSlNcwbyG72XA" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.12"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.12"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_8Aqu8U42EeSlNcwbyG72XA" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aqu8k42EeSlNcwbyG72XA"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aqu8042EeSlNcwbyG72XA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8Aqu9E42EeSlNcwbyG72XA" outgoingEdges="_8Aw1lE42EeSlNcwbyG72XA" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.14"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.14"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_8Aqu9U42EeSlNcwbyG72XA" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aqu9k42EeSlNcwbyG72XA"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aqu9042EeSlNcwbyG72XA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="__LXvQE_JEeSN2_Gs9XLhdQ" outgoingEdges="_AVupkE_KEeSN2_Gs9XLhdQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.16"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.16"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="__Lec8E_JEeSN2_Gs9XLhdQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="__Lec8U_JEeSN2_Gs9XLhdQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="__Lec8k_JEeSN2_Gs9XLhdQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_8Aqu-E42EeSlNcwbyG72XA" name="teste4" sourceNode="_8Aqu8E42EeSlNcwbyG72XA" targetNode="_f30C00ggEeSoEeYGnJpumQ">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.12"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_8Aw1kE42EeSlNcwbyG72XA" lineStyle="dash" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnAttribute']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aw1kU42EeSlNcwbyG72XA" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_8Aw1kk42EeSlNcwbyG72XA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aw1k042EeSlNcwbyG72XA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnAttribute']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_8Aw1lE42EeSlNcwbyG72XA" name="theC2s" sourceNode="_8Aqu9E42EeSlNcwbyG72XA" targetNode="_f3Eb8EggEeSoEeYGnJpumQ">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.14"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_8Aw1lU42EeSlNcwbyG72XA" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aw1lk42EeSlNcwbyG72XA" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_8Aw1l042EeSlNcwbyG72XA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aw1mE42EeSlNcwbyG72XA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_AVupkE_KEeSN2_Gs9XLhdQ" name="theC3s" sourceNode="__LXvQE_JEeSN2_Gs9XLhdQ" targetNode="_ePk5EErmEeScKsGbyBvDsQ">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.16"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_AVupkU_KEeSN2_Gs9XLhdQ" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_AVupkk_KEeSN2_Gs9XLhdQ" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_AVvQoE_KEeSN2_Gs9XLhdQ" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_AVvQoU_KEeSN2_Gs9XLhdQ"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_T9mI7Uc2EeSNb9drnaYohQ"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']/@ownedRepresentations[name='Class']/@defaultLayer"/>
+      <target xmi:type="ecec_cormas:Model" href="sample.ecec_cormas#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Classes']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_Bv484EfnEeSaXP3PsmE1tw" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_isUFMEfoEeSaXP3PsmE1tw" name="CormasInitializate">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_isUFOkfoEeSaXP3PsmE1tw" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_isUFO0foEeSaXP3PsmE1tw" type="Sirius" element="_isUFMEfoEeSaXP3PsmE1tw" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_Nggm0EiNEeSGj7cvgD6OYw" type="2002" element="_NgXc4EiNEeSGj7cvgD6OYw">
+            <children xmi:type="notation:Node" xmi:id="_Ng0I0EiNEeSGj7cvgD6OYw" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_Ng0I0UiNEeSGj7cvgD6OYw" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_QteFEE3-EeSg_ZoFuWdoAQ" type="3007" element="_QtUUEE3-EeSg_ZoFuWdoAQ">
+                <children xmi:type="notation:Node" xmi:id="_QteFE03-EeSg_ZoFuWdoAQ" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_QteFFE3-EeSg_ZoFuWdoAQ" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_QteFH03-EeSg_ZoFuWdoAQ" type="3005" element="_QtUUEU3-EeSg_ZoFuWdoAQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_QteFIE3-EeSg_ZoFuWdoAQ" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QteFIU3-EeSg_ZoFuWdoAQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_QteFEU3-EeSg_ZoFuWdoAQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QteFEk3-EeSg_ZoFuWdoAQ" x="15" y="59" width="27" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_QteFFU3-EeSg_ZoFuWdoAQ" type="3007" element="_QtUUFE3-EeSg_ZoFuWdoAQ">
+                <children xmi:type="notation:Node" xmi:id="_QteFGE3-EeSg_ZoFuWdoAQ" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_QteFGU3-EeSg_ZoFuWdoAQ" x="28" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_QteFIk3-EeSg_ZoFuWdoAQ" type="3005" element="_QtUUFU3-EeSg_ZoFuWdoAQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_QteFI03-EeSg_ZoFuWdoAQ" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QteFJE3-EeSg_ZoFuWdoAQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_QteFFk3-EeSg_ZoFuWdoAQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QteFF03-EeSg_ZoFuWdoAQ" x="10" y="99" width="27" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_QteFGk3-EeSg_ZoFuWdoAQ" type="3007" element="_QtUUGE3-EeSg_ZoFuWdoAQ">
+                <children xmi:type="notation:Node" xmi:id="_QteFHU3-EeSg_ZoFuWdoAQ" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_QteFHk3-EeSg_ZoFuWdoAQ" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_QteFJU3-EeSg_ZoFuWdoAQ" type="3005" element="_QtUUGU3-EeSg_ZoFuWdoAQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_QteFJk3-EeSg_ZoFuWdoAQ" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QteFJ03-EeSg_ZoFuWdoAQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_QteFG03-EeSg_ZoFuWdoAQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QteFHE3-EeSg_ZoFuWdoAQ" x="45" y="134" width="27" height="27"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_Ng0I0kiNEeSGj7cvgD6OYw"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_Ng0I00iNEeSGj7cvgD6OYw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Nggm0UiNEeSGj7cvgD6OYw" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Nggm0kiNEeSGj7cvgD6OYw" x="-300" y="-10" width="213" height="198"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_IlVUBUiSEeSGj7cvgD6OYw" type="2001" element="_IlJGw0iSEeSGj7cvgD6OYw">
+            <children xmi:type="notation:Node" xmi:id="_IlVUCEiSEeSGj7cvgD6OYw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_IlVUCUiSEeSGj7cvgD6OYw" x="-29" y="33"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_IlVUDUiSEeSGj7cvgD6OYw" type="3005" element="_IlJGxEiSEeSGj7cvgD6OYw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_IlVUDkiSEeSGj7cvgD6OYw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IlVUD0iSEeSGj7cvgD6OYw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_IlVUBkiSEeSGj7cvgD6OYw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IlVUB0iSEeSGj7cvgD6OYw" x="-125" y="395" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eQoB8ErmEeScKsGbyBvDsQ" type="2001" element="_eOiXQErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_eQoB80rmEeScKsGbyBvDsQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_eQoB9ErmEeScKsGbyBvDsQ" x="-24" y="33"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_eQxL-UrmEeScKsGbyBvDsQ" type="3005" element="_eOiXQUrmEeScKsGbyBvDsQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_eQxL-krmEeScKsGbyBvDsQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQxL-0rmEeScKsGbyBvDsQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eQoB8UrmEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQoB8krmEeScKsGbyBvDsQ" x="-220" y="385" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eQoB9UrmEeScKsGbyBvDsQ" type="2001" element="_eOsIQErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_eQoB-ErmEeScKsGbyBvDsQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_eQoB-UrmEeScKsGbyBvDsQ" x="-44" y="33"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_eQxL_ErmEeScKsGbyBvDsQ" type="3005" element="_eOsIQUrmEeScKsGbyBvDsQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_eQxL_UrmEeScKsGbyBvDsQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQxL_krmEeScKsGbyBvDsQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eQoB9krmEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQoB90rmEeScKsGbyBvDsQ" x="-15" y="400" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eQoCBErmEeScKsGbyBvDsQ" type="2002" element="_eO1SMErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_eQxL4ErmEeScKsGbyBvDsQ" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_eQxL4UrmEeScKsGbyBvDsQ" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_eQxL4krmEeScKsGbyBvDsQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_eQxL40rmEeScKsGbyBvDsQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eQoCBUrmEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQoCBkrmEeScKsGbyBvDsQ" x="-110" y="210" height="118"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eQxL5ErmEeScKsGbyBvDsQ" type="2002" element="_eO1SNkrmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_eQxL50rmEeScKsGbyBvDsQ" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_eQxL6ErmEeScKsGbyBvDsQ" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_eQxMBUrmEeScKsGbyBvDsQ" type="3009" element="_eO1SQkrmEeScKsGbyBvDsQ">
+                <children xmi:type="notation:Node" xmi:id="_eQxMCErmEeScKsGbyBvDsQ" type="5004"/>
+                <children xmi:type="notation:Node" xmi:id="_eQxMCUrmEeScKsGbyBvDsQ" type="7003">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_eQxMCkrmEeScKsGbyBvDsQ"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_eQxMC0rmEeScKsGbyBvDsQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_eQxMBkrmEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQxMB0rmEeScKsGbyBvDsQ" x="15" y="64" width="178" height="113"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_eQxL6UrmEeScKsGbyBvDsQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_eQxL6krmEeScKsGbyBvDsQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eQxL5UrmEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQxL5krmEeScKsGbyBvDsQ" x="225" y="-30" width="403" height="228"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eQxL60rmEeScKsGbyBvDsQ" type="2002" element="_eO1SPErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_eQxL7krmEeScKsGbyBvDsQ" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_eQxL70rmEeScKsGbyBvDsQ" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_eQxL8ErmEeScKsGbyBvDsQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_eQxL8UrmEeScKsGbyBvDsQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eQxL7ErmEeScKsGbyBvDsQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eQxL7UrmEeScKsGbyBvDsQ" x="230" y="235" width="228" height="93"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_mHHBkE1NEeSUjupW3KXf2A" type="2001" element="_mGogcE1NEeSUjupW3KXf2A">
+            <children xmi:type="notation:Node" xmi:id="_mHHBk01NEeSUjupW3KXf2A" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_mHHBlE1NEeSUjupW3KXf2A" x="-28" y="33"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_mHfcEE1NEeSUjupW3KXf2A" type="3005" element="_mGogcU1NEeSUjupW3KXf2A">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_mHfcEU1NEeSUjupW3KXf2A" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHfcEk1NEeSUjupW3KXf2A"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_mHHBkU1NEeSUjupW3KXf2A" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHHBkk1NEeSUjupW3KXf2A" x="135" y="40" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8BDJcE42EeSlNcwbyG72XA" type="2001" element="_8AYbEE42EeSlNcwbyG72XA">
+            <children xmi:type="notation:Node" xmi:id="_8BDJc042EeSlNcwbyG72XA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8BDJdE42EeSlNcwbyG72XA" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8BDJek42EeSlNcwbyG72XA" type="3005" element="_8AYbEU42EeSlNcwbyG72XA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_8BDJe042EeSlNcwbyG72XA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8BDJfE42EeSlNcwbyG72XA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8BDJcU42EeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8BDJck42EeSlNcwbyG72XA" x="60" y="400" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8BDJdU42EeSlNcwbyG72XA" type="2001" element="_8AYbFE42EeSlNcwbyG72XA">
+            <children xmi:type="notation:Node" xmi:id="_8BDJeE42EeSlNcwbyG72XA" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8BDJeU42EeSlNcwbyG72XA" x="33"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8BDJfU42EeSlNcwbyG72XA" type="3005" element="_8AYbFU42EeSlNcwbyG72XA">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_8BDJfk42EeSlNcwbyG72XA" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8BDJf042EeSlNcwbyG72XA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8BDJdk42EeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8BDJd042EeSlNcwbyG72XA" x="105" y="115" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_c-sCYE7rEeSngqoljhSjJw" type="2001" element="_c6llgE7rEeSngqoljhSjJw">
+            <children xmi:type="notation:Node" xmi:id="_c-spcE7rEeSngqoljhSjJw" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_c-spcU7rEeSngqoljhSjJw" x="-24" y="-14"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_c-t3kE7rEeSngqoljhSjJw" type="3005" element="_c6wkoE7rEeSngqoljhSjJw">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_c-t3kU7rEeSngqoljhSjJw" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c-t3kk7rEeSngqoljhSjJw"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_c-sCYU7rEeSngqoljhSjJw" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c-sCYk7rEeSngqoljhSjJw" x="-280" y="260" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_FUuaEFKyEeSlUO8xxcPpzg" type="2002" element="_FSV0cFKyEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_FUuaE1KyEeSlUO8xxcPpzg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_FUuaFFKyEeSlUO8xxcPpzg" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_FUuaFVKyEeSlUO8xxcPpzg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_FUuaFlKyEeSlUO8xxcPpzg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_FUuaEVKyEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FUuaElKyEeSlUO8xxcPpzg" x="240" y="350" width="263" height="133"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_isUFPEfoEeSaXP3PsmE1tw"/>
+          <edges xmi:type="notation:Edge" xmi:id="_2DfB4E1REeSUjupW3KXf2A" type="4001" element="_2BrEAE1REeSUjupW3KXf2A" source="_IlVUBUiSEeSGj7cvgD6OYw" target="_eQoCBErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_2DfB5E1REeSUjupW3KXf2A" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2DfB5U1REeSUjupW3KXf2A" x="-46" y="-34"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_2DfB5k1REeSUjupW3KXf2A" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2DfB501REeSUjupW3KXf2A" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_2DfB6E1REeSUjupW3KXf2A" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2DfB6U1REeSUjupW3KXf2A" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_2DfB4U1REeSUjupW3KXf2A"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_2DfB4k1REeSUjupW3KXf2A" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2DfB401REeSUjupW3KXf2A" points="[16, -13, -173, 133]$[190, -123, 1, 23]"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_2DfB6k1REeSUjupW3KXf2A" id="(0.25333333333333335,0.8559322033898306)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_2o9tgE1REeSUjupW3KXf2A" type="4001" element="_2orZoE1REeSUjupW3KXf2A" source="_eQoB9UrmEeScKsGbyBvDsQ" target="_eQoCBErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_2o9thE1REeSUjupW3KXf2A" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2o9thU1REeSUjupW3KXf2A" x="-39" y="34"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_2o9thk1REeSUjupW3KXf2A" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2o9th01REeSUjupW3KXf2A" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_2o9tiE1REeSUjupW3KXf2A" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2o9tiU1REeSUjupW3KXf2A" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_2o9tgU1REeSUjupW3KXf2A"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_2o9tgk1REeSUjupW3KXf2A" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2o9tg01REeSUjupW3KXf2A" points="[12, -16, -116, 136]$[89, -118, -39, 34]"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_wc9BwE1SEeSUjupW3KXf2A" type="4001" element="_wcYaAE1SEeSUjupW3KXf2A" source="_Nggm0EiNEeSGj7cvgD6OYw" target="_mHHBkE1NEeSUjupW3KXf2A">
+            <children xmi:type="notation:Node" xmi:id="_wc9BxE1SEeSUjupW3KXf2A" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wc9BxU1SEeSUjupW3KXf2A" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_wc9Bxk1SEeSUjupW3KXf2A" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wc9Bx01SEeSUjupW3KXf2A" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_wc9ByE1SEeSUjupW3KXf2A" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wc9ByU1SEeSUjupW3KXf2A" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_wc9BwU1SEeSUjupW3KXf2A"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_wc9Bwk1SEeSUjupW3KXf2A" fontName="Segoe UI" italic="true"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_wc9Bw01SEeSUjupW3KXf2A" points="[30, -1, -270, 15]$[302, 0, 2, 16]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_wc9Byk1SEeSUjupW3KXf2A" id="(0.8591549295774648,0.3181818181818182)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_RK1s4E1WEeSUjupW3KXf2A" type="4001" element="_RKl1QE1WEeSUjupW3KXf2A" source="_eQoB8ErmEeScKsGbyBvDsQ" target="_eQoCBErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_RK2T8E1WEeSUjupW3KXf2A" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RK2T8U1WEeSUjupW3KXf2A" x="-30" y="-43"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_RK2T8k1WEeSUjupW3KXf2A" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RK2T801WEeSUjupW3KXf2A" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_RK2T9E1WEeSUjupW3KXf2A" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RK2T9U1WEeSUjupW3KXf2A" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_RK1s4U1WEeSUjupW3KXf2A"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_RK1s4k1WEeSUjupW3KXf2A" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RK1s401WEeSUjupW3KXf2A" points="[16, -9, -236, 131]$[253, -118, 1, 22]"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RK2T9k1WEeSUjupW3KXf2A" id="(0.12666666666666668,0.6857142857142857)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_8BDJgE42EeSlNcwbyG72XA" type="4001" element="_8AehsE42EeSlNcwbyG72XA" source="_8BDJcE42EeSlNcwbyG72XA" target="_eQoCBErmEeScKsGbyBvDsQ">
+            <children xmi:type="notation:Node" xmi:id="_8BDJhE42EeSlNcwbyG72XA" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8BDJhU42EeSlNcwbyG72XA" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8BDJhk42EeSlNcwbyG72XA" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8BDJh042EeSlNcwbyG72XA" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8BDJiE42EeSlNcwbyG72XA" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8BDJiU42EeSlNcwbyG72XA" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_8BDJgU42EeSlNcwbyG72XA"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_8BDJgk42EeSlNcwbyG72XA" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_8BDJg042EeSlNcwbyG72XA" points="[0, 0, -138, 60]$[138, -60, 0, 0]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8BDJik42EeSlNcwbyG72XA" id="(0.5,0.0)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_8BDJi042EeSlNcwbyG72XA" id="(0.76,0.8135593220338984)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_g-MbAFKzEeSlUO8xxcPpzg" type="4001" element="_g8ACoFKzEeSlUO8xxcPpzg" source="_8BDJdU42EeSlNcwbyG72XA" target="_Nggm0EiNEeSGj7cvgD6OYw">
+            <children xmi:type="notation:Node" xmi:id="_g-MbBFKzEeSlUO8xxcPpzg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-MbBVKzEeSlUO8xxcPpzg" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_g-MbBlKzEeSlUO8xxcPpzg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-MbB1KzEeSlUO8xxcPpzg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_g-MbCFKzEeSlUO8xxcPpzg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_g-MbCVKzEeSlUO8xxcPpzg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_g-MbAVKzEeSlUO8xxcPpzg"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_g-MbAlKzEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_g-MbA1KzEeSlUO8xxcPpzg" points="[5, -6, -104, 121]$[111, -95, 2, 32]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g-MbClKzEeSlUO8xxcPpzg" id="(0.40625,0.1875)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_g-MbC1KzEeSlUO8xxcPpzg" id="(0.5117370892018779,0.8383838383838383)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_qNYHYFKzEeSlUO8xxcPpzg" type="4001" element="_qM_s4FKzEeSlUO8xxcPpzg" source="_c-sCYE7rEeSngqoljhSjJw" target="_QteFFU3-EeSg_ZoFuWdoAQ">
+            <children xmi:type="notation:Node" xmi:id="_qNYHZFKzEeSlUO8xxcPpzg" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qNYHZVKzEeSlUO8xxcPpzg" x="-10" y="58"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_qNYHZlKzEeSlUO8xxcPpzg" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qNYHZ1KzEeSlUO8xxcPpzg" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_qNYHaFKzEeSlUO8xxcPpzg" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qNYHaVKzEeSlUO8xxcPpzg" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_qNYHYVKzEeSlUO8xxcPpzg"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_qNYHYlKzEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qNYHY1KzEeSlUO8xxcPpzg" points="[-16, -1, 297, 17]$[-311, -4, 2, 14]"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_NgXc4EiNEeSGj7cvgD6OYw" name="Initial Instantiation" outgoingEdges="_wcYaAE1SEeSUjupW3KXf2A" incomingEdges="_g8ACoFKzEeSlUO8xxcPpzg">
+        <target xmi:type="ecec_cormas:Scheduler" href="sample.ecec_cormas#//@elements.2"/>
+        <semanticElements xmi:type="ecec_cormas:Scheduler" href="sample.ecec_cormas#//@elements.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_jqANgEiNEeSGj7cvgD6OYw" iconPath="/org.cirad.ecec.sirius.design/icons/png/flag.png" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_jqANgUiNEeSGj7cvgD6OYw"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_jqANgkiNEeSGj7cvgD6OYw"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_jqANg0iNEeSGj7cvgD6OYw" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Ly-2IE4AEeSg_ZoFuWdoAQ" red="173" green="127" blue="168"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QtUUEE3-EeSg_ZoFuWdoAQ" name="unrestrainedNumber : 34" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.2/@Attributes.0"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.2/@Attributes.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_QtUUEU3-EeSg_ZoFuWdoAQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_scheduler.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_QtUUEk3-EeSg_ZoFuWdoAQ"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_QtUUE03-EeSg_ZoFuWdoAQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QtUUFE3-EeSg_ZoFuWdoAQ" name="restrained : 10" incomingEdges="_qM_s4FKzEeSlUO8xxcPpzg" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.2/@Attributes.1"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.2/@Attributes.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_QtUUFU3-EeSg_ZoFuWdoAQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_scheduler.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_QtUUFk3-EeSg_ZoFuWdoAQ"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_QtUUF03-EeSg_ZoFuWdoAQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QtUUGE3-EeSg_ZoFuWdoAQ" name=" : " width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.2/@Attributes.2"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.2/@Attributes.2"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_QtUUGU3-EeSg_ZoFuWdoAQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_scheduler.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_QtUUGk3-EeSg_ZoFuWdoAQ"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_QtUUG03-EeSg_ZoFuWdoAQ"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Scheduler']/@subNodeMappings[name='InitialInstationsAttribute']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_eOiXQErmEeScKsGbyBvDsQ" name="myEnviromment" outgoingEdges="_RKl1QE1WEeSUjupW3KXf2A" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.3"/>
+        <semanticElements xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.3"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_eOiXQUrmEeScKsGbyBvDsQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/enviro32.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eOiXQkrmEeScKsGbyBvDsQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eOiXQ0rmEeScKsGbyBvDsQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_eOsIQErmEeScKsGbyBvDsQ" name="Teste" outgoingEdges="_2orZoE1REeSUjupW3KXf2A" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.6"/>
+        <semanticElements xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.6"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_eOsIQUrmEeScKsGbyBvDsQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/enviro32.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eOsIQkrmEeScKsGbyBvDsQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eOsIQ0rmEeScKsGbyBvDsQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_IlJGw0iSEeSGj7cvgD6OYw" name="myEnviroment" outgoingEdges="_2BrEAE1REeSUjupW3KXf2A" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.8"/>
+        <semanticElements xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.8"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_IlJGxEiSEeSGj7cvgD6OYw" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/enviro32.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_IlJGxUiSEeSGj7cvgD6OYw"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_IlJGxkiSEeSGj7cvgD6OYw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8AYbEE42EeSlNcwbyG72XA" outgoingEdges="_8AehsE42EeSlNcwbyG72XA" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.11"/>
+        <semanticElements xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.11"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_8AYbEU42EeSlNcwbyG72XA" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/enviro32.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8AYbEk42EeSlNcwbyG72XA"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8AYbE042EeSlNcwbyG72XA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='Enviromment']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eO1SMErmEeScKsGbyBvDsQ" name="Init" incomingEdges="_2BrEAE1REeSUjupW3KXf2A _2orZoE1REeSUjupW3KXf2A _RKl1QE1WEeSUjupW3KXf2A _8AehsE42EeSlNcwbyG72XA">
+        <target xmi:type="ecec_cormas:Init" href="sample.ecec_cormas#//@elements.7"/>
+        <semanticElements xmi:type="ecec_cormas:Init" href="sample.ecec_cormas#//@elements.7"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eO1SMUrmEeScKsGbyBvDsQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SMkrmEeScKsGbyBvDsQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Init']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SM0rmEeScKsGbyBvDsQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SNErmEeScKsGbyBvDsQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SNUrmEeScKsGbyBvDsQ" red="204" green="242" blue="166"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Init']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eO1SNkrmEeScKsGbyBvDsQ" name="CustomProtocol &#xD;&#xA;myProtocolOutside">
+        <target xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.4"/>
+        <semanticElements xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.4"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eO1SN0rmEeScKsGbyBvDsQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SOErmEeScKsGbyBvDsQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Custom%20Protocol']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SOUrmEeScKsGbyBvDsQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SOkrmEeScKsGbyBvDsQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SO0rmEeScKsGbyBvDsQ" red="194" green="239" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Custom%20Protocol']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_eO1SQkrmEeScKsGbyBvDsQ" name="methodTest( )">
+          <target xmi:type="ecec_cormas:Method" href="sample.ecec_cormas#//@elements.4/@methods.0"/>
+          <semanticElements xmi:type="ecec_cormas:Method" href="sample.ecec_cormas#//@elements.4/@methods.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eO1SQ0rmEeScKsGbyBvDsQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/methods_tools.png" backgroundStyle="GradientTopToBottom">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SRErmEeScKsGbyBvDsQ"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Custom%20Protocol']/@subContainerMappings[name='Method']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SRUrmEeScKsGbyBvDsQ"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SRkrmEeScKsGbyBvDsQ" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SR0rmEeScKsGbyBvDsQ" red="209" green="209" blue="209"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Custom%20Protocol']/@subContainerMappings[name='Method']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eO1SPErmEeScKsGbyBvDsQ" name="CustomProtocol &#xD;&#xA;otheroutsideprotocol">
+        <target xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.9"/>
+        <semanticElements xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.9"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eO1SPUrmEeScKsGbyBvDsQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SPkrmEeScKsGbyBvDsQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Custom%20Protocol']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SP0rmEeScKsGbyBvDsQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SQErmEeScKsGbyBvDsQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eO1SQUrmEeScKsGbyBvDsQ" red="194" green="239" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Custom%20Protocol']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_mGogcE1NEeSUjupW3KXf2A" name="ModelParameters" incomingEdges="_wcYaAE1SEeSUjupW3KXf2A" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:ModelParameters" href="sample.ecec_cormas#//@parameters"/>
+        <semanticElements xmi:type="ecec_cormas:ModelParameters" href="sample.ecec_cormas#//@parameters"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_mGogcU1NEeSUjupW3KXf2A" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/Model.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mGogck1NEeSUjupW3KXf2A"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='ModelParameters']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mGogc01NEeSUjupW3KXf2A"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='ModelParameters']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2BrEAE1REeSUjupW3KXf2A" name=".env" sourceNode="_IlJGw0iSEeSGj7cvgD6OYw" targetNode="_eO1SMErmEeScKsGbyBvDsQ">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.8"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2BrEAU1REeSUjupW3KXf2A" lineStyle="dash" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2BrEAk1REeSUjupW3KXf2A" red="77" green="137" blue="20"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_2BrEA01REeSUjupW3KXf2A" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2BrEBE1REeSUjupW3KXf2A"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_2orZoE1REeSUjupW3KXf2A" name=".env" sourceNode="_eOsIQErmEeScKsGbyBvDsQ" targetNode="_eO1SMErmEeScKsGbyBvDsQ">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.6"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_2orZoU1REeSUjupW3KXf2A" lineStyle="dash" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_2orZok1REeSUjupW3KXf2A" red="77" green="137" blue="20"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_2orZo01REeSUjupW3KXf2A" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_2orZpE1REeSUjupW3KXf2A"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_wcYaAE1SEeSUjupW3KXf2A" name="Init ECEC model" sourceNode="_NgXc4EiNEeSGj7cvgD6OYw" targetNode="_mGogcE1NEeSUjupW3KXf2A">
+        <target xmi:type="ecec_cormas:Scheduler" href="sample.ecec_cormas#//@elements.2"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_wcYaAU1SEeSUjupW3KXf2A" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='InitializeModel']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_wcYaAk1SEeSUjupW3KXf2A" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_wcYaA01SEeSUjupW3KXf2A" labelSize="9" labelFormat="italic" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_wcYaBE1SEeSUjupW3KXf2A"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='InitializeModel']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_RKl1QE1WEeSUjupW3KXf2A" name=".env" sourceNode="_eOiXQErmEeScKsGbyBvDsQ" targetNode="_eO1SMErmEeScKsGbyBvDsQ">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.3"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_RKl1QU1WEeSUjupW3KXf2A" lineStyle="dash" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_RKl1Qk1WEeSUjupW3KXf2A" red="77" green="137" blue="20"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_RKl1Q01WEeSUjupW3KXf2A" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_RKl1RE1WEeSUjupW3KXf2A"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8AYbFE42EeSlNcwbyG72XA" name="testeprobeinit" outgoingEdges="_g8ACoFKzEeSlUO8xxcPpzg" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:ProbeInit" href="sample.ecec_cormas#//@elements.13"/>
+        <semanticElements xmi:type="ecec_cormas:ProbeInit" href="sample.ecec_cormas#//@elements.13"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_8AYbFU42EeSlNcwbyG72XA" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8AYbFk42EeSlNcwbyG72XA"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='ProbeInit']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8AYbF042EeSlNcwbyG72XA"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='ProbeInit']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_c6llgE7rEeSngqoljhSjJw" name="testeninitprobe" outgoingEdges="_qM_s4FKzEeSlUO8xxcPpzg" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:ProbeInit" href="sample.ecec_cormas#//@elements.15"/>
+        <semanticElements xmi:type="ecec_cormas:ProbeInit" href="sample.ecec_cormas#//@elements.15"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_c6wkoE7rEeSngqoljhSjJw" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_c6wkoU7rEeSngqoljhSjJw"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='ProbeInit']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_c6wkok7rEeSngqoljhSjJw"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@nodeMappings[name='ProbeInit']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_8AehsE42EeSlNcwbyG72XA" name=".env" sourceNode="_8AYbEE42EeSlNcwbyG72XA" targetNode="_eO1SMErmEeScKsGbyBvDsQ">
+        <target xmi:type="ecec_cormas:Enviromment" href="sample.ecec_cormas#//@elements.11"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_8AehsU42EeSlNcwbyG72XA" lineStyle="dash" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_8Aehsk42EeSlNcwbyG72XA" red="77" green="137" blue="20"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_8Aehs042EeSlNcwbyG72XA" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8AehtE42EeSlNcwbyG72XA"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='EnvirommentEdge']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_FSV0cFKyEeSlUO8xxcPpzg" name="Controlteste">
+        <target xmi:type="ecec_cormas:Control" href="sample.ecec_cormas#//@elements.17"/>
+        <semanticElements xmi:type="ecec_cormas:Control" href="sample.ecec_cormas#//@elements.17"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_FSb7EFKyEeSlUO8xxcPpzg" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Orange.png" backgroundStyle="GradientTopToBottom">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_FSb7EVKyEeSlUO8xxcPpzg"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Control']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_FSb7ElKyEeSlUO8xxcPpzg"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_FSb7E1KyEeSlUO8xxcPpzg" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_FSb7FFKyEeSlUO8xxcPpzg" red="253" green="206" blue="137"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@containerMappings[name='Control']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_g8ACoFKzEeSlUO8xxcPpzg" name="testeprobeinit" sourceNode="_8AYbFE42EeSlNcwbyG72XA" targetNode="_NgXc4EiNEeSGj7cvgD6OYw">
+        <target xmi:type="ecec_cormas:ProbeInit" href="sample.ecec_cormas#//@elements.13"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_g8ACoVKzEeSlUO8xxcPpzg" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='ProbeOnInitInstantiation']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_g8AColKzEeSlUO8xxcPpzg" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_g8ACo1KzEeSlUO8xxcPpzg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_g8ACpFKzEeSlUO8xxcPpzg"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='ProbeOnInitInstantiation']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_qM_s4FKzEeSlUO8xxcPpzg" name="testeninitprobe" sourceNode="_c6llgE7rEeSngqoljhSjJw" targetNode="_QtUUFE3-EeSg_ZoFuWdoAQ">
+        <target xmi:type="ecec_cormas:ProbeInit" href="sample.ecec_cormas#//@elements.15"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_qM_s4VKzEeSlUO8xxcPpzg" lineStyle="dash" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='ProbeOnAttributeInit']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_qM_s4lKzEeSlUO8xxcPpzg" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_qM_s41KzEeSlUO8xxcPpzg" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_qM_s5FKzEeSlUO8xxcPpzg"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer/@edgeMappings[name='ProbeOnAttributeInit']"/>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_isUFOUfoEeSaXP3PsmE1tw"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']/@ownedRepresentations[name='Initializate']/@defaultLayer"/>
+      <target xmi:type="ecec_cormas:Model" href="sample.ecec_cormas#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Initialization']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_z6ruQFACEeSo_O-itLx1KQ" initialized="true">
+    <ownedRepresentations xmi:type="diagram:DSemanticDiagram" xmi:id="_8wbm8FACEeSo_O-itLx1KQ" name="ClassRepresentation">
+      <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_8whGgFACEeSo_O-itLx1KQ" source="GMF_DIAGRAMS">
+        <data xmi:type="notation:Diagram" xmi:id="_8whGgVACEeSo_O-itLx1KQ" type="Sirius" element="_8wbm8FACEeSo_O-itLx1KQ" measurementUnit="Pixel">
+          <children xmi:type="notation:Node" xmi:id="_8wiUoFACEeSo_O-itLx1KQ" type="2001" element="_8wbm8VACEeSo_O-itLx1KQ">
+            <children xmi:type="notation:Node" xmi:id="_8wjiwFACEeSo_O-itLx1KQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8wjiwVACEeSo_O-itLx1KQ" x="-1" y="-14"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8wrekFACEeSo_O-itLx1KQ" type="3005" element="_8wbm8lACEeSo_O-itLx1KQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_8wrekVACEeSo_O-itLx1KQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8wreklACEeSo_O-itLx1KQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8wiUoVACEeSo_O-itLx1KQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8wiUolACEeSo_O-itLx1KQ" x="325" y="135" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8wkw4FACEeSo_O-itLx1KQ" type="2001" element="_8wbm9VACEeSo_O-itLx1KQ">
+            <children xmi:type="notation:Node" xmi:id="_8wlX8FACEeSo_O-itLx1KQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8wlX8VACEeSo_O-itLx1KQ" x="-20" y="-14"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8wrek1ACEeSo_O-itLx1KQ" type="3005" element="_8wbm9lACEeSo_O-itLx1KQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_8wrelFACEeSo_O-itLx1KQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8wrelVACEeSo_O-itLx1KQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8wkw4VACEeSo_O-itLx1KQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8wkw4lACEeSo_O-itLx1KQ" x="195" y="70" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_8wl_AFACEeSo_O-itLx1KQ" type="2001" element="_8wbm-VACEeSo_O-itLx1KQ">
+            <children xmi:type="notation:Node" xmi:id="_8wmmEFACEeSo_O-itLx1KQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_8wmmEVACEeSo_O-itLx1KQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_8wsFoFACEeSo_O-itLx1KQ" type="3005" element="_8wbm-lACEeSo_O-itLx1KQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_8wsFoVACEeSo_O-itLx1KQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8wsFolACEeSo_O-itLx1KQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_8wl_AVACEeSo_O-itLx1KQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8wl_AlACEeSo_O-itLx1KQ" x="310" y="26" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eyyD2lLpEeSlUO8xxcPpzg" type="2002" element="_eyfv8FLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_eyyD3VLpEeSlUO8xxcPpzg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_eyyD3lLpEeSlUO8xxcPpzg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_ey4KdFLpEeSlUO8xxcPpzg" type="3008" element="_eyl2kFLpEeSlUO8xxcPpzg">
+                <children xmi:type="notation:Node" xmi:id="_ey4Kd1LpEeSlUO8xxcPpzg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_ey4KeFLpEeSlUO8xxcPpzg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_ey4KeVLpEeSlUO8xxcPpzg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_ey4KelLpEeSlUO8xxcPpzg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KdVLpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KdlLpEeSlUO8xxcPpzg" x="20" y="39"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ey4Ke1LpEeSlUO8xxcPpzg" type="3008" element="_eyl2llLpEeSlUO8xxcPpzg">
+                <children xmi:type="notation:Node" xmi:id="_ey4KflLpEeSlUO8xxcPpzg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_ey4Kf1LpEeSlUO8xxcPpzg" type="7002">
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_ey4KgFLpEeSlUO8xxcPpzg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_ey4KgVLpEeSlUO8xxcPpzg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KfFLpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KfVLpEeSlUO8xxcPpzg" x="20" y="129"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ey4KglLpEeSlUO8xxcPpzg" type="3007" element="_eyl2nFLpEeSlUO8xxcPpzg">
+                <children xmi:type="notation:Node" xmi:id="_ey4KhVLpEeSlUO8xxcPpzg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ey4KhlLpEeSlUO8xxcPpzg" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ey4KkVLpEeSlUO8xxcPpzg" type="3005" element="_eyl2nVLpEeSlUO8xxcPpzg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KklLpEeSlUO8xxcPpzg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4Kk1LpEeSlUO8xxcPpzg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4Kg1LpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KhFLpEeSlUO8xxcPpzg" x="205" y="59" width="27" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ey4Kh1LpEeSlUO8xxcPpzg" type="3007" element="_eyl2oFLpEeSlUO8xxcPpzg">
+                <children xmi:type="notation:Node" xmi:id="_ey4KilLpEeSlUO8xxcPpzg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ey4Ki1LpEeSlUO8xxcPpzg" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ey4KlFLpEeSlUO8xxcPpzg" type="3005" element="_eyl2oVLpEeSlUO8xxcPpzg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KlVLpEeSlUO8xxcPpzg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KllLpEeSlUO8xxcPpzg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KiFLpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KiVLpEeSlUO8xxcPpzg" x="200" y="134" width="27" height="27"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_ey4KjFLpEeSlUO8xxcPpzg" type="3007" element="_eyl2pFLpEeSlUO8xxcPpzg">
+                <children xmi:type="notation:Node" xmi:id="_ey4Kj1LpEeSlUO8xxcPpzg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ey4KkFLpEeSlUO8xxcPpzg" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ey4Kl1LpEeSlUO8xxcPpzg" type="3005" element="_eyl2pVLpEeSlUO8xxcPpzg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KmFLpEeSlUO8xxcPpzg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KmVLpEeSlUO8xxcPpzg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KjVLpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KjlLpEeSlUO8xxcPpzg" x="300" y="64" width="27" height="27"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_eyyD31LpEeSlUO8xxcPpzg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_eyyD4FLpEeSlUO8xxcPpzg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eyyD21LpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eyyD3FLpEeSlUO8xxcPpzg" x="-50" y="220" width="463" height="258"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eyyD4VLpEeSlUO8xxcPpzg" type="2002" element="_eyfv9lLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_eyyD5FLpEeSlUO8xxcPpzg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_eyyD5VLpEeSlUO8xxcPpzg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_ey4KmlLpEeSlUO8xxcPpzg" type="3007" element="_eyl2qFLpEeSlUO8xxcPpzg">
+                <children xmi:type="notation:Node" xmi:id="_ey4KnVLpEeSlUO8xxcPpzg" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ey4KnlLpEeSlUO8xxcPpzg" x="28"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_ey4Kn1LpEeSlUO8xxcPpzg" type="3005" element="_eyr9MFLpEeSlUO8xxcPpzg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KoFLpEeSlUO8xxcPpzg" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KoVLpEeSlUO8xxcPpzg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4Km1LpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KnFLpEeSlUO8xxcPpzg" x="30" y="30" width="27" height="27"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_eyyD5lLpEeSlUO8xxcPpzg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_eyyD51LpEeSlUO8xxcPpzg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eyyD4lLpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eyyD41LpEeSlUO8xxcPpzg" x="-70" y="50"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eyyD6FLpEeSlUO8xxcPpzg" type="2002" element="_eyfv_FLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_ey4KcFLpEeSlUO8xxcPpzg" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_ey4KcVLpEeSlUO8xxcPpzg" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_ey4KolLpEeSlUO8xxcPpzg" type="3008" element="_eyr9M1LpEeSlUO8xxcPpzg">
+                <children xmi:type="notation:Node" xmi:id="_ey4KpVLpEeSlUO8xxcPpzg" type="5005"/>
+                <children xmi:type="notation:Node" xmi:id="_ey4KplLpEeSlUO8xxcPpzg" type="7002">
+                  <children xmi:type="notation:Node" xmi:id="_ey4KqVLpEeSlUO8xxcPpzg" type="3008" element="_eyr9OVLpEeSlUO8xxcPpzg">
+                    <children xmi:type="notation:Node" xmi:id="_ey-REFLpEeSlUO8xxcPpzg" type="5005"/>
+                    <children xmi:type="notation:Node" xmi:id="_ey-REVLpEeSlUO8xxcPpzg" type="7002">
+                      <styles xmi:type="notation:SortingStyle" xmi:id="_ey-RElLpEeSlUO8xxcPpzg"/>
+                      <styles xmi:type="notation:FilteringStyle" xmi:id="_ey-RE1LpEeSlUO8xxcPpzg"/>
+                    </children>
+                    <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4KqlLpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4Kq1LpEeSlUO8xxcPpzg" x="30" y="30"/>
+                  </children>
+                  <styles xmi:type="notation:SortingStyle" xmi:id="_ey4Kp1LpEeSlUO8xxcPpzg"/>
+                  <styles xmi:type="notation:FilteringStyle" xmi:id="_ey4KqFLpEeSlUO8xxcPpzg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_ey4Ko1LpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ey4KpFLpEeSlUO8xxcPpzg" x="30" y="30"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_ey4KclLpEeSlUO8xxcPpzg"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_ey4Kc1LpEeSlUO8xxcPpzg"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eyyD6VLpEeSlUO8xxcPpzg" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eyyD6lLpEeSlUO8xxcPpzg" x="455" y="20"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_Y2WzUFOGEeSooeRfQr1SwQ" type="2001" element="_Y0vCsFOGEeSooeRfQr1SwQ">
+            <children xmi:type="notation:Node" xmi:id="_Y2WzU1OGEeSooeRfQr1SwQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Y2WzVFOGEeSooeRfQr1SwQ" x="-29" y="33"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Y2c58FOGEeSooeRfQr1SwQ" type="3005" element="_Y01JUFOGEeSooeRfQr1SwQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Y2c58VOGEeSooeRfQr1SwQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y2c58lOGEeSooeRfQr1SwQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_Y2WzUVOGEeSooeRfQr1SwQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Y2WzUlOGEeSooeRfQr1SwQ" x="540" y="330" width="32" height="32"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_EZc_YFOIEeSooeRfQr1SwQ" type="2001" element="_EYyRAFOIEeSooeRfQr1SwQ">
+            <children xmi:type="notation:Node" xmi:id="_EZc_Y1OIEeSooeRfQr1SwQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_EZc_ZFOIEeSooeRfQr1SwQ" x="-23" y="-14"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_EZc_ZVOIEeSooeRfQr1SwQ" type="3005" element="_EYyRAVOIEeSooeRfQr1SwQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_EZc_ZlOIEeSooeRfQr1SwQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EZc_Z1OIEeSooeRfQr1SwQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_EZc_YVOIEeSooeRfQr1SwQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EZc_YlOIEeSooeRfQr1SwQ" x="860" y="65" width="31" height="31"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_s85UoFRTEeSPup8JJICB8g" type="2002" element="_s8Us4FRTEeSPup8JJICB8g">
+            <children xmi:type="notation:Node" xmi:id="_s85Uo1RTEeSPup8JJICB8g" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_s85UpFRTEeSPup8JJICB8g" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_s85UpVRTEeSPup8JJICB8g"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_s85UplRTEeSPup8JJICB8g"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_s85UoVRTEeSPup8JJICB8g" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_s85UolRTEeSPup8JJICB8g" x="800" y="190" width="131" height="81"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_wsmjwFRXEeSo9PZ2iofnKQ" type="2002" element="_wqsfQFRXEeSo9PZ2iofnKQ">
+            <children xmi:type="notation:Node" xmi:id="_wsmjw1RXEeSo9PZ2iofnKQ" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_wsmjxFRXEeSo9PZ2iofnKQ" type="7001">
+              <styles xmi:type="notation:SortingStyle" xmi:id="_wsmjxVRXEeSo9PZ2iofnKQ"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_wsmjxlRXEeSo9PZ2iofnKQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_wsmjwVRXEeSo9PZ2iofnKQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wsmjwlRXEeSo9PZ2iofnKQ" x="645" y="230" width="121" height="81"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_UlqJMFkjEeScns7ncNWByA" type="2002" element="_fAtLwFkjEeScns7ncNWByA">
+            <children xmi:type="notation:Node" xmi:id="_UlqJM1kjEeScns7ncNWByA" type="5006"/>
+            <children xmi:type="notation:Node" xmi:id="_Ulz6MFkjEeScns7ncNWByA" type="7001">
+              <children xmi:type="notation:Node" xmi:id="_fBmjqlkjEeScns7ncNWByA" type="3007" element="_fA28wFkjEeScns7ncNWByA">
+                <children xmi:type="notation:Node" xmi:id="_fBmjrVkjEeScns7ncNWByA" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_fBmjrlkjEeScns7ncNWByA" x="-25" y="1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_fBwUqlkjEeScns7ncNWByA" type="3003" element="_fA28wVkjEeScns7ncNWByA">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_fBwUq1kjEeScns7ncNWByA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBwUrFkjEeScns7ncNWByA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_fBmjq1kjEeScns7ncNWByA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBmjrFkjEeScns7ncNWByA" x="9" y="78" width="31" height="26"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_fBwUoFkjEeScns7ncNWByA" type="3007" element="_fA28xVkjEeScns7ncNWByA">
+                <children xmi:type="notation:Node" xmi:id="_fBwUo1kjEeScns7ncNWByA" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_fBwUpFkjEeScns7ncNWByA" x="-25" y="1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_fBwUrVkjEeScns7ncNWByA" type="3003" element="_fBAtwFkjEeScns7ncNWByA">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_fBwUrlkjEeScns7ncNWByA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBwUr1kjEeScns7ncNWByA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_fBwUoVkjEeScns7ncNWByA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBwUolkjEeScns7ncNWByA" x="24" y="108" width="31" height="35"/>
+              </children>
+              <children xmi:type="notation:Node" xmi:id="_fBwUpVkjEeScns7ncNWByA" type="3007" element="_fBAtxFkjEeScns7ncNWByA">
+                <children xmi:type="notation:Node" xmi:id="_fBwUqFkjEeScns7ncNWByA" type="5003">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_fBwUqVkjEeScns7ncNWByA" x="1"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_fBwUsFkjEeScns7ncNWByA" type="3003" element="_fBTosFkjEeScns7ncNWByA">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_fBwUsVkjEeScns7ncNWByA" fontName="Segoe UI"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBwUslkjEeScns7ncNWByA"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_fBwUplkjEeScns7ncNWByA" fontName="Segoe UI" fontHeight="8"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBwUp1kjEeScns7ncNWByA" x="4" y="48" width="41" height="25"/>
+              </children>
+              <styles xmi:type="notation:SortingStyle" xmi:id="_Ulz6MVkjEeScns7ncNWByA"/>
+              <styles xmi:type="notation:FilteringStyle" xmi:id="_Ulz6MlkjEeScns7ncNWByA"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_UlqJMVkjEeScns7ncNWByA" fontName="Segoe UI"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UlqJMlkjEeScns7ncNWByA" x="1065" y="175" width="148" height="178"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_YkfVAKMLEeSWJ74vqzx8EQ" type="2001" element="_YY2swKMLEeSWJ74vqzx8EQ">
+            <children xmi:type="notation:Node" xmi:id="_YkriQKMLEeSWJ74vqzx8EQ" type="5002">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_YkriQaMLEeSWJ74vqzx8EQ" x="-1"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Yk3vgKMLEeSWJ74vqzx8EQ" type="3005" element="_YY2swaMLEeSWJ74vqzx8EQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_Yk3vgaMLEeSWJ74vqzx8EQ" fontName="Segoe UI"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Yk3vgqMLEeSWJ74vqzx8EQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_YkfVAaMLEeSWJ74vqzx8EQ" fontName="Segoe UI" fontHeight="8"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YkfVAqMLEeSWJ74vqzx8EQ" x="110" y="-10" width="32" height="32"/>
+          </children>
+          <styles xmi:type="notation:DiagramStyle" xmi:id="_8whGglACEeSo_O-itLx1KQ"/>
+          <edges xmi:type="notation:Edge" xmi:id="_FaX74FRvEeSo9PZ2iofnKQ" type="4001" element="_FaEZ4FRvEeSo9PZ2iofnKQ" source="_8wiUoFACEeSo_O-itLx1KQ" target="_ey4KjFLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_FaYi8FRvEeSo9PZ2iofnKQ" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FaYi8VRvEeSo9PZ2iofnKQ" x="-115" y="62"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FaYi8lRvEeSo9PZ2iofnKQ" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FaYi81RvEeSo9PZ2iofnKQ" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_FaYi9FRvEeSo9PZ2iofnKQ" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FaYi9VRvEeSo9PZ2iofnKQ" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_FaX74VRvEeSo9PZ2iofnKQ"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_FaX74lRvEeSo9PZ2iofnKQ" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_FaX741RvEeSo9PZ2iofnKQ" points="[275, 130, 275, 130]$[250, 284, 250, 284]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FaYi9lRvEeSo9PZ2iofnKQ" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_FaYi91RvEeSo9PZ2iofnKQ" id="(0.48148148148148145,0.48148148148148145)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I3axwFhlEeSoTI-A1XD-8Q" type="4001" element="_I2hZ4FhlEeSoTI-A1XD-8Q" source="_8wkw4FACEeSo_O-itLx1KQ" target="_eyyD2lLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_I3axxFhlEeSoTI-A1XD-8Q" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I3axxVhlEeSoTI-A1XD-8Q" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I3axxlhlEeSoTI-A1XD-8Q" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I3axx1hlEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I3axyFhlEeSoTI-A1XD-8Q" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I3axyVhlEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I3axwVhlEeSoTI-A1XD-8Q"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I3axwlhlEeSoTI-A1XD-8Q" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I3axw1hlEeSoTI-A1XD-8Q" points="[195, 70, 195, 70]$[0, 220, 0, 220]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I3kiwFhlEeSoTI-A1XD-8Q" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I3kiwVhlEeSoTI-A1XD-8Q" id="(0.499184339314845,0.49823321554770317)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_I3kiwlhlEeSoTI-A1XD-8Q" type="4001" element="_I2hZ5VhlEeSoTI-A1XD-8Q" source="_8wl_AFACEeSo_O-itLx1KQ" target="_eyyD6FLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_I3kixlhlEeSoTI-A1XD-8Q" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I3kix1hlEeSoTI-A1XD-8Q" y="-10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I3kiyFhlEeSoTI-A1XD-8Q" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I3kiyVhlEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_I3kiylhlEeSoTI-A1XD-8Q" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I3kiy1hlEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_I3kiw1hlEeSoTI-A1XD-8Q"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_I3kixFhlEeSoTI-A1XD-8Q" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_I3kixVhlEeSoTI-A1XD-8Q" points="[310, 26, 310, 26]$[460, -6, 460, -6]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I3kizFhlEeSoTI-A1XD-8Q" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_I3kizVhlEeSoTI-A1XD-8Q" id="(0.5,0.5)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_mHCsoFhwEeSoTI-A1XD-8Q" type="4001" element="_mGpEAFhwEeSoTI-A1XD-8Q" source="_eyyD4VLpEeSlUO8xxcPpzg" target="_eyyD2lLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_mHD6wFhwEeSoTI-A1XD-8Q" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHD6wVhwEeSoTI-A1XD-8Q" x="-6" y="-23"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_mHD6wlhwEeSoTI-A1XD-8Q" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHD6w1hwEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_mHD6xFhwEeSoTI-A1XD-8Q" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHD6xVhwEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_mHCsoVhwEeSoTI-A1XD-8Q"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_mHCsolhwEeSoTI-A1XD-8Q" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mHCso1hwEeSoTI-A1XD-8Q" points="[6, 35, -245, -241]$[6, 101, -245, -175]$[54, 136, -197, -140]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mHFI4FhwEeSoTI-A1XD-8Q" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mHFI4VhwEeSoTI-A1XD-8Q" id="(0.499184339314845,0.49823321554770317)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_mHFI4lhwEeSoTI-A1XD-8Q" type="4001" element="_mGq5MFhwEeSoTI-A1XD-8Q" source="_eyyD4VLpEeSlUO8xxcPpzg" target="_eyyD2lLpEeSlUO8xxcPpzg">
+            <children xmi:type="notation:Node" xmi:id="_mHFv8FhwEeSoTI-A1XD-8Q" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHFv8VhwEeSoTI-A1XD-8Q" x="-14" y="35"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_mHFv8lhwEeSoTI-A1XD-8Q" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHFv81hwEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_mHGXAFhwEeSoTI-A1XD-8Q" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mHGXAVhwEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_mHFI41hwEeSoTI-A1XD-8Q"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_mHFI5FhwEeSoTI-A1XD-8Q" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_mHFI5VhwEeSoTI-A1XD-8Q" points="[74, 0, -102, -263]$[131, 0, -45, -263]$[154, 136, -22, -127]"/>
+            <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mHG-EFhwEeSoTI-A1XD-8Q" id="(0.5,0.5)"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_mHG-EVhwEeSoTI-A1XD-8Q" id="(0.499184339314845,0.49823321554770317)"/>
+          </edges>
+          <edges xmi:type="notation:Edge" xmi:id="_ObosoFiDEeSoTI-A1XD-8Q" type="4001" element="_ObC2wFiDEeSoTI-A1XD-8Q" source="_EZc_YFOIEeSooeRfQr1SwQ" target="_s85UoFRTEeSPup8JJICB8g">
+            <children xmi:type="notation:Node" xmi:id="_ObospFiDEeSoTI-A1XD-8Q" type="6001">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ObospViDEeSoTI-A1XD-8Q" x="-12" y="-63"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ObospliDEeSoTI-A1XD-8Q" type="6002">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Obosp1iDEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_ObosqFiDEeSoTI-A1XD-8Q" type="6003">
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ObosqViDEeSoTI-A1XD-8Q" y="10"/>
+            </children>
+            <styles xmi:type="notation:ConnectorStyle" xmi:id="_ObosoViDEeSoTI-A1XD-8Q"/>
+            <styles xmi:type="notation:FontStyle" xmi:id="_ObosoliDEeSoTI-A1XD-8Q" fontName="Segoe UI" fontHeight="8"/>
+            <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Oboso1iDEeSoTI-A1XD-8Q" points="[12, 16, -54, -68]$[68, 75, 2, -9]"/>
+            <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ObosqliDEeSoTI-A1XD-8Q" id="(0.5572519083969466,0.12345679012345678)"/>
+          </edges>
+        </data>
+      </ownedAnnotationEntries>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8wbm8VACEeSo_O-itLx1KQ" name="probeAttCustom" outgoingEdges="_FaEZ4FRvEeSo9PZ2iofnKQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.12"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.12"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_8wbm8lACEeSo_O-itLx1KQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8wbm81ACEeSo_O-itLx1KQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8wbm9FACEeSo_O-itLx1KQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8wbm9VACEeSo_O-itLx1KQ" name="myProbeName" outgoingEdges="_I2hZ4FhlEeSoTI-A1XD-8Q" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.14"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.14"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_8wbm9lACEeSo_O-itLx1KQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8wbm91ACEeSo_O-itLx1KQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8wbm-FACEeSo_O-itLx1KQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8wbm-VACEeSo_O-itLx1KQ" outgoingEdges="_I2hZ5VhlEeSoTI-A1XD-8Q" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.16"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.16"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_8wbm-lACEeSo_O-itLx1KQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_8wbm-1ACEeSo_O-itLx1KQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_8wbm_FACEeSo_O-itLx1KQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Y0vCsFOGEeSooeRfQr1SwQ" name="myProbeOnAttDsl" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.18"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.18"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_Y01JUFOGEeSooeRfQr1SwQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Y01JUVOGEeSooeRfQr1SwQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_Y01JUlOGEeSooeRfQr1SwQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_EYyRAFOIEeSooeRfQr1SwQ" name="probeOnAttDsl" outgoingEdges="_ObC2wFiDEeSoTI-A1XD-8Q" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.19"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.19"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_EYyRAVOIEeSooeRfQr1SwQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_EYyRAlOIEeSooeRfQr1SwQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_EYyRA1OIEeSooeRfQr1SwQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_YY2swKMLEeSWJ74vqzx8EQ" width="-1" height="-1" resizeKind="NSEW">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.22"/>
+        <semanticElements xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.22"/>
+        <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_YY2swaMLEeSWJ74vqzx8EQ" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/search.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_YY2swqMLEeSWJ74vqzx8EQ"/>
+          <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_YY2sw6MLEeSWJ74vqzx8EQ"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@nodeMappings[name='Probe']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eyfv8FLpEeSlUO8xxcPpzg" name="c2 SpatialEntityCell" incomingEdges="_I2hZ4FhlEeSoTI-A1XD-8Q _mGpEAFhwEeSoTI-A1XD-8Q _mGq5MFhwEeSoTI-A1XD-8Q">
+        <target xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.0"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_RAuX8FRDEeSVmdGXdYChPQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/spatial_entity.png">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_RAuX8VRDEeSVmdGXdYChPQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@conditionnalStyles.1/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_RAuX8lRDEeSVmdGXdYChPQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_RAuX81RDEeSVmdGXdYChPQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_RAuX9FRDEeSVmdGXdYChPQ" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eyl2kFLpEeSlUO8xxcPpzg" name="Control">
+          <target xmi:type="ecec_cormas:Control" href="sample.ecec_cormas#//@elements.0/@protocols.1"/>
+          <semanticElements xmi:type="ecec_cormas:Control" href="sample.ecec_cormas#//@elements.0/@protocols.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eyl2kVLpEeSlUO8xxcPpzg" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Orange.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2klLpEeSlUO8xxcPpzg"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='ControlClass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2k1LpEeSlUO8xxcPpzg"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2lFLpEeSlUO8xxcPpzg" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2lVLpEeSlUO8xxcPpzg" red="253" green="206" blue="137"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='ControlClass']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eyl2llLpEeSlUO8xxcPpzg" name="Init Protocol">
+          <target xmi:type="ecec_cormas:Init" href="sample.ecec_cormas#//@elements.0/@protocols.0"/>
+          <semanticElements xmi:type="ecec_cormas:Init" href="sample.ecec_cormas#//@elements.0/@protocols.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eyl2l1LpEeSlUO8xxcPpzg" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Green.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2mFLpEeSlUO8xxcPpzg"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='InitClass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2mVLpEeSlUO8xxcPpzg"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2mlLpEeSlUO8xxcPpzg" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2m1LpEeSlUO8xxcPpzg" red="204" green="242" blue="166"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='InitClass']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_eyl2nFLpEeSlUO8xxcPpzg" name="  a : 10" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.0"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.0"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_eyl2nVLpEeSlUO8xxcPpzg" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2nlLpEeSlUO8xxcPpzg"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2n1LpEeSlUO8xxcPpzg"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_eyl2oFLpEeSlUO8xxcPpzg" name="  b : 23" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.1"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_eyl2oVLpEeSlUO8xxcPpzg" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2olLpEeSlUO8xxcPpzg"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.1/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2o1LpEeSlUO8xxcPpzg"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_eyl2pFLpEeSlUO8xxcPpzg" name="  y : 47" incomingEdges="_FaEZ4FRvEeSo9PZ2iofnKQ" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.2"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.0/@attributes.2"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_eyl2pVLpEeSlUO8xxcPpzg" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_class.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2plLpEeSlUO8xxcPpzg"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.0/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyl2p1LpEeSlUO8xxcPpzg"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eyfv9lLpEeSlUO8xxcPpzg" name="c1 AgentLocation" outgoingEdges="_mGpEAFhwEeSoTI-A1XD-8Q _mGq5MFhwEeSoTI-A1XD-8Q">
+        <target xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.1"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eyfv91LpEeSlUO8xxcPpzg">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyfv-FLpEeSlUO8xxcPpzg"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyfv-VLpEeSlUO8xxcPpzg"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyfv-lLpEeSlUO8xxcPpzg" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyfv-1LpEeSlUO8xxcPpzg" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_eyl2qFLpEeSlUO8xxcPpzg" name="  z : 90" width="-1" height="-1" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.1/@attributes.0"/>
+          <semanticElements xmi:type="ecec_cormas:Attribute" href="sample.ecec_cormas#//@elements.1/@attributes.0"/>
+          <ownedStyle xmi:type="diagram:WorkspaceImage" xmi:id="_eyr9MFLpEeSlUO8xxcPpzg" showIcon="false" workspacePath="/org.cirad.ecec.sirius.design/icons/png/attribute_class.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9MVLpEeSlUO8xxcPpzg"/>
+            <description xmi:type="style:WorkspaceImageDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']/@conditionnalStyles.0/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9MlLpEeSlUO8xxcPpzg"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subNodeMappings[name='Attribute']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eyfv_FLpEeSlUO8xxcPpzg" name="c3 AgentLocation" incomingEdges="_I2hZ5VhlEeSoTI-A1XD-8Q">
+        <target xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.5"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="sample.ecec_cormas#//@elements.5"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_PkprcFRXEeSo9PZ2iofnKQ">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_PkprcVRXEeSo9PZ2iofnKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@conditionnalStyles.0/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_PkprclRXEeSo9PZ2iofnKQ"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Pkprc1RXEeSo9PZ2iofnKQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_PkprdFRXEeSo9PZ2iofnKQ" red="209" green="209" blue="209"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+        <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eyr9M1LpEeSlUO8xxcPpzg" name="CustomProtocol &#xD;&#xA;MyCustom">
+          <target xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.5/@protocols.0"/>
+          <semanticElements xmi:type="ecec_cormas:CustomProtocol" href="sample.ecec_cormas#//@elements.5/@protocols.0"/>
+          <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eyr9NFLpEeSlUO8xxcPpzg" iconPath="/org.cirad.ecec.sirius.design/icons/png/Knob Blue.png">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9NVLpEeSlUO8xxcPpzg"/>
+            <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9NlLpEeSlUO8xxcPpzg"/>
+            <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9N1LpEeSlUO8xxcPpzg" red="255" green="255" blue="255"/>
+            <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9OFLpEeSlUO8xxcPpzg" red="194" green="239" blue="255"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']"/>
+          <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_eyr9OVLpEeSlUO8xxcPpzg" name="MyMethod( )">
+            <target xmi:type="ecec_cormas:Method" href="sample.ecec_cormas#//@elements.5/@protocols.0/@methods.0"/>
+            <semanticElements xmi:type="ecec_cormas:Method" href="sample.ecec_cormas#//@elements.5/@protocols.0/@methods.0"/>
+            <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_eyr9OlLpEeSlUO8xxcPpzg" iconPath="/org.cirad.ecec.sirius.design/icons/png/methods_tools.png" backgroundStyle="GradientTopToBottom">
+              <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9O1LpEeSlUO8xxcPpzg"/>
+              <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']/@subContainerMappings[name='Method']/@style"/>
+              <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9PFLpEeSlUO8xxcPpzg"/>
+              <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9PVLpEeSlUO8xxcPpzg" red="255" green="255" blue="255"/>
+              <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_eyr9PlLpEeSlUO8xxcPpzg" red="209" green="209" blue="209"/>
+            </ownedStyle>
+            <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@subContainerMappings[name='CustomProtocolClass']/@subContainerMappings[name='Method']"/>
+          </ownedDiagramElements>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_s8Us4FRTEeSPup8JJICB8g" name="myVegetUnit" incomingEdges="_ObC2wFiDEeSoTI-A1XD-8Q">
+        <target xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+        <semanticElements xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_bdpdQFRYEeSo9PZ2iofnKQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/tree32.png" borderSize="2" borderSizeComputationExpression="2">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_bdpdQVRYEeSo9PZ2iofnKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@conditionnalStyles.2/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_mOrW4FRYEeSo9PZ2iofnKQ" red="138" green="226" blue="52"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_bdpdQ1RYEeSo9PZ2iofnKQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_bdpdRFRYEeSo9PZ2iofnKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_wqsfQFRXEeSo9PZ2iofnKQ" name="Restrained">
+        <target xmi:type="ecec_cormas:Forager" href="sample.ecec_cormas#//@elements.21"/>
+        <semanticElements xmi:type="ecec_cormas:Forager" href="sample.ecec_cormas#//@elements.21"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_Gs_RwFRYEeSo9PZ2iofnKQ" iconPath="/org.cirad.ecec.sirius.design/icons/png/Sheep_tool.png" borderSize="2" borderSizeComputationExpression="2">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_Gs_RwVRYEeSo9PZ2iofnKQ"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']/@conditionnalStyles.3/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_NqKfQFRYEeSo9PZ2iofnKQ" red="138" green="226" blue="52"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_Gs_Rw1RYEeSo9PZ2iofnKQ" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_IvKk4FRYEeSo9PZ2iofnKQ" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='Classes']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_FaEZ4FRvEeSo9PZ2iofnKQ" name="probeAttCustom normal" sourceNode="_8wbm8VACEeSo_O-itLx1KQ" targetNode="_eyl2pFLpEeSlUO8xxcPpzg">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.12"/>
+        <semanticElements xmi:type="ecec_cormas:Class" href="teste.ecec_cormas#//@elements.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_M-pC0FiGEeSoTI-A1XD-8Q" lineStyle="dash" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnAttribute']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_EnulwFiHEeSoTI-A1XD-8Q" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_M-pC0liGEeSoTI-A1XD-8Q" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_M-pC01iGEeSoTI-A1XD-8Q"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnAttribute']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_I2hZ4FhlEeSoTI-A1XD-8Q" name="theC2s" sourceNode="_8wbm9VACEeSo_O-itLx1KQ" targetNode="_eyfv8FLpEeSlUO8xxcPpzg">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.14"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_jyUy0FiCEeSoTI-A1XD-8Q" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_jyUy0ViCEeSoTI-A1XD-8Q" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_jyUy0liCEeSoTI-A1XD-8Q" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_jyUy01iCEeSoTI-A1XD-8Q"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_I2hZ5VhlEeSoTI-A1XD-8Q" name="theC3s" sourceNode="_8wbm-VACEeSo_O-itLx1KQ" targetNode="_eyfv_FLpEeSlUO8xxcPpzg">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.16"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_jyUy1FiCEeSoTI-A1XD-8Q" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_jyUy1ViCEeSoTI-A1XD-8Q" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_jyUy1liCEeSoTI-A1XD-8Q" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_jyUy11iCEeSoTI-A1XD-8Q"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_mGpEAFhwEeSoTI-A1XD-8Q" name="eat" sourceNode="_eyfv9lLpEeSlUO8xxcPpzg" targetNode="_eyfv8FLpEeSlUO8xxcPpzg">
+        <target xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.0"/>
+        <semanticElements xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.0"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_mGprEFhwEeSoTI-A1XD-8Q" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_mGprEVhwEeSoTI-A1XD-8Q" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_mGprElhwEeSoTI-A1XD-8Q" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mGprE1hwEeSoTI-A1XD-8Q"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_mGq5MFhwEeSoTI-A1XD-8Q" name="teste" sourceNode="_eyfv9lLpEeSlUO8xxcPpzg" targetNode="_eyfv8FLpEeSlUO8xxcPpzg">
+        <target xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.1"/>
+        <semanticElements xmi:type="ecec_cormas:Relation" href="sample.ecec_cormas#//@relations.1"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_mGrgQFhwEeSoTI-A1XD-8Q" size="2">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_mGrgQVhwEeSoTI-A1XD-8Q" red="136" green="136" blue="136"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_mGrgQlhwEeSoTI-A1XD-8Q" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_mGrgQ1hwEeSoTI-A1XD-8Q"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='Relation']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_ObC2wFiDEeSoTI-A1XD-8Q" name="theMyVegetUnits" sourceNode="_EYyRAFOIEeSooeRfQr1SwQ" targetNode="_s8Us4FRTEeSPup8JJICB8g">
+        <target xmi:type="ecec_cormas:Probe" href="sample.ecec_cormas#//@elements.19"/>
+        <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_ObC2wViDEeSoTI-A1XD-8Q" size="3">
+          <description xmi:type="style:EdgeStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']/@style"/>
+          <strokeColor xmi:type="viewpoint:RGBValues" xmi:id="_ObC2wliDEeSoTI-A1XD-8Q" red="114" green="159" blue="207"/>
+          <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_ObC2w1iDEeSoTI-A1XD-8Q" showIcon="false">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_ObC2xFiDEeSoTI-A1XD-8Q"/>
+          </centerLabelStyle>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@edgeMappings[name='ProbeOnClass']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_fAtLwFkjEeScns7ncNWByA" name="myVegetUnit">
+        <target xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+        <semanticElements xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_lXFfAFkjEeScns7ncNWByA" iconPath="/org.cirad.ecec.sirius.design/icons/png/tree32.png" borderSize="2" borderSizeComputationExpression="2">
+          <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_lXFfAVkjEeScns7ncNWByA"/>
+          <description xmi:type="style:FlatContainerStyleDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']/@style"/>
+          <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_oq_fwFkjEeScns7ncNWByA" red="138" green="226" blue="52"/>
+          <backgroundColor xmi:type="viewpoint:RGBValues" xmi:id="_lXFfA1kjEeScns7ncNWByA" red="255" green="255" blue="255"/>
+          <foregroundColor xmi:type="viewpoint:RGBValues" xmi:id="_oq_fwVkjEeScns7ncNWByA" red="255" green="255" blue="255"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']"/>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_fA28wFkjEeScns7ncNWByA" name="   k 10.0" width="0" height="0" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+          <semanticElements xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_fA28wVkjEeScns7ncNWByA" showIcon="false" labelAlignment="RIGHT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fA28wlkjEeScns7ncNWByA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='k']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fA28w1kjEeScns7ncNWByA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fA28xFkjEeScns7ncNWByA" red="136" green="136" blue="136"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='k']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_fA28xVkjEeScns7ncNWByA" name="   r 0.2" width="0" height="0" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+          <semanticElements xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_fBAtwFkjEeScns7ncNWByA" showIcon="false" labelAlignment="RIGHT" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fBAtwVkjEeScns7ncNWByA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='r']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fBAtwlkjEeScns7ncNWByA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fBAtw1kjEeScns7ncNWByA" red="252" green="233" blue="79"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='r']"/>
+        </ownedDiagramElements>
+        <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_fBAtxFkjEeScns7ncNWByA" width="0" height="0" resizeKind="NSEW">
+          <target xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+          <semanticElements xmi:type="ecec_cormas:VegetationUnit" href="sample.ecec_cormas#//@elements.20"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_fBTosFkjEeScns7ncNWByA" showIcon="false" labelPosition="node">
+            <labelColor xmi:type="viewpoint:RGBValues" xmi:id="_fBTosVkjEeScns7ncNWByA"/>
+            <description xmi:type="style:SquareDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='biomass']/@style"/>
+            <borderColor xmi:type="viewpoint:RGBValues" xmi:id="_fBToslkjEeScns7ncNWByA"/>
+            <color xmi:type="viewpoint:RGBValues" xmi:id="_fBTos1kjEeScns7ncNWByA" red="217" green="196" blue="215"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer/@containerMappings[name='VegetationUnit']/@subNodeMappings[name='biomass']"/>
+        </ownedDiagramElements>
+      </ownedDiagramElements>
+      <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']"/>
+      <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_8wcOLVACEeSo_O-itLx1KQ"/>
+      <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']/@ownedRepresentations[name='Class']/@defaultLayer"/>
+      <target xmi:type="ecec_cormas:Model" href="sample.ecec_cormas#/"/>
+    </ownedRepresentations>
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='CormasDsl']"/>
+  </ownedViews>
+  <ownedViews xmi:type="viewpoint:DRepresentationContainer" xmi:id="_z67l4FACEeSo_O-itLx1KQ" initialized="true">
+    <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.cirad.ecec.sirius.design/description/My.odesign#//@ownedViewpoints[name='Methods']"/>
+  </ownedViews>
+</viewpoint:DAnalysis>

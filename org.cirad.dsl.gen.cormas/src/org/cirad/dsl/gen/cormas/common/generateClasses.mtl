@@ -1,0 +1,145 @@
+[module generateClasses('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::gen::cormas::common::generateExpressions /]
+[import org::cirad::dsl::gen::cormas::common::generateBehaviors /]
+[template public generateClasses (m : Model)]
+
+<class>
+<name>[m.name/]</name>
+<environment>CormasNS.Models.[m.name.toUpper()/]</environment>
+<super>CormasNS.Kernel.CormasModel</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>[for (initEntity : InitEntity | m.eAllContents(InitEntity))]the[initEntity.initName.toUpperFirst()/]s [initEntity.initName.toLower()/]InitialNumber [/for] [for (initSpace : InitSpace | m.eAllContents(InitSpace))]the[initSpace.entity.name.toUpperFirst()/]s[/for]</inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>[m.name.toUpper()/]Category</category>
+<attributes>
+<package>[m.name.toUpper()/]</package>
+</attributes>
+</class>
+
+[for (initSuperClass : Entity | m.eAllContents(InitEntity).entity->asSet())]
+<class>
+<Name>[initSuperClass.name.toUpperFirst()/]</Name>
+<environment>CormasNS.Models.[m.name.toUpper()/]</environment>
+<super>CormasNS.Kernel.AgentLocation</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>[for (att :  AttributeClass | initSuperClass.attributes)] [att.name.toLower()/] [/for]</inst-vars>
+<class-inst-vars>[for (par : ParameterClass | initSuperClass.behavior.parameters)] [par.name.toLower()/] [/for]</class-inst-vars>
+<imports></imports>
+<category>[m.name.toUpper()/]Category</category>
+<attributes>
+<package>[m.name.toUpper()/]</package>
+</attributes>
+</class>
+[/for]
+
+[comment Instances of all non-space entities /]
+[for (initEntity : InitEntity | m.eAllContents(InitEntity))]
+<class>
+<Name>[initEntity.initName.toUpperFirst()/]</Name>
+<environment>CormasNS.Models.[m.name.toUpper()/]</environment>
+<super>CormasNS.Models.[m.name.toUpper()/].[initEntity.entity.name/]</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>[m.name.toUpper()/]Category</category>
+<attributes>
+<package>[m.name.toUpper()/]</package>
+</attributes>
+</class>
+[/for]
+
+[for (initSpace : InitSpace | m.eAllContents(InitSpace))]
+<class>
+<Name>[initSpace.entity.name.toUpperFirst()/]</Name>
+<environment>CormasNS.Models.[m.name.toUpper()/]</environment>
+<super>CormasNS.Kernel.SpatialEntityCell</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>[for (att : AttributeClass | initSpace.eAllContents(Assignment).variable->selectByKind(AttributeClass))][att.name.toLower()/] [/for]</inst-vars>
+<class-inst-vars>[for (par : ParameterClass | initSpace.eAllContents(Assignment).variable->selectByKind(ParameterClass))][par.name.toLower()/] [/for]</class-inst-vars>
+<imports></imports>
+<category>[m.name.toUpper()/]Category</category>
+<attributes>
+<package>[m.name.toUpper()/]</package>
+</attributes>
+</class>
+[/for]
+
+[/template]
+[template public generateSubClassesProtocols (m : Model)]
+[for (initEntity : InitEntity | m.eAllContents(InitEntity))]
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toUpper()/].[initEntity.initName.toUpperFirst()/] class</class-id> <category>testing</category>
+
+<body package="[m.name.toUpper()/]" selector="isAbstract">isAbstract 
+^false</body>
+</methods>
+[for (paramsInit : DeclaredVariable | initEntity.assingnments->asSequence().variable->selectByKind(DeclaredVariable))]
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toUpper()/].[initEntity.initName.toUpperFirst()/] class</class-id> <category>accessing</category>
+	<body package="[m.name.toUpper()/]" selector="	[paramsInit.variableclass.name/]">[paramsInit.variableclass.name/]
+	"Getter accessor with default value = [current(DeclaredVariable).generateAssigmentValue()/] "
+	^[paramsInit.variableclass.name/] ifNil:[ '[' /] [paramsInit.variableclass.name/] := [current(DeclaredVariable).generateAssigmentValue()/][ ']' /] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toUpper()/].[initEntity.initName.toUpperFirst()/] class</class-id> <category>- default value</category>
+
+<body package="[m.name.toUpper()/]" selector="[paramsInit.variableclass.name/]_default">[paramsInit.variableclass.name/]_default 
+	"Return the default value of [paramsInit.variableclass.name/] attribute"	
+	^[current(DeclaredVariable).generateAssigmentValue()/]</body>
+</methods>
+[/for]
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toUpper()/].[initEntity.initName.toUpperFirst()/] class</class-id> <category>pov symbols</category>
+
+<body package="[m.name.toUpper()/]" selector="VectorialPOV_[initEntity.initName.toUpperFirst()/]">VectorialPOV_[initEntity.initName.toUpperFirst()/]
+"Returns an array containing the settings of a Situated entity vectorial pov symbol in the following order:
+(color red) (color green) (color blue) (lineColor red) (lineColor green) (lineColor blue) lineWidth sizeratio position (array of outline vertices)"
+^#(1.0 0.0 0.0 0.0 0.0 0.0 1 0.7 #center #(-5.51429@-9.78095 10.6417@-9.64286 24.8307@-13.6217 18.6732@2.5 16.7069@24.7857 5.23787@4.63757 -2.0748@10.3571 -7.66472@24.1561 -8.62047@10.3042 -11.9656@2.74868 -24.8307@-1.07143 -26.1693@-8.92857 -13.3992@-13.6217 -11.0098@-26.2143 -11.0098@-14.2513 -5.51429@-9.78095))</body>
+</methods>
+[/for]
+[/template]
+[template public generateAcessingClasses(m : Model)]
+[for (entity : Entity | m.eAllContents(Entity)->asSet())]
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toUpper()/].[entity.name.toUpperFirst()/]</class-id> <category>accessing</category>
+[for (att : AttributeClass | entity.attributes)]
+<body package="[m.name.toUpper()/]" selector="[att.name.toLower()/]">[att.name/]
+	"Getter accessor with default value = 0 "
+	^[att.name.toLower()/] ifNil:['['/] [att.name.toLower()/] := 0[']'/]</body>
+
+<body package="[m.name.toUpper()/]" selector="[att.name/]:">[att.name/]: anObject
+	"Setter accessor of attribute [att.name.toLower()/] "
+	[att.name.toLower()/] = anObject ifTrue:['['/]^nil[']'/].   "for optimization"
+	[att.name.toLower()/] := anObject.
+	self changed</body>
+[/for]
+</methods>
+[/for]
+[/template]
+[template public generateGeneratedClassesMethods (m : Model)]
+[for (entity : Entity | m.eAllContents(Entity)->asSet()) separator ('\n')]
+<methods>
+<class-id>CormasNS.Models.ECEC.Forager</class-id> <category>Generated[entity.name.toUpperFirst()/]MethodsProtocol</category>
+[for (ativityBehavior: ActivityBehavior | entity.eAllContents(ActivityBehavior))]
+[ativityBehavior.generateActivityBehavior()/]
+[/for]
+[for (ativityDiagramBehavior: ActivityDiagramBehavior | entity.eAllContents(ActivityDiagramBehavior))]
+[ativityDiagramBehavior.generateActivityDiagramBehavior()/]
+[/for]
+[for (equationBehavior: EquationBehavior | entity.eAllContents(EquationBehavior))]
+[equationBehavior.generateEquationBehaviors()/]
+[/for]
+[/for]
+</methods>
+[/template]

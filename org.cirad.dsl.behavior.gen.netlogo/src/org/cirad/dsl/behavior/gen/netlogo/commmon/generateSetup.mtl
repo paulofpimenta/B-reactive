@@ -1,0 +1,55 @@
+[comment encoding = UTF-8 /]
+[module generateSetup('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::behavior::gen::netlogo::commmon::generateExpressions/]
+
+[template public generateSetup(aModel : Model)]
+to setup
+	clear-all
+[for (anEntity:Entity | aModel.entities)]
+	setup-[anEntity.name.toLower()/]s  
+[/for]
+	reset-ticks
+	;;TODO should be implemented
+end
+[for (anInitEntity:InitEntity | aModel.eAllContents(InitEntity)->asSet() )  separator ('\n')]
+to setup-[anInitEntity.entity.name.toLowerCase()/]s
+	;;[protected (anInitEntity.entity.name)]
+	;;TODO should be implemented
+	;;[/protected]
+	create-[anInitEntity.entity.name.toLower()/]s ([aModel.eContents(InitEntity).initFunctionCall.oclAsType(FunctionCallExpression).arguments->last().generateArithimeticExpressions()/]) [ '[' /] 
+		move-to [aModel.eContents(InitEntity)->first().initialLocation.generateLocationFunctionCallExpression()->asSet()/]
+		[for (anAssignement:Assignment | anInitEntity.eAllContents(Assignment))]
+		set [anAssignement.variable.generateArithimeticExpressions().toString().toLower()/] [anAssignement.expression.generateFunctionCallExpressions()/]
+		[/for]
+	[ ']' /] 
+end
+[/for]
+[for (entities : Entity | aModel.eAllContents(Entity))]
+to-report [entities.name.toLower()/]-here
+  report one-of [entities.name.toLower()/]s-here
+end
+[/for]
+[for (anInitSpace:InitSpace | aModel.eAllContents(InitSpace))]
+to setup-[anInitSpace.entity.name.toLower()/]s
+[if (anInitSpace.initFunctionCall.eContents(NamedFunction).name->first() = 'Create grid')] 
+  resize-world 0 [anInitSpace.initFunctionCall.oclAsType(FunctionCallExpression).arguments->at(2).generateArithimeticExpressions()/] 0 [anInitSpace.initFunctionCall.oclAsType(FunctionCallExpression).arguments->at(3).generateArithimeticExpressions()/]
+  let i 0
+    let j 0
+    repeat [anInitSpace.initFunctionCall.oclAsType(FunctionCallExpression).arguments->at(2).generateArithimeticExpressions().toReal().round() + 1/] [ '[' /] 
+      set j 0
+      repeat [anInitSpace.initFunctionCall.oclAsType(FunctionCallExpression).arguments->at(2).generateArithimeticExpressions().toReal().round() + 1/] [ '[' /] 
+        create-[anInitSpace.entity.name.toLower()/]s 1[ '[' /] 
+          setxy i j
+		 [for (anAssignement:Assignment | anInitSpace.eAllContents(Assignment))]
+		  set [anAssignement.variable.generateArithimeticExpressions()/] [anAssignement.expression.generateFunctionCallExpressions()/]
+		 [/for]
+          set hidden? true
+        [ ']' /] 
+        set j j + 1
+      [ ']' /] 
+      set i i + 1
+   [ ']' /] 
+[/if]
+end
+[/for]
+[/template]

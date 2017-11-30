@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="behaviour" nsURI="http://www.cirad.fr/behaviour" nsPrefix="behaviour">
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableClass" abstract="true" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeClass" eSuperTypes="#//VariableClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ParameterClass" eSuperTypes="#//VariableClass"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCallExpression" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arguments" lowerBound="1"
+        upperBound="-1" eType="#//VariableClass" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" lowerBound="1"
+        eType="#//Function"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domaine" lowerBound="1"
+        eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="codomaine" lowerBound="1"
+        eType="#//Type"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConstantExpression" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntConstantExpression" eSuperTypes="#//ConstantExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringConstantExpression" eSuperTypes="#//ConstantExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FloatConstantExpression" eSuperTypes="#//ConstantExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Type">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TypeEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TypeEnum">
+    <eLiterals name="string"/>
+    <eLiterals name="int"/>
+    <eLiterals name="boolean"/>
+    <eLiterals name="float"/>
+    <eLiterals name="location"/>
+    <eLiterals name="locationset"/>
+    <eLiterals name="entity"/>
+    <eLiterals name="entityset"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveExpression" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityPrimive" eSuperTypes="#//PrimitiveExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitive" eType="#//EntityPrimitiveEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocationPrimitive" eSuperTypes="#//PrimitiveExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitive" eType="#//LocationPrimiveEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocationSetPrimitive" eSuperTypes="#//PrimitiveExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitive" eType="#//LocationSetPrimiveEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntitySetPrimitive" eSuperTypes="#//PrimitiveExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitive" eType="#//EntityPrimitiveEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LocationSetPrimiveEnum">
+    <eLiterals name="neighbourhood"/>
+    <eLiterals name="space"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LocationPrimiveEnum">
+    <eLiterals name="here"/>
+    <eLiterals name="top" value="1"/>
+    <eLiterals name="left" value="2"/>
+    <eLiterals name="right" value="3"/>
+    <eLiterals name="bottom" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntitySetPrimiveEnum">
+    <eLiterals name="all"/>
+    <eLiterals name="neighbours" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EntityPrimitiveEnum">
+    <eLiterals name="oneOf" literal="one-of"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanPrimitive" eSuperTypes="#//PrimitiveExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="primitive" eType="#//BooleanPrimitiveEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityClass">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="behaviour" upperBound="-1"
+        eType="#//Behavior" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="entityName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
+        eType="#//AttributeClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocationExpression" abstract="true"
+      eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Behavior" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behaviorName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="#//DurationTypeEnum"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="startTime" lowerBound="1"
+        eType="#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="endTime" lowerBound="1"
+        eType="#//Duration"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parameters" lowerBound="1"
+        upperBound="-1" eType="#//ParameterClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EquationBehaviour" eSuperTypes="#//Behavior">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="equation" lowerBound="1"
+        eType="#//Equation" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ActivityDiagramBehavior" eSuperTypes="#//Behavior #//ExecutableNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="start" lowerBound="1" eType="#//Start"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="end" lowerBound="1" upperBound="-1"
+        eType="#//End"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="edge" lowerBound="1" upperBound="-1"
+        eType="#//Edge" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="node" lowerBound="2" upperBound="-1"
+        eType="#//Node" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Equation">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//AttributeClass"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" upperBound="-1"
+        eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AnonymousFunction" eSuperTypes="#//Function"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NamedFunction" eSuperTypes="#//Function"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnconditionedEdge" eSuperTypes="#//Edge"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryStringFunction" eSuperTypes="#//UnaryFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//UnaryStringFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryLocationFunction" eSuperTypes="#//UnaryFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//UnaryLocationFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryBooleanFunction" abstract="true"
+      eSuperTypes="#//BinaryFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryArithmeticFunction" eSuperTypes="#//BinaryFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//ArithmeticFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryNumericFunction" eSuperTypes="#//UnaryFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//UnaryNumericFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComparisonBooleanFunction" eSuperTypes="#//BinaryBooleanFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//ComparisonBooleanFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OccupationBooleanFunction" eSuperTypes="#//BinaryBooleanFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//OccupationBooleanFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicBooleanFunction" eSuperTypes="#//BinaryBooleanFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//LogicBooleanFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Node" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Edge" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
+        eType="#//Node"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
+        eType="#//Node"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlNode" abstract="true" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExecutableNode" abstract="true" eSuperTypes="#//Node"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeExpression" abstract="true" eSuperTypes="#//ControlNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decision" eSuperTypes="#//ControlNode">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Join" eSuperTypes="#//ControlNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Start" eSuperTypes="#//ControlNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="End" eSuperTypes="#//ControlNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fork" eSuperTypes="#//ControlNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Merge" eSuperTypes="#//ControlNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimitiveActivity" abstract="true" eSuperTypes="#//ExecutableNode"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Move" eSuperTypes="#//PrimitiveActivity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" lowerBound="1"
+        upperBound="-1" eType="#//Expression"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Die" eSuperTypes="#//PrimitiveActivity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Reproduce" eSuperTypes="#//PrimitiveActivity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Add" eSuperTypes="#//PrimitiveActivity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="to" lowerBound="1" eType="#//AttributeClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Remove" eSuperTypes="#//PrimitiveActivity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="from" lowerBound="1" eType="#//AttributeClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="While" eSuperTypes="#//TimeExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TrueEdge" eSuperTypes="#//Edge"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FalseEdge" eSuperTypes="#//Edge"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="BooleanPrimitiveEnum">
+    <eLiterals name="true"/>
+    <eLiterals name="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryEntityFunction" eSuperTypes="#//UnaryFunction">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="functionName" eType="#//UnaryEntityFunctionEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryEntityFunctionEnum">
+    <eLiterals name="oneof"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ArithmeticFunctionEnum">
+    <eLiterals name="Sum"/>
+    <eLiterals name="Minus" value="1"/>
+    <eLiterals name="Times" value="2"/>
+    <eLiterals name="Division" value="3"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryNumericFunctionEnum">
+    <eLiterals name="random" literal="random"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComparisonBooleanFunctionEnum">
+    <eLiterals name="GreaterOrEequalThan" value="3" literal="Greater or Equal Than"/>
+    <eLiterals name="GreaterThan" value="2" literal="Greater Than"/>
+    <eLiterals name="NotEqual" value="6" literal="Not Equal"/>
+    <eLiterals name="LessThan" literal="Less Than"/>
+    <eLiterals name="LessOrEqualThan" value="1" literal="Less or equal than"/>
+    <eLiterals name="Equal" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="OccupationBooleanFunctionEnum">
+    <eLiterals name="Occupied"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryStringFunctionEnum">
+    <eLiterals name="Get"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryLocationFunctionEnum">
+    <eLiterals name="RandomLocation" value="1"/>
+    <eLiterals name="RandomNeighbourhoodLocation" value="2"/>
+    <eLiterals name="TopLocation" value="3"/>
+    <eLiterals name="TopLeftLocation" value="4"/>
+    <eLiterals name="TopRightLocation" value="5"/>
+    <eLiterals name="BottomLocation" value="6"/>
+    <eLiterals name="BottomLeftLocation" value="7"/>
+    <eLiterals name="BottomRightLocation" value="8"/>
+    <eLiterals name="RightLocation" value="9"/>
+    <eLiterals name="LeftLocation" value="10"/>
+    <eLiterals name="OneOf" value="13"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LogicBooleanFunctionEnum">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="NOT" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NameLocationExpression" eSuperTypes="#//LocationExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CoordinateLocationExpression" eSuperTypes="#//LocationExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFloat"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DurationTypeEnum">
+    <eLiterals name="weekly"/>
+    <eLiterals name="monthly"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WeekDaysEnum">
+    <eLiterals name="monday"/>
+    <eLiterals name="tuesday"/>
+    <eLiterals name="wednesday"/>
+    <eLiterals name="thursday"/>
+    <eLiterals name="friday"/>
+    <eLiterals name="saturday"/>
+    <eLiterals name="sunday"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="MonthsEnum">
+    <eLiterals name="January"/>
+    <eLiterals name="Februrary"/>
+    <eLiterals name="March"/>
+    <eLiterals name="April"/>
+    <eLiterals name="May"/>
+    <eLiterals name="June"/>
+    <eLiterals name="July"/>
+    <eLiterals name="August"/>
+    <eLiterals name="September"/>
+    <eLiterals name="October"/>
+    <eLiterals name="November"/>
+    <eLiterals name="December"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Duration" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="durationTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MonthDuration" eSuperTypes="#//Duration">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="month" eType="#//MonthsEnum"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryFunction" eSuperTypes="#//NamedFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryFunction" eSuperTypes="#//NamedFunction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryLocationFunction" eSuperTypes="#//BinaryFunction"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryLocationEnum">
+    <eLiterals name="oneof" literal="one-of"/>
+    <eLiterals name="oneofneighbour"/>
+    <eLiterals name="toplocation"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumericPrimitive"/>
+</ecore:EPackage>

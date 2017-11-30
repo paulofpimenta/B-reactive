@@ -1,0 +1,11 @@
+[comment encoding = Cp1252 /]
+[module stringservices('http://www.cirad.org/dsl/ecec')/]
+
+[query public now(anOclAny: OclAny) : String
+	= invoke('org.cirad.ecec.gen.cormas.main.services.StringServices', 'now()', Sequence{})
+/]
+
+[query public noSpecials(arg0 : Model,arg1 : String) : String
+	= invoke('org.cirad.ecec.gen.cormas.main.services.StringServices', 'noSpecials(java.lang.String)', Sequence{arg0})
+/]
+

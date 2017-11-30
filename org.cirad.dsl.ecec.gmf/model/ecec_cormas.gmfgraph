@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="ecec_cormas">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="RelationFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="EnvirommentLoadEnviromentFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ProbeClassProbesFigureTargetDecoration"/>
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="ProbeAttributeProbesFigureTargetDecoration"/>
+    <descriptors name="ClassFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ClassFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ClassLabelFigure" text="Class">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ClassProtocolsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureClassLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getClassProtocolsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="MethodFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="MethodFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="MethodLabelFigure" text="Method"/>
+      </actualFigure>
+      <accessors accessor="getFigureMethodLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="AttributeFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="AttributeFigure" documentURI="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/attribute.svg">
+        <preferredSize dx="40" dy="40"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="AttributeLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="AttributeLabelFigure" text="Attribute"/>
+    </descriptors>
+    <descriptors name="EnvirommentFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="EnvirommentFigure" documentURI="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/environemment3.svg">
+        <preferredSize dx="60" dy="60"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="EnvirommentLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="EnvirommentLabelFigure" text="Enviromment"/>
+    </descriptors>
+    <descriptors name="ModelParametersFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="ModelParametersFigure" documentURI="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/model_config.svg">
+        <preferredSize dx="60" dy="60"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ModelParametersAuthorLabelFigure"/>
+        <children xsi:type="gmfgraph:Label" name="ModelParametersModelNameLabelFigure"/>
+      </actualFigure>
+      <accessors accessor="getFigureModelParametersAuthorLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureModelParametersModelNameLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ModelParametersLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ModelParametersLabelFigure" text="ModelParameters"/>
+    </descriptors>
+    <descriptors name="VegetationUnitFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="VegetationUnitFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="VegetationUnitLabelFigure" text="VegetationUnit">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="VegetationUnitProtocolsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureVegetationUnitLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+      <accessors accessor="getVegetationUnitProtocolsCompartmentFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ForagerFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ForagerFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ForagerLabelFigure" text="Forager">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ForagerProtocolsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureForagerLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+      <accessors accessor="getForagerProtocolsCompartmentFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="LogisticGrowthFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LogisticGrowthFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="LogisticGrowthLabelFigure" text="LogisticGrowth"/>
+      </actualFigure>
+      <accessors accessor="getFigureLogisticGrowthLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="InitFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="InitFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="InitLabelFigure" text="Init">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="InitMethodsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureInitLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      <accessors accessor="getInitMethodsCompartmentFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="ControlFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ControlFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ControlLabelFigure" text="Control">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="ControlMethodsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureControlLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+      <accessors accessor="getControlMethodsCompartmentFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="CustomProtocolFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CustomProtocolFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="CustomProtocolLabelFigure" text="CustomProtocol">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="CustomProtocolMethodsCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureCustomProtocolLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+      <accessors accessor="getCustomProtocolMethodsCompartmentFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="PoVFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="PoVFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="PoVLabelFigure" text="PoV"/>
+      </actualFigure>
+      <accessors accessor="getFigurePoVLabelFigure" figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ProbeFigure">
+      <actualFigure xsi:type="gmfgraph:SVGFigure" name="ProbeFigure" documentURI="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/probes.svg">
+        <preferredSize dx="60" dy="60"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ProbeLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ProbeLabelFigure" text="Probe"/>
+    </descriptors>
+    <descriptors name="SchedulerFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SchedulerFigure">
+        <preferredSize dx="200" dy="200"/>
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="SchedulerLabelFigure" text="Scheduler">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="SchedulerAttributesSchedulerCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureSchedulerLabelFigure" figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
+      <accessors accessor="getSchedulerAttributesSchedulerCompartmentFigure" figure="//@figures.0/@descriptors.17/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="RelationFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RelationFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.0">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="RelationLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="RelationLabelLabel" text="Relation"/>
+    </descriptors>
+    <descriptors name="EnvirommentLoadEnviromentFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EnvirommentLoadEnviromentFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="EnvirommentLoadEnviromentExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="EnvirommentLoadEnviromentExternalLabel" text="Load Enviromment"/>
+    </descriptors>
+    <descriptors name="ProbeClassProbesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ProbeClassProbesFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.2"/>
+    </descriptors>
+    <descriptors name="ProbeClassProbesExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ProbeClassProbesExternalLabel" text="aClassProbe"/>
+    </descriptors>
+    <descriptors name="ProbeAttributeProbesFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ProbeAttributeProbesFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.3"/>
+    </descriptors>
+    <descriptors name="ProbeAttributeProbesExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ProbeAttributeProbesExternalLabel" text="aAttributeProbe"/>
+    </descriptors>
+  </figures>
+  <nodes name="Class" figure="ClassFigure"/>
+  <nodes name="Method" figure="MethodFigure"/>
+  <nodes name="Attribute" figure="AttributeFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="40" dy="40"/>
+    </facets>
+  </nodes>
+  <nodes name="Enviromment" figure="EnvirommentFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="60" dy="60"/>
+    </facets>
+  </nodes>
+  <nodes name="ModelParameters" figure="ModelParametersFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="60" dy="60"/>
+    </facets>
+  </nodes>
+  <nodes name="VegetationUnit" figure="VegetationUnitFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="Forager" figure="ForagerFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="LogisticGrowth" figure="LogisticGrowthFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="Init" figure="InitFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="Control" figure="ControlFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="CustomProtocol" figure="CustomProtocolFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="PoV" figure="PoVFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <nodes name="Probe" figure="ProbeFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="60" dy="60"/>
+    </facets>
+  </nodes>
+  <nodes name="Scheduler" figure="SchedulerFigure">
+    <facets xsi:type="gmfgraph:DefaultSizeFacet">
+      <defaultSize dx="200" dy="200"/>
+    </facets>
+  </nodes>
+  <connections name="Relation" figure="RelationFigure"/>
+  <connections name="EnvirommentLoadEnviroment" figure="EnvirommentLoadEnviromentFigure"/>
+  <connections name="ProbeClassProbes" figure="ProbeClassProbesFigure"/>
+  <connections name="ProbeAttributeProbes" figure="ProbeAttributeProbesFigure"/>
+  <compartments name="ClassProtocolsCompartment" figure="ClassFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <compartments name="VegetationUnitProtocolsCompartment" figure="VegetationUnitFigure" collapsible="true" accessor="//@figures.0/@descriptors.8/@accessors.1"/>
+  <compartments name="ForagerProtocolsCompartment" figure="ForagerFigure" collapsible="true" accessor="//@figures.0/@descriptors.9/@accessors.1"/>
+  <compartments name="InitMethodsCompartment" figure="InitFigure" collapsible="true" accessor="//@figures.0/@descriptors.11/@accessors.1"/>
+  <compartments name="ControlMethodsCompartment" figure="ControlFigure" collapsible="true" accessor="//@figures.0/@descriptors.12/@accessors.1"/>
+  <compartments name="CustomProtocolMethodsCompartment" figure="CustomProtocolFigure" collapsible="true" accessor="//@figures.0/@descriptors.13/@accessors.1"/>
+  <compartments name="SchedulerAttributesSchedulerCompartment" figure="SchedulerFigure" collapsible="true" accessor="//@figures.0/@descriptors.17/@accessors.1"/>
+  <labels name="ClassLabel" figure="ClassFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="MethodLabel" figure="MethodFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="AttributeLabel" figure="AttributeLabelFigure" elementIcon="false"/>
+  <labels name="EnvirommentLabel" figure="EnvirommentLabelFigure" elementIcon="false"/>
+  <labels name="ModelParametersLabel" figure="ModelParametersLabelFigure" elementIcon="false"/>
+  <labels name="ModelParametersAuthorLabel" figure="ModelParametersFigure" elementIcon="false" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="ModelParametersModelNameLabel" figure="ModelParametersFigure" elementIcon="false" accessor="//@figures.0/@descriptors.6/@accessors.1"/>
+  <labels name="VegetationUnitLabel" figure="VegetationUnitFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="ForagerLabel" figure="ForagerFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels name="LogisticGrowthLabel" figure="LogisticGrowthFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+  <labels name="InitLabel" figure="InitFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="ControlLabel" figure="ControlFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels name="CustomProtocolLabel" figure="CustomProtocolFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+  <labels name="PoVLabel" figure="PoVFigure" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+  <labels name="ProbeLabel" figure="ProbeLabelFigure" elementIcon="false"/>
+  <labels name="SchedulerLabel" figure="SchedulerFigure" accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+  <labels name="RelationLabel" figure="RelationLabelFigure" elementIcon="false"/>
+  <labels name="EnvirommentLoadEnviromentExternalLabel" figure="EnvirommentLoadEnviromentExternalLabelFigure" elementIcon="false"/>
+  <labels name="ProbeClassProbesExternalLabel" figure="ProbeClassProbesExternalLabelFigure" elementIcon="false"/>
+  <labels name="ProbeAttributeProbesExternalLabel" figure="ProbeAttributeProbesExternalLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

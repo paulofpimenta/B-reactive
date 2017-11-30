@@ -1,0 +1,119 @@
+[module generateMethods('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::gen::cormas::common::generateExpressions /]
+[import org::cirad::dsl::gen::cormas::common::generateBehaviors /]
+[template public generateAcessingIntanceVar(e : Entity)]
+<methods>
+<class-id>CormasNS.Models.[e.eContainer(Model).name.toLower()/].[e.name.toLower()/]</class-id> <category>accessing</category>
+[for (param : ParameterClass | e.eContents(Behavior).eAllContents(ParameterClass))]
+
+	<body package="[e.eContainer(Model).name.toLower()/]" selector="[param.name.toLower()/]">[param.name.toLower()/]
+	"Getter accessor of attribute [param.name.toLower().toLower()/] with default Value TODO!!" </body>
+	^[param.name.toLower()/] ifNil:['['/][param.name.toLower()/] := [param.generateAssigmentValue()/][']'/]
+	
+    <body package="[e.eContainer(Model).name.toLower()/]" selector="[param.name.toLower()/]:">[param.name.toLower()/]: anObject
+	"Setter accessor of attribute [param.name.toLower()/]"
+	[param.name.toLower()/] = anObject ifTrue:['['/]^nil[']'/].   "for optimization"
+	[param.name.toLower()/] := anObject.
+	self changed</body>
+
+	<body package="[e.eContainer(Model).name.toLower()/]" selector="[param.name.toLower()/]:">[param.name.toLower()/]: anObject
+	"Setter accessor of attribute [param.name.toLower().toLower()/]"</body>
+	[param.name.toLower()/] := anObject.
+	
+[/for]
+</methods>
+[/template]
+
+[template public generateAcessingClassVar(e : Entity)]
+
+<methods>
+<class-id>CormasNS.Models.[e.eContainer(Model).name.toLower()/].[e.eContainer(Model).name.toLower()/] class</class-id> <category>accessing</category>
+[for (param : ParameterClass | e.eContents(Behavior).eAllContents(ParameterClass))]	
+	
+	<body package="[e.eContainer(Model).name.toLower()/]" selector="[param.name.toLower()/]">[param.name.toLower()/]
+	"Getter accessor of attribute [param.name.toLower()/] with [param.generateAssigmentValue()/]" </body>
+	^[param.name.toLower()/] ifNil:['['/]biomass := [param.generateAssigmentValue()/]/]
+	
+	<body package="[e.eContainer(Model).name.toLower()/]" selector="[param.name.toLower()/]:">[param.name.toLower()/]: anObject
+	"Setter accessor of attribute [param.name.toLower()/]"</body>
+[/for]
+
+</methods>
+[/template]
+
+[template public generateDefaultValues(m : Model)]
+[if (m.eContents(Entity).attributes->size() > 0)]
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toLower()/].[m.eContents(Entity).name.toLower()/] class</class-id> <category>- default Value</category>
+[for (att : AttributeClass | m.eContents(Entity).eAllContents(AttributeClass))]
+	
+	<body package="[m.name.toLower()/]" selector="[att.name.toLower()/]_default">[att.name.toLower()/]_default 
+	"Return the default Value of [att.name.toLower()/] attribute"	
+	^[att.generateAssigmentValue()/]/]</body>	
+[/for]
+[for (param : ParameterClass | m.eContents(Entity).eAllContents(Behavior).eAllContents(ParameterClass))]
+	
+	<body package="[m.name.toLower()/]" selector="[param.name.toLower()/]_default">[param.name.toLower()/]_default 
+	"Return the default Value of [param.name.toLower()/] attribute"	
+	^[param.generateAssigmentValue()/]</body>	
+[/for]
+</methods>
+[/if]
+[/template]
+[template public generateCustomProtocol(m : Model)]
+<methods>
+<class-id>CormasNS.Models.[m.name.toLower()/].[m.eContents(Entity).name.toLower()/]</class-id> <category>generated_protocol</category>
+	[for (be : Behavior | m.eAllContents(Behavior))]
+	<body package="[m.name.toLower()/]" selector="[be.name.toLower()/]">[be.name.toLower()/]
+	"The [be.name.toLower()/] method"</body>
+	[/for]
+</methods>
+
+[/template]
+[template public generateInfo(m : Model)]
+[comment ]
+
+[for (eAllContents().filter("Custom")){]
+
+<methods>
+<class-id>[m.parameters.ModelName].[current("Class").name.toLower()]</class-id> <category>* info</category>
+	[for (current("Custom").eAllContents("Method")){]
+	
+	<body package="[m.parameters.ModelName]" selector="TO-DO : Include an info buttom GMF Node!">
+	"TO DO!! "</body>
+	[}]
+	
+</methods>
+[}]
+[/comment]
+[/template]
+[template public generatePov(m : Model)]
+<methods>
+<class-id>CormasNS.Models.[m.name.toLower()/].[m.eContents(Entity).name.toLower()/]</class-id> <category>* pov</category>
+
+<body package="[m.name.toLower()/]" selector="TO DO - PUT POV on GMF">povBiomass
+"return a symbol of a color Value"
+	^#aSymbol</body>
+</methods
+[/template]
+
+
+[template public generateAssigmentValue(assignment : Assignment)]
+	[assignment.variable.variableclass.generateArithimeticExpressions()/]
+[/template]
+
+
+[template public generatePovSymbols(m : Model)]
+[comment ]
+
+<methods>
+<class-id>CormasNS.Models.[m.name.toLower()/].[current("Class").name.toLower()/] class</class-id> <category>pov symbols</category>
+
+<body package="ECEC" selector="VectorialPOV_[current("Class").name.toLower()]">VectorialPOV_[current("Class").name.toLower()]
+"Returns an array containing the settings of a Situated entity vectorial pov symbol in the following order:
+(color red) (color green) (color blue) (lineColor red) (lineColor green) (lineColor blue) lineWidth sizeratio position (array of outline vertices)"
+^#(0.833354 0.833354 0.833354 0.0 0.0 0.0 1 0.6 #center #(0@-17 15@-9 15@9 0@17 -15@9 -15@-9 0@-17))</body>
+</methods>
+[/comment]
+[/template]

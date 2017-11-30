@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+
+-->
+<plugin>
+
+   <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
+      <?gmfgen generated="true"?>
+      <fileTypes type="text" extension="ecec_cormas_diagram"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
+      <?gmfgen generated="true"?>
+      <parser
+         type="ecec_cormas_diagram"
+         class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
+      </parser>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors" id="gmf-editor">
+      <?gmfgen generated="true"?>
+      <editor
+         id="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID"
+         name="%editorName"
+         icon="icons/obj16/Ecec_cormasDiagramFile.gif"
+         extensions="ecec_cormas_diagram"
+         default="true"
+         class="ecec_cormas.diagram.part.Ecec_cormasDiagramEditor"
+         matchingStrategy="ecec_cormas.diagram.part.Ecec_cormasMatchingStrategy"
+         contributorClass="ecec_cormas.diagram.part.Ecec_cormasDiagramActionBarContributor">
+      </editor>
+   </extension>
+   
+   <extension point="org.eclipse.ui.contexts" id="ui-context">
+      <?gmfgen generated="true"?>
+      <context
+         description="%context.description"
+         id="ecec_cormas.diagram.ui.diagramContext"
+         name="%context.name"
+         parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
+      </context>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards" id="creation-wizard">
+      <?gmfgen generated="true"?>
+  	  <wizard
+  	     name="%newWizardName"
+  	     icon="icons/obj16/Ecec_cormasDiagramFile.gif"
+  	     category="org.eclipse.ui.Examples"
+  	     class="ecec_cormas.diagram.part.Ecec_cormasCreationWizard"
+  	     id="ecec_cormas.diagram.part.Ecec_cormasCreationWizardID">
+  	  	 <description>%newWizardDesc</description>  
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.popupMenus" id="init-diagram-action">
+      <?gmfgen generated="true"?>
+      <objectContribution
+            id="org.cirad.dsl.ecec.gmf.diagram.InitDiagram"
+            nameFilter="*.ecec_cormas"
+            objectClass="org.eclipse.core.resources.IFile">
+         <action
+               label="%initDiagramActionLabel"
+               class="ecec_cormas.diagram.part.Ecec_cormasInitDiagramFileAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.cirad.dsl.ecec.gmf.diagram.InitDiagramAction">
+         </action>
+      </objectContribution>
+   </extension>
+	
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.action.globalActionHandlerProviders" id="global-actions">
+      <?gmfgen generated="true"?>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
+         id="Ecec_cormasPresentation">
+         <Priority name="Lowest"/>
+         <ViewId id="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="delete"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.DiagramEditPart">
+               <GlobalActionId actionId="save"/>
+            </ElementType>
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="save">
+               </GlobalActionId>
+            </ElementType>        
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
+         id="Ecec_cormasPresentationPrint">
+         <Priority name="Lowest"/>
+         <ViewId id="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="print"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+         class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
+         id="Ecec_cormasPresentationIDE">
+         <Priority name="Lowest"/>
+         <ViewId id="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="bookmark"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+      <GlobalActionHandlerProvider
+            class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
+            id="Ecec_cormasRender">
+         <Priority name="Lowest"/>
+         <ViewId id="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID">
+            <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
+               <GlobalActionId actionId="cut"/>
+               <GlobalActionId actionId="copy"/>
+               <GlobalActionId actionId="paste"/>
+            </ElementType>
+         </ViewId>
+      </GlobalActionHandlerProvider>
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
+      <?gmfgen generated="true"?>
+      <MarkerNavigationProvider class="ecec_cormas.diagram.providers.Ecec_cormasMarkerNavigationProvider">
+         <MarkerType name="org.cirad.dsl.ecec.gmf.diagram.diagnostic"/>
+         <Priority name="Lowest"/>
+      </MarkerNavigationProvider>
+   </extension>
+
+   <extension id="diagnostic" name="Ecec_cormas Plugin problems" point="org.eclipse.core.resources.markers">
+      <?gmfgen generated="true"?>
+      <super type="org.eclipse.core.resources.problemmarker"/>
+      <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
+      <persistent value="true"/>
+   </extension>   
+
+   <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="ecec_cormas.diagram.providers.Ecec_cormasValidationDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
+         <context decoratorTargets="PRIMARY_VIEW"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.core.runtime.preferences" id="prefs">
+      <?gmfgen generated="true"?>
+      <initializer class="ecec_cormas.diagram.preferences.DiagramPreferenceInitializer"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.preferencePages" id="prefpages">
+      <?gmfgen generated="true"?>
+      <page
+            id="org.cirad.dsl.ecec.gmf.diagram.general"
+            name="%prefpage.org.cirad.dsl.ecec.gmf.diagram.general"
+            class="ecec_cormas.diagram.preferences.DiagramGeneralPreferencePage">
+      </page>
+      <page
+            id="org.cirad.dsl.ecec.gmf.diagram.appearance"
+            name="%prefpage.org.cirad.dsl.ecec.gmf.diagram.appearance"
+            category="org.cirad.dsl.ecec.gmf.diagram.general"
+            class="ecec_cormas.diagram.preferences.DiagramAppearancePreferencePage">
+      </page>
+      <page
+            id="org.cirad.dsl.ecec.gmf.diagram.connections"
+            name="%prefpage.org.cirad.dsl.ecec.gmf.diagram.connections"
+            category="org.cirad.dsl.ecec.gmf.diagram.general"
+            class="ecec_cormas.diagram.preferences.DiagramConnectionsPreferencePage">
+      </page>
+      <page
+            id="org.cirad.dsl.ecec.gmf.diagram.printing"
+            name="%prefpage.org.cirad.dsl.ecec.gmf.diagram.printing"
+            category="org.cirad.dsl.ecec.gmf.diagram.general"
+            class="ecec_cormas.diagram.preferences.DiagramPrintingPreferencePage">
+      </page>
+      <page
+            id="org.cirad.dsl.ecec.gmf.diagram.rulersAndGrid"
+            name="%prefpage.org.cirad.dsl.ecec.gmf.diagram.rulersAndGrid"
+            category="org.cirad.dsl.ecec.gmf.diagram.general"
+            class="ecec_cormas.diagram.preferences.DiagramRulersAndGridPreferencePage">
+      </page>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyContributor" id="prop-contrib">
+      <?gmfgen generated="true"?>
+      <propertyContributor
+            contributorId="org.cirad.dsl.ecec.gmf.diagram"
+            labelProvider="ecec_cormas.diagram.sheet.Ecec_cormasSheetLabelProvider">
+         <propertyCategory category="domain"/>
+         <propertyCategory category="visual"/>
+         <propertyCategory category="extra"/>
+      </propertyContributor>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertyTabs" id="proptabs">
+      <?gmfgen generated="true"?>   
+      <propertyTabs contributorId="org.cirad.dsl.ecec.gmf.diagram">
+         <propertyTab
+             category="visual"
+             id="property.tab.AppearancePropertySection"
+             label="%tab.appearance"/>
+          <propertyTab
+             category="visual"
+             id="property.tab.DiagramPropertySection"
+             label="%tab.diagram"/>
+          <propertyTab
+             category="domain"
+             id="property.tab.domain"
+             label="%tab.domain"/>
+      </propertyTabs>
+   </extension>
+
+   <extension point="org.eclipse.ui.views.properties.tabbed.propertySections" id="propsections">
+      <?gmfgen generated="true"?>   
+      <propertySections contributorId="org.cirad.dsl.ecec.gmf.diagram">
+         <propertySection id="property.section.ConnectorAppearancePropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ConnectionEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ConnectionAppearancePropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>
+         <propertySection id="property.section.ShapeColorAndFontPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.ShapeEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.ShapeColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection> 
+         <propertySection id="property.section.DiagramColorsAndFontsPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.appearance.DiagramColorsAndFontsPropertySection" 
+            tab="property.tab.AppearancePropertySection">
+         </propertySection>     
+         <propertySection id="property.section.RulerGridPropertySection" 
+            filter="org.eclipse.gmf.runtime.diagram.ui.properties.filters.DiagramEditPartPropertySectionFilter" 
+            class="org.eclipse.gmf.runtime.diagram.ui.properties.sections.grid.RulerGridPropertySection" 
+            tab="property.tab.DiagramPropertySection">
+         </propertySection>     
+         <propertySection
+            id="property.section.domain" 
+            tab="property.tab.domain"
+            class="ecec_cormas.diagram.sheet.Ecec_cormasPropertySection">
+            <input type="org.eclipse.gmf.runtime.notation.View"/>
+            <input type="org.eclipse.gef.EditPart"/>
+            <input type="ecec_cormas.diagram.navigator.Ecec_cormasAbstractNavigatorItem"/>
+         </propertySection>
+      </propertySections>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
+      <?gmfgen generated="true"?>
+      <viewProvider class="ecec_cormas.diagram.providers.Ecec_cormasViewProvider">
+         <Priority name="Lowest"/>
+         <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
+            <method name="getType()" value="ecec_cormas"/>
+         </object>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Ecec_cormas"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,3001,3002,3003,3004,3005,3006"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4004,4001,4003,4005"/>
+      </viewProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
+      <?gmfgen generated="true"?>
+      <editpartProvider class="ecec_cormas.diagram.providers.Ecec_cormasEditPartProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
+            <method name="getType()" value="Ecec_cormas"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,3001,3002,3003,3004,3005,3006"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
+            <method name="getType()" value="4004,4001,4003,4005"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
+            <method name="getType()" value="5006,5007,5008,5009,5010,5011,5012,5013,5014,5015,5016,5017,5019,5020,5022,5023,5003,5001,5002,5004,5005,5018"/>
+         </object>
+         <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
+            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010"/>
+         </object>
+         <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
+      </editpartProvider>
+   </extension>
+
+   
+   <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
+      <?gmfgen generated="true"?>
+      <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfModelEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.ModelEditPart" id="Model_1000"/>
+         <context elements="Model_1000"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfVegetationUnitEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.VegetationUnitEditPart" id="VegetationUnit_2001"/>
+         <context elements="VegetationUnit_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfForagerEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.ForagerEditPart" id="Forager_2002"/>
+         <context elements="Forager_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfLogisticGrowthEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.LogisticGrowthEditPart" id="LogisticGrowth_2003"/>
+         <context elements="LogisticGrowth_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfInitEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.InitEditPart" id="Init_2004"/>
+         <context elements="Init_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfControlEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.ControlEditPart" id="Control_2005"/>
+         <context elements="Control_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfCustomProtocolEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.CustomProtocolEditPart" id="CustomProtocol_2006"/>
+         <context elements="CustomProtocol_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfClassEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.ClassEditPart" id="Class_2007"/>
+         <context elements="Class_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfMethodEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.MethodEditPart" id="Method_2008"/>
+         <context elements="Method_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfAttributeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.AttributeEditPart" id="Attribute_2009"/>
+         <context elements="Attribute_2009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfEnvirommentEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.EnvirommentEditPart" id="Enviromment_2010"/>
+         <context elements="Enviromment_2010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfPoVEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.PoVEditPart" id="PoV_2011"/>
+         <context elements="PoV_2011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfProbeEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.ProbeEditPart" id="Probe_2012"/>
+         <context elements="Probe_2012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfSchedulerEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.SchedulerEditPart" id="Scheduler_2013"/>
+         <context elements="Scheduler_2013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfModelParametersEditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.ModelParametersEditPart" id="ModelParameters_2014"/>
+         <context elements="ModelParameters_2014"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfInit2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.Init2EditPart" id="Init_3001"/>
+         <context elements="Init_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfLogisticGrowth2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.LogisticGrowth2EditPart" id="LogisticGrowth_3002"/>
+         <context elements="LogisticGrowth_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfMethod2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.Method2EditPart" id="Method_3003"/>
+         <context elements="Method_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfControl2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.Control2EditPart" id="Control_3004"/>
+         <context elements="Control_3004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfCustomProtocol2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.CustomProtocol2EditPart" id="CustomProtocol_3005"/>
+         <context elements="CustomProtocol_3005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="ecec_cormas.diagram.providers.assistants.Ecec_cormasModelingAssistantProviderOfAttribute2EditPart">
+         <Priority name="Lowest"/>
+         <object class="ecec_cormas.diagram.edit.parts.Attribute2EditPart" id="Attribute_3006"/>
+         <context elements="Attribute_3006"/>
+      </modelingAssistantProvider>
+      
+   </extension>
+
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
+      <?gmfgen generated="true"?>
+      <IconProvider class="ecec_cormas.diagram.providers.Ecec_cormasIconProvider">
+         <Priority name="Low"/>
+      </IconProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
+      <?gmfgen generated="true"?>
+      <ParserProvider class="ecec_cormas.diagram.providers.Ecec_cormasParserProvider">
+         <Priority name="Lowest"/>
+      </ParserProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
+      <?gmfgen generated="true"?>
+      <decoratorProvider class="ecec_cormas.diagram.providers.Ecec_cormasShortcutsDecoratorProvider">
+         <Priority name="Lowest"/>
+         <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
+            <method name="getType()" value="2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014"/>
+         </object>
+         <context decoratorTargets="generated-top-nodes"/>
+      </decoratorProvider>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
+      <?gmfgen generated="true"?>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Model_1000"
+               name="%metatype.name.Model_1000"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Model"
+               edithelper="ecec_cormas.diagram.edit.helpers.ModelEditHelper">
+            <param name="semanticHint" value="1000"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.VegetationUnit_2001"
+               name="%metatype.name.VegetationUnit_2001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="VegetationUnit"
+               edithelper="ecec_cormas.diagram.edit.helpers.VegetationUnitEditHelper">
+            <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Forager_2002"
+               name="%metatype.name.Forager_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Forager"
+               edithelper="ecec_cormas.diagram.edit.helpers.ForagerEditHelper">
+            <param name="semanticHint" value="2002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.LogisticGrowth_2003"
+               name="%metatype.name.LogisticGrowth_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.cirad.dsl.ecec.gmf.diagram.LogisticGrowth_3002"/>
+            <param name="semanticHint" value="2003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.Init_2004"
+               name="%metatype.name.Init_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.cirad.dsl.ecec.gmf.diagram.Init_3001"/>
+            <param name="semanticHint" value="2004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.Control_2005"
+               name="%metatype.name.Control_2005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.cirad.dsl.ecec.gmf.diagram.Control_3004"/>
+            <param name="semanticHint" value="2005"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.CustomProtocol_2006"
+               name="%metatype.name.CustomProtocol_2006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.cirad.dsl.ecec.gmf.diagram.CustomProtocol_3005"/>
+            <param name="semanticHint" value="2006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Class_2007"
+               name="%metatype.name.Class_2007"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Class"
+               edithelper="ecec_cormas.diagram.edit.helpers.ClassEditHelper">
+            <param name="semanticHint" value="2007"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.Method_2008"
+               name="%metatype.name.Method_2008"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.cirad.dsl.ecec.gmf.diagram.Method_3003"/>
+            <param name="semanticHint" value="2008"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Attribute_2009"
+               name="%metatype.name.Attribute_2009"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Attribute"
+               edithelper="ecec_cormas.diagram.edit.helpers.AttributeEditHelper">
+            <param name="semanticHint" value="2009"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Enviromment_2010"
+               name="%metatype.name.Enviromment_2010"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Enviromment"
+               edithelper="ecec_cormas.diagram.edit.helpers.EnvirommentEditHelper">
+            <param name="semanticHint" value="2010"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.PoV_2011"
+               name="%metatype.name.PoV_2011"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="PoV"
+               edithelper="ecec_cormas.diagram.edit.helpers.PoVEditHelper">
+            <param name="semanticHint" value="2011"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Probe_2012"
+               name="%metatype.name.Probe_2012"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Probe"
+               edithelper="ecec_cormas.diagram.edit.helpers.ProbeEditHelper">
+            <param name="semanticHint" value="2012"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Scheduler_2013"
+               name="%metatype.name.Scheduler_2013"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Scheduler"
+               edithelper="ecec_cormas.diagram.edit.helpers.SchedulerEditHelper">
+            <param name="semanticHint" value="2013"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.ModelParameters_2014"
+               name="%metatype.name.ModelParameters_2014"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ModelParameters"
+               edithelper="ecec_cormas.diagram.edit.helpers.ModelParametersEditHelper">
+            <param name="semanticHint" value="2014"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Init_3001"
+               name="%metatype.name.Init_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Init"
+               edithelper="ecec_cormas.diagram.edit.helpers.InitEditHelper">
+            <param name="semanticHint" value="3001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.LogisticGrowth_3002"
+               name="%metatype.name.LogisticGrowth_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LogisticGrowth"
+               edithelper="ecec_cormas.diagram.edit.helpers.LogisticGrowthEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Method_3003"
+               name="%metatype.name.Method_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Method"
+               edithelper="ecec_cormas.diagram.edit.helpers.MethodEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Control_3004"
+               name="%metatype.name.Control_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Control"
+               edithelper="ecec_cormas.diagram.edit.helpers.ControlEditHelper">
+            <param name="semanticHint" value="3004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.CustomProtocol_3005"
+               name="%metatype.name.CustomProtocol_3005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="CustomProtocol"
+               edithelper="ecec_cormas.diagram.edit.helpers.CustomProtocolEditHelper">
+            <param name="semanticHint" value="3005"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.Attribute_3006"
+               name="%metatype.name.Attribute_3006"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.cirad.dsl.ecec.gmf.diagram.Attribute_2009"/>
+            <param name="semanticHint" value="3006"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <metamodelType
+               id="org.cirad.dsl.ecec.gmf.diagram.Relation_4004"
+               name="%metatype.name.Relation_4004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="Relation"
+               edithelper="ecec_cormas.diagram.edit.helpers.RelationEditHelper">
+            <param name="semanticHint" value="4004"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.EnvirommentLoadEnviroment_4001"
+               name="%metatype.name.EnvirommentLoadEnviroment_4001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4001"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.ProbeClassProbes_4003"
+               name="%metatype.name.ProbeClassProbes_4003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="http://www.cirad.org/dsl/ecec">
+         <specializationType
+               id="org.cirad.dsl.ecec.gmf.diagram.ProbeAttributeProbes_4005"
+               name="%metatype.name.ProbeAttributeProbes_4005"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4005"/>
+         </specializationType>
+      </metamodel>
+   </extension>
+
+   <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
+      <?gmfgen generated="true"?>
+      <clientContext id="org.cirad.dsl.ecec.gmf.diagram.TypeContext">
+         <enablement>
+            <test
+               property="org.eclipse.gmf.runtime.emf.core.editingDomain"
+               value="org.cirad.dsl.ecec.gmf.diagram.EditingDomain"/>
+         </enablement>
+      </clientContext> 
+      <binding context="org.cirad.dsl.ecec.gmf.diagram.TypeContext">
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Model_1000"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.VegetationUnit_2001"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Forager_2002"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.LogisticGrowth_2003"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Init_2004"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Control_2005"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.CustomProtocol_2006"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Class_2007"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Method_2008"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Attribute_2009"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Enviromment_2010"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.PoV_2011"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Probe_2012"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Scheduler_2013"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.ModelParameters_2014"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Init_3001"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.LogisticGrowth_3002"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Method_3003"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Control_3004"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.CustomProtocol_3005"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Attribute_3006"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.Relation_4004"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.EnvirommentLoadEnviroment_4001"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.ProbeClassProbes_4003"/>
+         <elementType ref="org.cirad.dsl.ecec.gmf.diagram.ProbeAttributeProbes_4005"/>
+         <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
+      </binding>
+   </extension>
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isURIEditorInput">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.cirad.dsl.ecec.gmf.diagram.URIEditorInputPropertyTester"
+           type="org.eclipse.emf.common.ui.URIEditorInput"
+           namespace="org.cirad.dsl.ecec.gmf.diagram"
+           properties="isURIEditorInput"
+           class="ecec_cormas.diagram.part.Ecec_cormasUriEditorInputTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.core.expressions.propertyTesters" id="navigator-proptest.isShortcut">
+      <?gmfgen generated="true"?>
+       <propertyTester
+           id="org.cirad.dsl.ecec.gmf.diagram.ShortcutPropertyTester"
+           type="org.eclipse.gmf.runtime.notation.View"
+           namespace="org.cirad.dsl.ecec.gmf.diagram"
+           properties="isShortcut"
+           class="ecec_cormas.diagram.part.Ecec_cormasShortcutPropertyTester">
+       </propertyTester>
+   </extension>
+
+	   <extension point="org.eclipse.ui.navigator.viewer" id="navigator-viewbinding">
+      <?gmfgen generated="true"?>
+      <viewerContentBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <contentExtension pattern="org.cirad.dsl.ecec.gmf.diagram.resourceContent"/>
+			<contentExtension pattern="org.cirad.dsl.ecec.gmf.diagram.domainResourceContent"/>
+            <contentExtension pattern="org.cirad.dsl.ecec.gmf.diagram.navigatorLinkHelper"/>
+         </includes>
+      </viewerContentBinding>
+      <viewerActionBinding viewerId="org.eclipse.ui.navigator.ProjectExplorer">
+         <includes>
+            <actionExtension pattern="org.cirad.dsl.ecec.gmf.diagram.navigatorActionProvider"/>
+         </includes>
+      </viewerActionBinding>
+   </extension>
+
+   <extension point="org.eclipse.ui.navigator.navigatorContent" id="navigator-content">
+      <?gmfgen generated="true"?>
+      <navigatorContent
+            id="org.cirad.dsl.ecec.gmf.diagram.resourceContent" 
+            name="%navigatorContentName" 
+            priority="normal" 
+            contentProvider="ecec_cormas.diagram.navigator.Ecec_cormasNavigatorContentProvider" 
+            labelProvider="ecec_cormas.diagram.navigator.Ecec_cormasNavigatorLabelProvider"
+            icon="icons/obj16/Ecec_cormasDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="ecec_cormas_diagram"/>
+               </and>
+               <instanceof value="ecec_cormas.diagram.navigator.Ecec_cormasAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.cirad.dsl.ecec.gmf.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <or>
+         	   <instanceof value="ecec_cormas.diagram.navigator.Ecec_cormasAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.cirad.dsl.ecec.gmf.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </possibleChildren>
+         <commonSorter 
+               id="org.cirad.dsl.ecec.gmf.diagram.navigatorSorter" 
+               class="ecec_cormas.diagram.navigator.Ecec_cormasNavigatorSorter">
+            <parentExpression>
+               <or>
+	              <and>
+    	             <instanceof value="org.eclipse.core.resources.IFile"/>
+        	         <test property="org.eclipse.core.resources.extension" value="ecec_cormas_diagram"/>
+                  </and>
+                  <instanceof value="ecec_cormas.diagram.navigator.Ecec_cormasAbstractNavigatorItem"/>
+               </or>
+            </parentExpression>
+         </commonSorter>
+      </navigatorContent>
+      <navigatorContent
+            id="org.cirad.dsl.ecec.gmf.diagram.domainResourceContent" 
+            name="%domainNavigatorContentName" 
+            priority="normal" 
+            contentProvider="ecec_cormas.diagram.navigator.Ecec_cormasDomainNavigatorContentProvider" 
+            labelProvider="ecec_cormas.diagram.navigator.Ecec_cormasDomainNavigatorLabelProvider"
+            icon="icons/obj16/Ecec_cormasDiagramFile.gif"
+            activeByDefault="true">
+         <triggerPoints>
+            <or>
+	           <and>
+    	          <instanceof value="org.eclipse.core.resources.IFile"/>
+        	      <test property="org.eclipse.core.resources.extension" value="ecec_cormas"/>
+               </and>
+               <instanceof value="ecec_cormas.diagram.navigator.Ecec_cormasDomainNavigatorItem"/>
+            </or>
+         </triggerPoints>
+         <possibleChildren>
+            <instanceof value="ecec_cormas.diagram.navigator.Ecec_cormasDomainNavigatorItem"/>
+         </possibleChildren>
+      </navigatorContent>
+      <actionProvider
+            id="org.cirad.dsl.ecec.gmf.diagram.navigatorActionProvider"
+            class="ecec_cormas.diagram.navigator.Ecec_cormasNavigatorActionProvider">
+         <enablement>
+            <or>
+               <instanceof value="ecec_cormas.diagram.navigator.Ecec_cormasAbstractNavigatorItem"/>
+           	   <adapt type="org.eclipse.gmf.runtime.notation.View">
+           	      <test property="org.cirad.dsl.ecec.gmf.diagram.isShortcut"/>
+           	   </adapt>
+            </or>
+         </enablement>
+      </actionProvider>
+   </extension>
+   
+	   <extension point="org.eclipse.ui.navigator.linkHelper" id="navigator-linkhelper">
+      <?gmfgen generated="true"?>
+      <linkHelper
+            id="org.cirad.dsl.ecec.gmf.diagram.navigatorLinkHelper"
+            class="ecec_cormas.diagram.navigator.Ecec_cormasNavigatorLinkHelper">
+         <editorInputEnablement>
+            <and>
+               <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
+               <test property="org.cirad.dsl.ecec.gmf.diagram.isURIEditorInput"/>
+            </and>
+         </editorInputEnablement>
+         <selectionEnablement>
+            <instanceof value="ecec_cormas.diagram.navigator.Ecec_cormasAbstractNavigatorItem"/>
+         </selectionEnablement>
+      </linkHelper>
+   </extension>
+   <extension point="org.eclipse.ui.commands" id="update-cmd">
+      <?gmfgen generated="true"?>
+      <command
+         categoryId="org.eclipse.ui.category.edit"
+         defaultHandler="ecec_cormas.diagram.part.Ecec_cormasDiagramUpdateCommand"
+         description="%update.diagram.description"
+         id="ecec_cormas.diagram.updateDiagram"
+         name="%update.diagram.name"/>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
+      <?gmfgen generated="true"?>
+      <key 
+         commandId="ecec_cormas.diagram.updateDiagram"
+         contextId="ecec_cormas.diagram.ui.diagramContext"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="F5"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.menus" id="context-menus">
+      <?gmfgen generated="true"?>
+      <!-- menuContribution locationURI="menu:org.eclipse.ui.main.menu?after=">
+      </menuContribution>
+      <menuContribution locationURI="toolbar:org.eclipse.ui.main.toolbar?after=">
+      </menuContribution -->
+      <menuContribution locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu">
+         <command commandId="org.cirad.dsl.ecec.gmf.diagram.LoadResourceAction">
+            <visibleWhen>
+               <and>
+                  <with variable="activePartId"><equals value="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID"/></with>
+                  <with variable="selection"><iterate ifEmpty="false"> 
+                     <instanceof value="ecec_cormas.diagram.edit.parts.ModelEditPart"/>
+                  </iterate></with>
+               </and>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.commands" id="menu-commands">
+      <?gmfgen generated="true"?>
+      <category id="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <command id="org.cirad.dsl.ecec.gmf.diagram.LoadResourceAction"
+         name="Load Resource"
+         categoryId="ecec_cormas.diagram.part.Ecec_cormasDiagramEditorID"
+         defaultHandler="ecec_cormas.diagram.part.LoadResourceAction"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.handlers" id="menu-handlers">
+      <?gmfgen generated="true"?>
+   </extension>
+
+   <!-- optionally, specify keybindings -->
+</plugin>

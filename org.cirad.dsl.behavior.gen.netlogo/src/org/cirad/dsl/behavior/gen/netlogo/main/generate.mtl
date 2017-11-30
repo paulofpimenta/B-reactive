@@ -1,0 +1,10 @@
+[comment encoding = UTF-8 /]
+[module generate('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore') /]
+[import org::cirad::dsl::behavior::gen::netlogo::files::generateNetLogoFile /]
+
+
+[template public generate(m : Model)]
+[comment @main/]
+[generateNetLogoFile(m)/]
+[/template]
+

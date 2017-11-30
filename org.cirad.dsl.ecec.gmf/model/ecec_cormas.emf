@@ -1,0 +1,143 @@
+@"http://www.eclipse.org/OCL/Import"(ecore="http://www.eclipse.org/emf/2002/Ecore")
+@Ecore(invocationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", settingDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot", validationDelegates="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot")
+@namespace(uri="http://www.cirad.org/dsl/ecec", prefix="ecec_cormas")
+package ecec_cormas;
+
+class DiagramElement {
+}
+
+class Space extends DiagramElement {
+  attr String path;
+  attr String[1] Name;
+}
+
+@gmf.node(label="Name")
+class Class extends DiagramElement {
+
+  @gmf.compartment
+  val Protocol[*] protocols;
+  val Attribute[*] attributes;
+  attr String[1] Name;
+  attr CormasClassType Type;
+}
+
+@gmf.node(label="Name")
+class Method extends DiagramElement {
+  attr String[1] Name;
+  ref Attribute[*] useAttributes;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/attribute.svg", label.icon="false", label="Name,value", label.pattern="{0}:{1}", label.placement="external", size="40,40", resizable="false")
+class Attribute extends DiagramElement {
+  attr String Value;
+  attr String[1] Name;
+  attr BooleanType InstanceType;
+  attr BooleanType NotifyObservers;
+  attr BooleanType SetterAcessor;
+  attr BooleanType GetterAcessor;
+}
+
+class Protocol extends DiagramElement {
+
+  @gmf.compartment
+  val Method[*] methods;
+  attr String Name;
+}
+
+enum CormasClassType {
+  AgentLocation = 0;
+  SpatialEntityCell = 0;
+  Initializator = 0;
+}
+
+enum BooleanType {
+  Yes = 0;
+  No = 1;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/environemment3.svg", label.icon="false", label="Name", label.placement="external", size="60,60", resizable="false")
+class Enviromment extends DiagramElement {
+  attr String[1] Name = "";
+  attr String Path;
+
+  @gmf.link(target.decoration="arrow", style="dash", label="Load Enviromment", source.decoration="none", color="0,0,0")
+  ref Init[*] LoadEnviroment;
+}
+
+@gmf.diagram
+class Model {
+  val DiagramElement[*] elements;
+  val ModelParameters[1] parameters;
+  val Relation[*] relations;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/model_config.svg", label.icon="false", label="ModelName", label.placement="external", size="60,60", resizable="false")
+class ModelParameters {
+  attr String Author;
+  attr String ModelName;
+}
+
+@gmf.node
+class VegetationUnit extends Class {
+  readonly attr float k = "10";
+  readonly attr float r = "0.2";
+  attr float Biomass;
+}
+
+@gmf.node
+class Forager extends Class {
+  readonly attr float CatabolicRate = "2";
+  readonly attr float FertilityThreshold = "100";
+  attr float HaverstRate;
+  readonly attr float Energy = "50";
+}
+
+@gmf.node(label="name")
+class LogisticGrowth extends Method {
+}
+
+@gmf.node
+class Init extends Protocol {
+}
+
+@gmf.node
+class Control extends Protocol {
+}
+
+@gmf.node(label="Name")
+class CustomProtocol extends Protocol {
+  attr String ProtocolName = "";
+}
+
+@gmf.node(label="Name")
+class PoV extends DiagramElement {
+  attr String[1] Name = "";
+  ref Class pov;
+}
+
+@gmf.node(figure="svg", svg.uri="platform:/plugin/org.cirad.dsl.ecec.gmf/icons/svg/probes.svg", label.icon="false", label="Name", label.placement="external", size="60,60", resizable="false")
+class Probe extends DiagramElement {
+  attr String[1] Name = "";
+
+  @gmf.link(target.decoration="arrow", style="dash", label="aClassProbe")
+  ref Class classes;
+
+  @gmf.link(target.decoration="arrow", style="dash", label="aAttributeProbe")
+  ref Attribute attributes;
+}
+
+@gmf.node
+class Scheduler extends DiagramElement {
+
+  @gmf.compartment
+  val Attribute[*] Attributes;
+  ref ModelParameters[1] InitModel;
+}
+
+@gmf.link(label="name", source="from", target="to", source.decoration="none", target.decoration="arrow", style="dash", color="0,0,0")
+class Relation {
+  attr String[1] Name;
+  ref Class[*] to;
+  ref Class[*] from;
+}
+

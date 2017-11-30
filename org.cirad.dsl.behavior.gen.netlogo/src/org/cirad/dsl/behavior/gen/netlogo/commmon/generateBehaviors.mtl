@@ -1,0 +1,47 @@
+[comment encoding = UTF-8 /]
+[module generateBehaviors('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::behavior::gen::netlogo::commmon::generateExpressions/]
+[import org::cirad::dsl::behavior::gen::netlogo::commmon::generateEquations]
+[import org::cirad::dsl::behavior::gen::netlogo::commmon::generateNodesAndEdges /]
+[template public generateBehaviors(aModel : Model)]
+[generateEquationBehaviors(aModel)/]
+[generateActivityBehavior(aModel)/]
+[generateActivityDiagramBehavior(aModel)/]
+[/template]
+[template public generateActivityBehavior (aModel:Model)]
+
+[for (activityB:ActivityBehavior | aModel.eAllContents(Entity).eAllContents(ActivityBehavior))]
+to [activityB.name.toLower()/]
+[for (aLocalVariable : LocalVariable | activityB.eAllContents(LocalVariable)) separator('\n')]
+let [aLocalVariable.generateArithimeticExpressions()/] [aLocalVariable.expression.generateFunctionCallExpressions()/]
+[/for]
+[for (aPrimaryActivity: PrimitiveActivities | activityB.eAllContents(PrimitiveActivities))]
+[aPrimaryActivity.generatePrimaryActivities()/]
+[/for]
+end
+[/for]
+[/template]
+[template public generateActivityDiagramBehavior (aModel:Model) ]
+
+[for (activityDB:ActivityDiagramBehavior | aModel.eAllContents(Entity).eAllContents(ActivityDiagramBehavior))]
+to [activityDB.name.toLower()/]
+[for (aLocalVariable : LocalVariable | activityDB.eAllContents(LocalVariable)) separator('\n')]
+	let [aLocalVariable.generateArithimeticExpressions()/] [aLocalVariable.expression.generateFunctionCallExpressions()/]
+[/for]
+	[activityDB.start.generateControlNodes()/]
+end
+[/for]
+[/template]
+
+[template public generateEquationBehaviors (aModel:Model)]
+
+[for (anEquationBehavior : EquationBehavior | aModel.eAllContents(Entity).eAllContents(EquationBehavior))]
+to [anEquationBehavior.name.toLower()/]
+[for (aLocalVariable : LocalVariable | anEquationBehavior.eAllContents(LocalVariable)) separator('\n')]
+ let [aLocalVariable.generateArithimeticExpressions()/] [aLocalVariable.expression.generateFunctionCallExpressions()/]
+[/for]
+	[generateEquation(anEquationBehavior.equation)/]
+end
+[/for]
+[/template]
+

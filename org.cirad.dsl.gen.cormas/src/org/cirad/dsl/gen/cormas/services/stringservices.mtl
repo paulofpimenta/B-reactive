@@ -1,0 +1,11 @@
+[comment encoding = UTF-8 /]
+[module stringservices('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')/]
+
+[query public now(anOclAny: OclAny) : String
+	= invoke('org.cirad.dsl.gen.cormas.services.StringServices', 'now()', Sequence{})
+/]
+
+[query public noSpecials(arg0 : Model,arg1 : String) : String
+	= invoke('org.cirad.dsl.gen.cormas.services.StringServices', 'noSpecials(java.lang.String)', Sequence{arg0})
+/]
+

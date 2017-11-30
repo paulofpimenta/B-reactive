@@ -1,0 +1,487 @@
+modeltype ConcreteMetamodel uses 'http://www.cirad.org/dsl/BehaviorDsl';
+modeltype AbstractMetamodel uses 'http://www.cirad.org/dsl/BehaviorMetamodel';
+
+transformation behaviorCS2behaviorAS(in modelIn:ConcreteMetamodel, out modelOut:AbstractMetamodel);
+
+main() {
+
+  modelIn.rootObjects()[Model]-> map Concrete2Abstract();
+}
+
+mapping Model::Concrete2Abstract(): AbstractMetamodel::Model  {
+
+	log("################ Begin of Model Transformation #################\n");
+	name := self.name;
+	entities+= self.entity -> map to2AbstractEntites();
+	log("Transforming Entities for model " + self.name + " done!");
+	log("\n################ Model Transformation finished #################");
+	
+	
+}
+
+mapping ConcreteMetamodel::EntityClass::to2AbstractEntites(): AbstractMetamodel::Entity  {
+	
+	log("Transforming Entity: " + self.name);
+	name := self.name;
+	attributes := self.attribute.map toAbstractAttribute();
+	log("Attributes transformation for entity " + self.name + " done!");
+	behavior := self.behavior.map toAbstractBehavior();
+	log("Behaviors transformation for entity "+ self.name + " done!");
+
+}
+
+mapping ConcreteMetamodel::AttributeClass::toAbstractAttribute(): AbstractMetamodel::AttributeClass{
+	name := self.name;
+	type := self.type.ConcreteTypeEnum2AbstractTypeEnum();
+    log("Transforming Atrtibute : " + name + ', type : ' + type.toString());
+	--log("AttributeTransformation "+name+" done!");
+	
+}
+
+mapping ConcreteMetamodel::AttributeClass::toAbstractAttribute2(): AbstractMetamodel::AttributeClass{
+	name := self.name;
+	type := self.type.ConcreteTypeEnum2AbstractTypeEnum();
+    log("Transforming Atrtibute : " + name + ', type : ' + type.toString());
+	--log("AttributeTransformation "+name+" done!");
+	
+}
+
+mapping ConcreteMetamodel::Behavior::toAbstractBehavior(): AbstractMetamodel::Behavior
+disjuncts ConcreteMetamodel::EquationBehaviour::toEquationBehavior,
+          ConcreteMetamodel::ActivityDiagramBehavior::toActivityDiagramBehavior, 
+          ConcreteMetamodel::ActivityBehavior::toActivityBehavior
+
+{}
+
+mapping ConcreteMetamodel::EquationBehaviour::toEquationBehavior(): AbstractMetamodel::EquationBehavior{
+	
+	log("Transforming Equations...");
+	name := self.name;
+	parameters := self.parameters.map toAbstractParameters();
+	equation := self.equation.map toAbstractEquation();
+	
+}
+
+mapping ConcreteMetamodel::Equation::toAbstractEquation() : AbstractMetamodel::Equation {
+	
+	left := self.left.map toAbstractAttribute();
+	right := self.right.map toAbstractExpression();
+
+}
+
+mapping ConcreteMetamodel::ActivityBehavior::toActivityBehavior() : AbstractMetamodel::ActivityBehavior{
+
+	name:=self.name;
+	parameters:=self.parameters.map toAbstractParameters();
+	primitiveaactivities := self.primaryActivities.map toPrimaryActivity();
+}
+mapping ConcreteMetamodel::ActivityDiagramBehavior::toActivityDiagramBehavior(): AbstractMetamodel::ActivityDiagramBehavior{
+
+	name :=self.name;
+	log("Transforming activity diagram " + name);
+	--parameters +=self.parameters.map toAbstractParameters();
+	parameters := self.parameters.late resolve(AbstractMetamodel::ParameterClass);
+	
+	
+	elements := self.start.map toStart();
+	
+}
+
+// Activity Diragram\\\\\\
+
+mapping ConcreteMetamodel::Node::toAllNodesExceptStart() : AbstractMetamodel::Node
+disjuncts ConcreteMetamodel::End::toEnd,
+		  ConcreteMetamodel::Decision::toDecision,
+		  ConcreteMetamodel::PrimaryActivity::toPrimaryActivity
+		 -- To add fork, merge and join
+{}
+
+mapping ConcreteMetamodel::Node::toNode() : AbstractMetamodel::Node
+disjuncts ConcreteMetamodel::ControlNode::toControlNode,
+		  ConcreteMetamodel::ExcecutableNode::toExecutableNode
+		 -- ConcreteMetamodel::Node::toAllNodesExceptStart
+		  
+{}
+
+mapping ConcreteMetamodel::ControlNode::toControlNode() : AbstractMetamodel::ControlNode
+disjuncts ConcreteMetamodel::Start::toStart,
+		  ConcreteMetamodel::End::toEnd,
+		  ConcreteMetamodel::Decision::toDecision
+{}
+
+mapping ConcreteMetamodel::ExcecutableNode::toExecutableNode() : AbstractMetamodel::ExecutableNode
+disjuncts ConcreteMetamodel::PrimaryActivity::toPrimaryActivity
+{}
+
+
+///////// PRIMARY ACTIVITIES/////////////////////////
+mapping ConcreteMetamodel::PrimaryActivity::toPrimaryActivity(): AbstractMetamodel::PrimitiveActivities
+disjuncts ConcreteMetamodel::Move::toMove,
+		 ConcreteMetamodel::Reproduce::toReproduce,
+		 ConcreteMetamodel::Add::toAdd,
+		 ConcreteMetamodel::Remove::toRemove,
+		 ConcreteMetamodel::Die::toDie
+{}
+
+mapping ConcreteMetamodel::Reproduce::toReproduce(): AbstractMetamodel::Reproduce{
+
+	name:=self.name;
+	var a := self.amount;
+	var t := a.oclAsType(Real);
+	initial_location := self.location.map toAbstractExpression();
+}
+
+mapping ConcreteMetamodel::Add::toAdd(): AbstractMetamodel::Add{
+
+	name:=self.name;
+	expression := self.expression.map toAbstractExpression();
+	toAttribute :=   self.variable.name.oclAsType(AttributeClass).late resolveone(AbstractMetamodel::AttributeClass);
+	--log("To : " + self.variable.name.name + '..new TO: ' + toAttribute.toString());
+	log("Expression :" + self.expression.toString());
+}
+
+mapping ConcreteMetamodel::Remove::toRemove(): AbstractMetamodel::Remove{
+
+	name:=self.name;
+	expression := self.expression.map toAbstractExpression();
+	--log("Antes : " + self.variable.name.metaClassName());
+	--if (self.variable.name.metaClassName() = "AttributeClass") then {
+	--var att := self.variable.name.oclAsType(AttributeClass).map toAbstractAttribute() ;	
+	fromAttribute := self.variable.name.oclAsType(AttributeClass).late resolveone(AbstractMetamodel::AttributeClass);
+	--fromAttribute := attribute;
+	
+	--log("From attribute : " + fromAttribute.toString() + "\n..attribute name: " + fromAttribute.name.toString() + "\n...meta fromAtt : " + att.metaClassName() + "\n...meta att : " + att.metaClassName());
+	--log("Expression :" + self.expression.toString());
+	--}endif;
+}
+
+mapping ConcreteMetamodel::Move::toMove(): AbstractMetamodel::Move{
+
+	name:=self.name;
+}
+
+mapping ConcreteMetamodel::Die::toDie(): AbstractMetamodel::Die{
+
+	name:=self.name;
+}
+
+mapping ConcreteMetamodel::Decision::toDecision() : AbstractMetamodel::Decision
+{
+	name := self.name;
+	--if (self._true->notEmpty()) then {
+	--	log("True : " +self._true->size().toString());
+		
+	--} else {
+	--	log("False : " +self._false->size().toString());
+	--}endif;
+	booleanexpression := self.boolean.map toAbstractExpression();
+	outcome_edge += self._true.map toTrueEdge();
+	outcome_edge += self._false.map toFalseEdge();
+}
+
+
+mapping ConcreteMetamodel::Start::toStart() : AbstractMetamodel::Start{
+	
+		
+		name := self.name;
+		outcome_edge := self.edge.map toUnconditionedEdge();
+}
+
+mapping ConcreteMetamodel::End::toEnd() : AbstractMetamodel::End{
+	
+	name := self.name
+}
+
+///// Edge Transformation ///////
+mapping ConcreteMetamodel::Edge::toEdge() : AbstractMetamodel::Edge
+disjuncts ConcreteMetamodel::TrueEdge::toTrueEdge,
+		  ConcreteMetamodel::FalseEdge::toFalseEdge,
+		  ConcreteMetamodel::UnconditionedEdge::toUnconditionedEdge
+{}
+
+mapping ConcreteMetamodel::TrueEdge::toTrueEdge() : AbstractMetamodel::IfTrueEdge
+{
+	name :=self.name;
+	if (self.edge.uncond.decision->notEmpty()) {
+			target_node := self.edge.decision.map toDecision();
+		}endif;
+	if (self.edge.primaryActivity->notEmpty()) {
+			target_node := self.edge.primaryActivity.map toPrimaryActivity();
+		}endif;	
+	
+	if (self.edge.behavior->notEmpty()) {
+				log("Chegou");
+				if (self.edge.behavior.oclIsTypeOf (ActivityDiagramBehavior)) {
+						target_node := object AbstractMetamodel::ActivityDiagramBehavior {
+						var activityDiagramBehavior := self.edge.behavior.map toAbstractBehavior();
+							name := activityDiagramBehavior.name;
+							outcome_edge :=self.edge.uncond.map toEdge();
+					};
+					--log("Node " + target_node.toString())
+				}endif;
+				if (self.edge.behavior.oclIsTypeOf (ActivityBehavior)) {
+						target_node := object AbstractMetamodel::ActivityBehavior {
+						var activitybehavior := self.edge.behavior.map toAbstractBehavior();
+							name:= activitybehavior.name;
+							outcome_edge := self.edge.uncond.map toEdge();
+					};
+					--log("Node " + target_node.toString())
+				}endif;				
+				if (self.edge.behavior.oclIsTypeOf (EquationBehaviour)) {
+						target_node := object AbstractMetamodel::EquationBehavior {
+						var equationBehavior := self.edge.behavior.map toAbstractBehavior();
+							name := equationBehavior.name;
+							outcome_edge := self.edge.uncond.map toEdge();
+					};
+					--log("Node " + target_node.toString())
+				}endif;
+		}endif;	
+}
+
+mapping ConcreteMetamodel::FalseEdge::toFalseEdge() : AbstractMetamodel::IfFalseEdge
+{
+	name :=self.name;
+	if (self.edge.uncond.decision->notEmpty()) {
+			target_node := self.edge.decision.map toDecision();
+		}endif;
+	if (self.edge.primaryActivity->notEmpty()) {
+			target_node := self.edge.primaryActivity.map toPrimaryActivity();
+		}endif;	
+	
+}
+mapping ConcreteMetamodel::UnconditionedEdge::toUnconditionedEdge() : AbstractMetamodel::UnconditionedEdge
+{
+		name := self.name;
+		
+		if (self.decision->notEmpty()) {
+			target_node := self.decision.map toDecision();
+		}endif;
+		if (self._end->notEmpty()){
+				target_node := self._end.map toEnd();
+		}endif;
+		if (self.primaryActivity->notEmpty()){
+				target_node := self.primaryActivity.map toPrimaryActivity();
+		}endif;
+		if (self.behavior->notEmpty()) {
+		
+				if (self.behavior.oclIsTypeOf (ActivityDiagramBehavior)) {
+						target_node := object AbstractMetamodel::ActivityDiagramBehavior {
+						var activityDiagramBehavior := self.behavior.map toAbstractBehavior();
+							name := activityDiagramBehavior.name;
+							outcome_edge :=self.uncond.map toEdge();
+					};
+					--log("Node " + target_node.toString())
+				}endif;
+				if (self.behavior.oclIsTypeOf (ActivityBehavior)) {
+						target_node := object AbstractMetamodel::ActivityBehavior {
+						var activitybehavior := self.behavior.map toAbstractBehavior();
+							name:= activitybehavior.name;
+							outcome_edge := self.uncond.map toEdge();
+					};
+					--log("Node " + target_node.toString())
+				}endif;				
+				if (self.behavior.oclIsTypeOf (EquationBehaviour)) {
+						target_node := object AbstractMetamodel::EquationBehavior {
+						var equationBehavior := self.behavior.map toAbstractBehavior();
+							name := equationBehavior.name;
+							outcome_edge := self.uncond.map toEdge();
+					};
+					--log("Node " + target_node.toString())
+				}endif;
+		}endif;
+}
+
+
+
+mapping ConcreteMetamodel::ParameterClass::toAbstractParameters(): AbstractMetamodel::ParameterClass{
+	
+	name:= self.name;
+	type := self.type.ConcreteTypeEnum2AbstractTypeEnum();
+	
+}
+
+mapping ConcreteMetamodel::LocalVariableClass::toAbstractLocalVariables(): AbstractMetamodel::LocalVariable{
+	
+	name:= self.name;
+	expression := self.map toAbstractExpression();
+	log("Local variable expression " + self.expression.metaClassName() );
+	
+	
+}
+
+
+query ConcreteMetamodel::TypeEnum::ConcreteTypeEnum2AbstractTypeEnum() : AbstractMetamodel::TypeEnum
+{
+    return switch {
+				case (self = ConcreteMetamodel::TypeEnum::String) AbstractMetamodel::TypeEnum::string;
+				case (self = ConcreteMetamodel::TypeEnum::Float) AbstractMetamodel::TypeEnum::float;
+				case (self = ConcreteMetamodel::TypeEnum::Boolean) AbstractMetamodel::TypeEnum::boolean;
+				case (self = ConcreteMetamodel::TypeEnum::Location) AbstractMetamodel::TypeEnum::location;
+				else assert error (false) with log("Illegal enum value");
+	}
+}
+
+
+
+mapping ConcreteMetamodel::Expression::toAbstractExpression():AbstractMetamodel::Expression
+disjuncts ConcreteMetamodel::ConstantExpression::toAbstractConstant,
+		  ConcreteMetamodel::VariableClass::fromVariabletoParameterClass,
+		  ConcreteMetamodel::VariableClass::fromVariabletoAbstractAttributeClass,
+		  ConcreteMetamodel::VariableClass::fromVariabletoLocalVariableClass,
+		  
+		  -- Must write Function by Function 
+		  ConcreteMetamodel::ArithmeticExpression::toAbstractArithmeticExpression,
+		  ConcreteMetamodel::BooleanNumericComparisonFunctionExpression::toBooleanNumericComparisonFunctionExpression
+{}
+
+//mapping ConcreteMetamodel::VariableClass::fromDeclaredVairabletoVariableClass(): AbstractMetamodel::Expression 
+//disjuncts ConcreteMetamodel::VariableClass::fromVariabletoParameterClass,
+//		  ConcreteMetamodel::VariableClass::fromVariabletoAbstractAttributeClass,
+//		  ConcreteMetamodel::VariableClass::fromVariabletoLocalVariableClass
+		  
+//{}
+
+mapping ConcreteMetamodel::ConstantExpression::toAbstractConstant(): AbstractMetamodel::ConstantExpression 
+{
+		value := self.value.name;
+		--log("Constant : " + value.toString());
+		
+}
+
+mapping ConcreteMetamodel::VariableClass::fromVariabletoParameterClass() : AbstractMetamodel::ParameterClass 
+
+
+	when { self.value.metaClassName() = "ParameterClass" } {
+		--var parameter := self.oclAsType(ParameterClass);
+		--name := self.value.name;
+		// Check behaviors which contains the parameters
+		var behavior := self.value.container().oclAsType(ConcreteMetamodel::Behavior);
+		// Select parameters whose names are equal to variable's (parameter type) name
+		var selectedPar := behavior.parameters->select(p:ConcreteMetamodel::ParameterClass | p.name = self.value.name);
+		name := selectedPar.name->first();
+		type := selectedPar.type.ConcreteTypeEnum2AbstractTypeEnum()->first();
+		log("Parameter : " + name + ', type : ' + type.toString());
+
+	
+}	
+
+mapping ConcreteMetamodel::VariableClass::fromVariabletoAbstractAttributeClass() : AbstractMetamodel::AttributeClass 
+
+	when { self.value.metaClassName() = "AttributeClass" } {
+		--var attribute := self.oclAsType(AttributeClass);
+		--name := self.value.name;
+		log("chegou!!");
+		// Check Entities' attributes
+		var entity := self.value.container().oclAsType(ConcreteMetamodel::EntityClass);
+		// Select attributes whose names are equal to variable's (parameter type) name
+		var selectedAttribute := entity.attribute->select(p:ConcreteMetamodel::AttributeClass | p.name = self.value.name);
+		name := selectedAttribute.name->first();
+		type := selectedAttribute.type.ConcreteTypeEnum2AbstractTypeEnum()->first();
+		log("Attribute : " + name + ', type : ' + type.toString());
+}
+
+mapping ConcreteMetamodel::VariableClass::fromVariabletoLocalVariableClass() : AbstractMetamodel::LocalVariable
+
+	when { self.value.metaClassName() = "LocalVariable" } {
+		var local := self.value.container().oclAsType(ConcreteMetamodel::LocalVariableClass);
+		log("Local variable : " + name + ', type : ' + type.toString());
+}
+
+mapping ConcreteMetamodel::AnonymousFunctionCallExpression::toAbstractNamedFunction() : AbstractMetamodel::FunctionCallExpression
+{} 		
+
+mapping ConcreteMetamodel::NamedFunctionCallExpression::toAbstractNamedFunction() : AbstractMetamodel::NamedFunction {
+
+ 	if (self.oclIsTypeOf(BinaryArithmeticExpression)) then {
+ 	 	name := self.oclAsType(BinaryArithmeticExpression).operator;
+ 	} endif; 
+ 		
+ 	if (self.oclIsTypeOf(BooleanNumericComparisonFunctionExpression)) then {
+ 		name := self.oclAsType(BooleanNumericComparisonFunctionExpression).op.toString();
+ 	}endif;
+}
+
+
+mapping ConcreteMetamodel::ArithmeticExpression::toAbstractArithmeticExpression():  AbstractMetamodel::FunctionCallExpression
+
+	when { self.oclIsTypeOf(BinaryArithmeticExpression) } 
+	
+	{
+		var binexp:=self.oclAsType(BinaryArithmeticExpression);
+		var t := binexp.left.container().container().container();
+		arguments += binexp.left.map toAbstractExpression();
+		function := binexp.map toAbstractNamedFunction();		
+		arguments += binexp.right.map toAbstractExpression();
+		
+	}
+	
+mapping ConcreteMetamodel::BooleanNumericComparisonFunctionExpression::toBooleanNumericComparisonFunctionExpression():  AbstractMetamodel::FunctionCallExpression
+
+	when { self.oclIsTypeOf(BooleanNumericComparisonFunctionExpression) } 
+	
+	{
+		init {
+			result:= object AbstractMetamodel::FunctionCallExpression {
+				
+			log ("Meta:" + self.left.metaClassName());
+			if (self.left.oclAsType(DeclaredVariables).name.metaClassName() = "AttributeClass"){
+				arguments += object AbstractMetamodel::AttributeClass {
+								var newAtt :=self.left.oclAsType(DeclaredVariables).name.oclAsType(AttributeClass).map toAbstractAttribute();
+								name := newAtt.name;
+								type := newAtt.type;
+				};
+			}endif;
+			if (self.left.oclAsType(DeclaredVariables).name.metaClassName() = "ParameterClass"){
+				arguments += object AbstractMetamodel::ParameterClass {
+								var newPar := self.left.oclAsType(DeclaredVariables).name.oclAsType(ParameterClass).map toAbstractParameters();
+								name := newPar.name;
+								type := newPar.type;
+				};
+			}endif;
+			if (self.left.oclAsType(DeclaredVariables).name.metaClassName() = "LocalVariableClass"){
+				arguments += object AbstractMetamodel::LocalVariable {
+								var localVar :=self.left.oclAsType(DeclaredVariables).name.oclAsType(LocalVariableClass).map toAbstractLocalVariables();
+								--name := newLocal.name;
+								--type := newLocal.type;
+				};
+			}endif;
+			if (self.left.oclIsTypeOf(ConstantExpression)){
+				arguments += object AbstractMetamodel::ConstantExpression {
+								self.left.oclAsType(Expression).map toAbstractExpression();
+				};
+			}endif;
+			
+			//RIGHT
+			
+			if (self.right.oclAsType(DeclaredVariables).name.metaClassName() = "AttributeClass"){
+				arguments += object AbstractMetamodel::AttributeClass {
+								var newAtt :=self.right.oclAsType(DeclaredVariables).name.oclAsType(AttributeClass).map toAbstractAttribute();
+								name := newAtt.name;
+								type := newAtt.type;
+				};
+			}endif;
+			if (self.right.oclAsType(DeclaredVariables).name.metaClassName() = "ParameterClass"){
+				arguments += object AbstractMetamodel::ParameterClass {
+								var newPar := self.right.oclAsType(DeclaredVariables).name.oclAsType(ParameterClass).map toAbstractParameters();
+								name := newPar.name;
+								type := newPar.type;
+				};
+			}endif;
+			if (self.right.oclAsType(DeclaredVariables).name.metaClassName() = "LocalVariableClass"){
+				arguments += object AbstractMetamodel::LocalVariable {
+								var newLocal :=self.right.oclAsType(DeclaredVariables).name.oclAsType(LocalVariableClass).map toAbstractLocalVariables();
+								name := newLocal.name;
+								type := newLocal.type;				
+				};
+			}endif;
+			if (self.right.oclIsTypeOf(ConstantExpression)){
+				arguments += object AbstractMetamodel::ConstantExpression {
+								self.right.oclAsType(ConstantExpression).expression.map toAbstractExpression();
+				};
+			}endif;
+			
+		function := self.map toAbstractNamedFunction() ; 
+		}; // end init
+	}
+		log("agrs " + arguments->size().toString());
+}

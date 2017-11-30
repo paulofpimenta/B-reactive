@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.cirad.dsl.ecec/src" modelPluginID="org.cirad.dsl.ecec"
+    modelName="Ecec" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ecec.ecore</foreignModel>
+  <genPackages prefix="Ecec" disposableProviderFactory="true" ecorePackage="ecec.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ecec.ecore#//DurationType">
+      <genEnumLiterals ecoreEnumLiteral="ecec.ecore#//DurationType/while"/>
+      <genEnumLiterals ecoreEnumLiteral="ecec.ecore#//DurationType/until"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ecec.ecore#//ConditionEnum">
+      <genEnumLiterals ecoreEnumLiteral="ecec.ecore#//ConditionEnum/if"/>
+      <genEnumLiterals ecoreEnumLiteral="ecec.ecore#//ConditionEnum/else"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ecec.ecore#//BehaviourTypeEnum">
+      <genEnumLiterals ecoreEnumLiteral="ecec.ecore#//BehaviourTypeEnum/untilTheEnd"/>
+      <genEnumLiterals ecoreEnumLiteral="ecec.ecore#//BehaviourTypeEnum/fromTheBegining"/>
+    </genEnums>
+    <genClasses ecoreClass="ecec.ecore#//Entity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec.ecore#//Entity/hasBehaviour"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec.ecore#//Entity/hasAttributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec.ecore#//Entity/location"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec.ecore#//Entity/movesTo"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec.ecore#//Behaviour">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec.ecore#//Behaviour/hasOperators"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec.ecore#//Behaviour/hasBehaviour"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec.ecore#//Behaviour/accessAttribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec.ecore#//Behaviour/hasDuration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec.ecore#//Behaviour/hasCondition"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec.ecore#//Behaviour/type"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec.ecore#//Attribute"/>
+    <genClasses ecoreClass="ecec.ecore#//Space">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec.ecore#//Space/neighbour"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec.ecore#//Space/hasAttributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec.ecore#//Space/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec.ecore#//Space/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec.ecore#//Space/occupied"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec.ecore#//Duration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec.ecore#//Duration/Type"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec.ecore#//Condition"/>
+    <genClasses ecoreClass="ecec.ecore#//Operators"/>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module generateEquations('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::behavior::gen::netlogo::commmon::generateExpressions]
+[template public generateEquation (anEquation:Equation)]
+	set [anEquation.left.generateArithimeticExpressions()/] [anEquation.right.generateArithimeticExpressions()/]
+[/template]

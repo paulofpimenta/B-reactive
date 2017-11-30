@@ -1,0 +1,268 @@
+
+grammar org.cirad.dsl.ecec.xtext.Ecec with org.eclipse.xtext.common.Terminals
+
+generate ecec "http://www.cirad.org/dsl/ecec/xtext/Ecec"
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+ 
+
+
+/*----------------------------------------RULES DEFINITION------------------------------------------------------------*/
+
+ Model :
+    (agent+=AgentEntity)* &
+    (spatialEntity+=SpatialEntity)* &  
+    (space=Space)
+    ;
+
+Space:
+	'Space'  name=ID '{'
+	(	
+		'Number of cells' numcells=INT ';'
+		'Type of Neighborhood' typeneigh=TypeofNeighbourhood ';'
+	)
+	'}'
+	;
+	
+Cell:
+	{Cell}
+	occupiedbyspatialEntity+=[SpatialEntity]'.cell.'
+	(
+		('occupied' ':' ocuppied=BooleanExpression)?
+ 		('x' ':' x=INT)?
+	 	('y' ':' y=INT)?
+	 	('is occupied by' occupiedbyAgentEntity+=[AgentEntity])?
+	 	('is not occupied by' occupiedbyAgentEntity+=[AgentEntity])?
+
+    )
+
+;
+
+NeighborhoodExpression:
+{NeighborhoodExpression}
+	
+	n+=NeighbourhooEnum a=AttributionType;
+
+
+AgentEntity:
+	
+	'Entity Agent :' name=ID '{'
+	(
+	 'Number of Agents :' agentNumbers=INT ';'
+	 'Initial Agents Location :' initialAgentLocation= InitialLocationType ('at' spatialEntity=[SpatialEntity])? ';'	
+	  agentparameters+=(ParameterExpression | DimensionExpression | RandomBetweenExpression)*
+      agentfunction+=FunctionExpression?
+      agentbehaviourdefinition+=Behaviour*
+	)
+	'}' 
+;
+
+SpatialEntity:
+	
+	'Spatial Entity :' name=ID '{'
+	(
+		'Entities per cell :' number=INT ';'
+		'Initial Location Type :' locationtype=InitialLocationType ';'
+		'Patch size :' X=INT 'x' Y=INT ';'
+		'Gap between patches:' gap=INT ';'
+	  	parameters+=(ParameterExpression | DimensionExpression | RandomBetweenExpression)*
+      	function+=FunctionExpression?
+      	behaviourdefinition+=Behaviour*
+	)
+    '}'
+
+;
+
+InitialLocationType:
+	name ='Random'
+;
+
+Behaviour:
+
+    'Behavior' name=ID ':'
+       (
+       	'Starts {' hasStart+=StartActivityDeclaration ( "," hasStart+=StartActivityDeclaration)* '}'
+       &'Finishes {' hasEnd+=FinishActivity ( "," hasEnd+=FinishActivity)* '}'
+       &'Conditions {' hasCondition+=Condition ( "," hasCondition+=Condition)* '}' 'then {'executes+=ExecutionDeclaration ( "," executes+=ExecutionDeclaration)* '}'
+       )
+    'End.';
+
+
+BehaviourQualifiedName:
+	
+	name+=[Behaviour|QualifiedName]
+;
+
+QualifiedName:
+    ID ('.' ID)*;
+    
+ParameterQualifiedName:
+{ParameterQualifiedName}	
+	'parameter' name=[ParameterExpression|QualifiedName] a=Attribution
+;
+
+FunctionQualifiedName:
+{FunctionQualifiedName}	
+	'function' name=[FunctionExpression|QualifiedName] a=Attribution
+;
+
+Attribution:
+{Attribution}	
+	equality=Equality expression=Primary /*TRY TO CHANGE TO expression=PRIMARY */
+;
+
+AttributionType :
+{AttributionType}
+       
+   p=ParameterQualifiedName | f=FunctionQualifiedName ; 
+
+
+StartActivityDeclaration:
+
+	saef+=StarAndEndExp be2+=BehaviourQualifiedName; 
+
+FinishActivity:
+	
+	saef+=StarAndEndExp be2+=BehaviourQualifiedName;
+
+Condition:
+{Condition}
+    ce+= ConditionEnum '(' ( a+=AttributionType | m=Cell | n=NeighborhoodExpression) ')'
+;
+ExecutionDeclaration:
+{ExecutionDeclaration}
+     
+   	'('(a+=AttributionType | arg=BehaviourQualifiedName  | m=MoveExpression ) ')'  	  
+ ;
+
+
+
+Addition returns Expression:
+Multiplication (({Plus.left=current} '+' | {Minus.left=current} '-') right=Multiplication )*;
+
+Multiplication returns Expression:
+Primary (({Multi.left=current} '*' | {Div.left=current} '/') right=Primary)*; 
+ 
+
+Primary returns Expression:
+FLOAT | parameters=[ParameterExpression|QualifiedName] | '(' Addition ')';
+
+FLOAT :
+	value=INT('.'INT)?
+;
+
+ 
+Expression:
+	
+	 AlgebricExpression | BooleanExpression | DimensionExpression | RandomBetweenExpression
+;
+
+AlgebricExpression:
+
+   args+=Addition (args+=Addition)* ('% of' arg=[ParameterExpression|QualifiedName])?
+;
+
+MoveExpression:
+	
+	name='move to ' 
+		(
+		 move= (Cell | NeighborhoodExpression)
+        );
+
+BooleanExpression:
+	
+	
+     {BooleanExpression} (value?='true' | 'false')
+;
+
+DimensionExpression:
+	
+	d=Dimensions';' 
+	
+;
+
+RandomBetweenExpression:
+	{RandomBetweenExpression}
+	 r=MathFunctionsEnum? ('between' (f=FLOAT| 'parameter'f1=[ParameterExpression|QualifiedName]) 'and' (f2=FLOAT | 'parameter' f3=[ParameterExpression|QualifiedName]))?';' 
+	
+;
+
+ParameterExpression:
+	
+ 	'Parameter' name=ID ':' ex=Expression ;
+ 
+
+FunctionExpression:
+	
+	'Function' name=ID '=' (right+=Addition (right+=Addition)*)';'
+	
+;
+	 
+Dimensions :
+ 	
+ 	(dim= 'lengths' name=FLOAT len=LenghtsUnits) | 
+ 	(dim= 'lasts'  name=FLOAT dur=TimeUnits) | 
+ 	(dim= 'weights'  name=FLOAT ma=MassUnits) |
+ 	(dim= 'has temperature' name=FLOAT temp=TemperatureUnits);
+ 	
+ LenghtsUnits :
+  	
+  	kilometer = 'km' |  meter = 'm' | miles = 'miles' | hectare = 'ha'  | squarekilometer = 'kmÂ²'  ;
+
+TimeUnits :
+  	
+  	hours = 'h' | minutes = 'm' | seconds = 's' ;
+
+MassUnits :
+	
+	kilogram = 'kg' | gram = 'g' | pounds = 'lb'  | ounces = 'oz';
+	
+TemperatureUnits :
+	
+	celsius = 'C' | Fahrenheit  = 'F' 
+;
+	
+
+/*--------------------------------------ENUMERATIONS---------------------------------------------------------------- */
+
+enum MathFunctionsEnum :
+	
+    randomint = 'random int' | randomdouble = 'random float';
+
+enum BooleanOperatorsEnum:
+	
+   true = 'true' | false = 'false';
+  
+enum StarAndEndExp :
+	
+	after = 'after' | withh='with';
+	
+enum StarAndEndRedefExp :
+	
+	when = 'when';
+	
+enum ConditionEnum:
+	
+    if = 'if' | else = 'while' ; 
+               
+enum Equality:
+	 
+ biggerthan = 'bigger than' | lessthan = 'less than' | equal = 'equal to' | 
+ biggerorequalthan = 'bigger or equal than' | lessorequalthan = 'less or equal than' | notequalto = 'not equal to' |
+ smallest ='is the smallest' | highest='is the highest';
+ 
+
+
+enum NeighbourhooEnum:
+	
+	neighcell='neighbor cell where' | currentcell='current cell where' | search='search neighborhood where'
+; 
+ 
+enum TypeofNeighbourhood:
+	
+	vonneuman = 'Von Nuenman' | moore = 'Moore'
+;
+
+
+
+/* ------------------------------------------TERMINALS DEFINITION ------------------------------------*/

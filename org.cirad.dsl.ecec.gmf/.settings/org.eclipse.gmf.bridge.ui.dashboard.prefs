@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+gmf_dashboard/domainGenerationModel=platform\:/resource/org.cirad.dsl.ecec.gmf/model/ecec_cormas.genmodel
+gmf_dashboard/domainModel=platform\:/resource/org.cirad.dsl.ecec.gmf/model/ecec_cormas.ecore
+gmf_dashboard/generationModel=platform\:/resource/org.cirad.dsl.ecec.gmf/model/ecec_cormas.gmfgen
+gmf_dashboard/graphicalDefinitionModel=platform\:/resource/org.cirad.dsl.ecec.gmf/model/ecec_cormas.gmfgraph
+gmf_dashboard/mappingModel=platform\:/resource/org.cirad.dsl.ecec.gmf/model/ecec_cormas.gmfmap
+gmf_dashboard/toolingDefinitionModel=platform\:/resource/org.cirad.dsl.ecec.gmf/model/ecec_cormas.gmftool

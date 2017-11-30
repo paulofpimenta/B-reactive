@@ -1,0 +1,6 @@
+[comment encoding = UTF-8 /]
+[module numberservices('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')/]
+
+[query public getRandomDouble(anOclAny: OclAny) : String
+	= invoke('org.cirad.dsl.gen.cormas.services.NumberServices', 'getRandomDouble()', Sequence{})
+/]

@@ -1,0 +1,93 @@
+Model AgentsAndCops { 
+	
+Entity agent {
+Attributes {active :  Boolean ,movement:Boolean, jailterm : Int, 
+	        arrestProbability : Float,grievance : Float,
+	        riskAversion:Float,perceivedhardship : Float,governmentlegitimacy:Float}
+
+
+EquationBehaviour estimateArrestProbability {  
+			Parameters (k : Float )
+			let c <- count ( cop  neighborhood )   
+			let a <- count  ( agent neighborhood having  ( get active true ) )
+			Equation { 
+				arrestProbability	= 1 - ( exp ( - k * ( floor ( c / (a+1) ) ) ) )     		 
+		} 
+	}
+	ActivityDiagramBehavior DetermineBehavior {
+		let test <- grievance - riskAversion * arrestProbability 
+		Start -> Decide  { if ( test > threshold )  then 
+			Set active := true else 
+			Set active := false -> End
+		}   
+	}
+	
+	ActivityDiagramBehavior MoveAgent {
+		let targets  <- select location from [ neighborhood ]such that ( neighborhood is NOT occupied  by 
+		( any cop  here  ) ) AND ( all agent on here has jailterm > 0 )
+		let numtargets <- count ( targets  )
+		Start -> Decide  { if  ( numtargets >= 1)   then 
+						Move to  { one-of [ targets ] } -> End } 
+	}
+	ActivityDiagramBehavior ReduceJailTerm {
+		Start -> Decide  { if  ( jailterm > 1 )  then 
+			Remove 1 from  jailterm  -> End } 
+	} 
+}
+
+Entity cop { 
+		
+		ActivityDiagramBehavior enforce { 
+		Parameters ( maxJailTerm : Float,threshold : Float  )
+			let suspect <- one-of (agent from  neighborhood having ((get active true )))
+			let numsuspect  <- count (suspect) 			   
+			Start -> Decide  { if  ( numsuspect > 0 )  then 
+				Set active := false -> Set jailterm := random ( maxJailTerm ) -> Move to { one-of [suspect] } -> End    
+				}  
+		}
+		ActivityDiagramBehavior MoveCops {
+		let targets  <- select location from [ neighborhood ]such that (neighborhood is NOT occupied  by 
+		( any cop  here  ) ) AND( all agent on here has jailterm > 0)
+		let numtargets <- count ( targets  )
+		Start -> Decide  { if  ( numtargets >= 1)   then 
+						Move to  { one-of [ targets ] } -> End } 
+	} 
+	}
+	 
+Entity cell { 
+		
+	}
+	
+Run main as :  ActivityDiagramBehavior MainAgentsAndCops { 
+	
+	Start -> estimateArrestProbability  -> MoveAgent -> 
+	DetermineBehavior -> ReduceJailTerm -> MoveCops -> enforce -> End 
+}
+ Create agent 20 as prisonerAgent { 
+ 	each agent { 
+ 		position = one-of [ select location from [ grid ] such that (grid is NOT occupied by ( any agent here , any cop here )) ]  
+ 		riskAversion := 1.0
+ 		perceivedhardship := 1.0
+ 		jailterm := 0
+ 	    governmentlegitimacy := 0.83
+ 		active := false 
+ 		k := 2.3 
+ 		threshold := 0.1
+ 		grievance := perceivedhardship * 1 - governmentlegitimacy  
+ 	} 
+ }
+ Create cop 20 as copAgent {
+ 	each cop {
+ 		position = one-of [select location from [ grid ]such that (grid is NOT occupied by ( any agent here , any cop here ) ) ]
+		maxJailTerm := 30
+ 	} 
+ }
+ Create grid of cell (20,20) { 
+ 	each cell { 
+ 		
+ 	} 
+ }
+}
+
+  
+	

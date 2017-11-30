@@ -1,0 +1,22 @@
+[comment encoding = UTF-8 /]
+[module generateProcedures('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[template public generateProcedures (aFunctionCall : FunctionCallExpression)]
+[for (aFunction : Function | aFunctionCall.eAllContents(Function))]
+[if (aFunction.oclIsKindOf(NamedFunction))]
+[aFunction.oclAsType(NamedFunction).name/]
+[elseif (aFunction.eContainer(FunctionCallExpression)->notEmpty())]
+AnonymousFunction
+[/if]
+[/for]
+[/template]
+
+[template public generateFunction (aFunction : NamedFunction)]
+	[aFunction.name/]
+[/template]
+[template public generateFunction (aFunction : AnonymousFunction)]
+	let
+[/template]
+
+[template public retriveA (aFunction : AnonymousFunction)]
+	let
+[/template]

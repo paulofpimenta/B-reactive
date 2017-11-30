@@ -1,0 +1,33 @@
+[comment encoding = UTF-8 /]
+[module generateBehaviors('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::gen::cormas::common::generateExpressions/]
+[import org::cirad::dsl::gen::cormas::common::generateEquations/]
+[import org::cirad::dsl::gen::cormas::common::generateNodesAndEdges /]
+[template public generateActivityBehavior (anActivityBehavior:ActivityBehavior)]
+
+<body package="[anActivityBehavior.name/]" selector="[anActivityBehavior.name/]">[anActivityBehavior.name/]
+	"The [anActivityBehavior.name/] method"
+	[for (aPrimaryActivity: PrimitiveActivities | anActivityBehavior.eAllContents(PrimitiveActivities))]
+	[aPrimaryActivity.generatePrimaryActivities()/]
+	[/for]</body>
+[/template]
+[template public generateActivityDiagramBehavior (anActivityDiagramBehavior:ActivityDiagramBehavior) ]
+
+<body package="[anActivityDiagramBehavior.name/]" selector="[anActivityDiagramBehavior.name/]">[anActivityDiagramBehavior.name/]
+	"The [anActivityDiagramBehavior.name/] method"
+	[for (aLocalVariable : LocalVariable | anActivityDiagramBehavior.eAllContents(LocalVariable))]
+	let [aLocalVariable.generateArithimeticExpressions()/] [aLocalVariable.expression.generateFunctionCallExpressions()/]
+	[/for]
+[anActivityDiagramBehavior.start.generateControlNodes()/]</body>
+[/template]
+[template public generateEquationBehaviors (anEquationBehavior:EquationBehavior)]
+
+<body package="[anEquationBehavior.name/]" selector="[anEquationBehavior.name/]">[anEquationBehavior.name/]
+	"The [anEquationBehavior.name/] method"
+	[for (aLocalVariable : LocalVariable | anEquationBehavior.eAllContents(LocalVariable))]
+	let [aLocalVariable.generateArithimeticExpressions()/] [aLocalVariable.expression.generateFunctionCallExpressions()/]
+	[/for]
+	[generateEquation(anEquationBehavior.equation)/]</body>
+
+[/template]
+

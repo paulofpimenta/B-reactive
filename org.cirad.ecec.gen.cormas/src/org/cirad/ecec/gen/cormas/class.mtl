@@ -1,0 +1,43 @@
+[module class('http://www.cirad.org/dsl/ecec')]
+[import org::cirad::ecec::gen::cormas::methodsMain/]
+
+[template public generateMainClass(m : Model)]
+
+<class>
+<Name>[m.eContents(ModelParameters).ModelName/]</Name>
+<environment>CormasNS.Models.[m.eContents(ModelParameters).ModelName/]</environment>
+<super>CormasNS.Kernel.CormasModel</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>[generateInstVariablesforMainClass(m)/][generateProbesNamesforMainClass(m)/][comment--GMF To do : include probes to generate probes variables (eg:restrainedInitialNumber unrestrainedInitialNumber)/] </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>[m.eContents(ModelParameters).ModelName/]Category</category>
+<attributes>
+<package>[m.eContents(ModelParameters).ModelName/]</package>
+</attributes>
+</class>
+
+[/template]
+
+[template public generateClasses (m : Model)]
+[for (c : Class | m.eAllContents("Class"))]
+<class>
+<Name>[c.Name/]</Name>
+<environment>CormasNS.Models.[c.Name/]</environment>
+<super>CormasNS.Kernel.[c.Type/]</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>[for (att : Attribute | m.eAllContents("Class").eAllContents(Attribute))][if (att.InstanceType='Yes')][att.Name/][/if][/for]</inst-vars>
+<class-inst-vars>[for (att : Attribute | m.eAllContents("Class").eAllContents("Attribute"))][if (att.InstanceType='No')][att.Name/][/if][/for]</class-inst-vars>
+<imports></imports>
+<category>[m.parameters.ModelName/]Category</category>
+<attributes>
+<package>[m.parameters.ModelName/]</package>
+</attributes>
+</class>
+
+[/for]
+[/template]
+
+

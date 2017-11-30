@@ -1,0 +1,501 @@
+<?xml version="1.0"?>
+
+<st-source>
+<!-- 
+Name: ECEC
+PackageName: ECEC
+Parcel: #('ECEC')
+ParcelName: ECEC
+Date: Tue 1 Nov 2016
+ -->
+<time-stamp>From VisualWorks® NonCommercial, 7.6 of lundi 3 mars 2008 on mardi 26 février 2013 at 9:29:12</time-stamp>
+
+<do-it>(Dialog confirm: 'You are filing-in a Parcel source file!\\While this is possible it will not have\the same effect as loading the parcel.\None of the Parcel''s prerequisites will\be loaded and none of its load actions\will be performed.\\Are you sure you want to file-in?' withCRs) ifFalse: [self error: 'Parcel file-in abandoned.  Choose terminate or close.']</do-it>
+
+<name-space>
+<name>ECEC</name>
+<environment>CormasNS.Models</environment>
+<private>false</private>
+<imports>private Smalltalk.* 
+		 private CormasNS.Kernel.* </imports>
+<category>ECECCategory</category>
+<attributes>
+<package>ECEC</package>
+</attributes>
+</name-space>
+
+<class>
+<name>ecec</name>
+<environment>CormasNS.Models.ECEC</environment>
+<super>CormasNS.Kernel.CormasModel</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>theRestraineds restrainedInitialNumber theUnrestraineds unrestrainedInitialNumber  thePlants</inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>ECECCategory</category>
+<attributes>
+<package>ECEC</package>
+</attributes>
+</class>
+
+<class>
+<Name>Forager</Name>
+<environment>CormasNS.Models.ECEC</environment>
+<super>CormasNS.Kernel.AgentLocation</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars> Energy </inst-vars>
+<class-inst-vars> catabolic_rate  harvest_rate  Fertility_Threshold </class-inst-vars>
+<imports></imports>
+<category>ECECCategory</category>
+<attributes>
+<package>ECEC</package>
+</attributes>
+</class>
+
+<class>
+<Name>Restrained</Name>
+<environment>CormasNS.Models.ECEC</environment>
+<super>CormasNS.Models.ECEC.Forager</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>ECECCategory</category>
+<attributes>
+<package>ECEC</package>
+</attributes>
+</class>
+<class>
+<Name>Unrestrained</Name>
+<environment>CormasNS.Models.ECEC</environment>
+<super>CormasNS.Models.ECEC.Forager</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>ECECCategory</category>
+<attributes>
+<package>ECEC</package>
+</attributes>
+</class>
+
+<class>
+<Name>Plant</Name>
+<environment>CormasNS.Models.ECEC</environment>
+<super>CormasNS.Kernel.SpatialEntityCell</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>ECECCategory</category>
+<attributes>
+<package>ECEC</package>
+</attributes>
+</class>
+
+
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Plant</class-id> <category>accessing</category>
+<body package="ECEC" selector="biomass">biomass
+	"Getter accessor with default value = 0 "
+	^biomass ifNil:[ biomass := 0]</body>
+
+<body package="ECEC" selector="biomass:">biomass: anObject
+	"Setter accessor of attribute biomass "
+	biomass = anObject ifTrue:[^nil].   "for optimization"
+	biomass := anObject.
+	self changed</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Forager</class-id> <category>accessing</category>
+<body package="ECEC" selector="energy">Energy
+	"Getter accessor with default value = 0 "
+	^energy ifNil:[ energy := 0]</body>
+
+<body package="ECEC" selector="Energy:">Energy: anObject
+	"Setter accessor of attribute energy "
+	energy = anObject ifTrue:[^nil].   "for optimization"
+	energy := anObject.
+	self changed</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Forager</class-id> <category>GeneratedPlantMethodsProtocol</category>
+
+<body package="grow" selector="grow">grow
+	"The grow method"
+		self biomass biomass  +r  *biomass  *1.0  -biomass  /k</body>
+
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Forager</class-id> <category>GeneratedForagerMethodsProtocol</category>
+
+<body package="ConsumeEnergy" selector="ConsumeEnergy">ConsumeEnergy
+	"The ConsumeEnergy method"
+	catabolic_rateharvest_ratefertility_threshold self energy
+	
+</body>
+
+<body package="Eat" selector="Eat">Eat
+	"The Eat method"
+	self energy energy - harvest_rate  *aplantbiomass
+	
+	catabolic_rateharvest_ratefertility_threshold self biomass
+	
+</body>
+
+<body package="ToMove" selector="ToMove">ToMove
+	"The ToMove method"
+	let alocalvariable 5.0
+	let biomassofplant [biomass] of plant-here
+	let alocation max-one-of (patch-set (patch-set patch-here ) neighbors  not any? Foragers-here)[biomass] of	plant-here]
+
+ifelse biomassofplant >= catabolic_rate 
+
+[move-to alocation]  
+[move-to one-of (patch-set neighbors patch-here )]
+
+
+</body>
+
+<body package="ToReproduce" selector="ToReproduce">ToReproduce
+	"The ToReproduce method"
+
+if energy >= fertility_threshold 
+[hatch-foragers 1.0[ move-to one-of neighborsself energy(50.0)  ]catabolic_rateharvest_ratefertility_threshold self energy]
+
+
+</body>
+
+<body package="ToDie" selector="ToDie">ToDie
+	"The ToDie method"
+
+if energy < 0.0 
+[die]
+
+
+</body>
+</methods>
+<class>
+<Name>ECEC</Name>
+<environment>CormasNS.Models.ECEC</environment>
+<super>CormasNS.Kernel.CormasModel</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>thePlants theForagers Probes for main class </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>ECECCategory</category>
+<attributes>
+<package>ECEC</package>
+</attributes>
+</class>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>testing</category>
+
+<body package="ECEC" selector="isAbstract">isAbstract 
+^false</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	catabolic_rate">catabolic_rate
+	"Getter accessor with default value = 2.0 "
+	^catabolic_rate ifNil:[ catabolic_rate := 2.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="catabolic_rate_default">catabolic_rate_default 
+	"Return the default value of catabolic_rate attribute"	
+	^2.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	harvest_rate">harvest_rate
+	"Getter accessor with default value = 0.5 "
+	^harvest_rate ifNil:[ harvest_rate := 0.5] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="harvest_rate_default">harvest_rate_default 
+	"Return the default value of harvest_rate attribute"	
+	^0.5</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	Energy">Energy
+	"Getter accessor with default value = 50.0 "
+	^Energy ifNil:[ Energy := 50.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="Energy_default">Energy_default 
+	"Return the default value of Energy attribute"	
+	^50.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	Fertility_Threshold">Fertility_Threshold
+	"Getter accessor with default value = 100.0 "
+	^Fertility_Threshold ifNil:[ Fertility_Threshold := 100.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="Fertility_Threshold_default">Fertility_Threshold_default 
+	"Return the default value of Fertility_Threshold attribute"	
+	^100.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Restrained class</class-id> <category>pov symbols</category>
+
+<body package="ECEC" selector="VectorialPOV_Restrained">VectorialPOV_Restrained
+"Returns an array containing the settings of a Situated entity vectorial pov symbol in the following order:
+(color red) (color green) (color blue) (lineColor red) (lineColor green) (lineColor blue) lineWidth sizeratio position (array of outline vertices)"
+^#(1.0 0.0 0.0 0.0 0.0 0.0 1 0.7 #center #(-5.51429@-9.78095 10.6417@-9.64286 24.8307@-13.6217 18.6732@2.5 16.7069@24.7857 5.23787@4.63757 -2.0748@10.3571 -7.66472@24.1561 -8.62047@10.3042 -11.9656@2.74868 -24.8307@-1.07143 -26.1693@-8.92857 -13.3992@-13.6217 -11.0098@-26.2143 -11.0098@-14.2513 -5.51429@-9.78095))</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>testing</category>
+
+<body package="ECEC" selector="isAbstract">isAbstract 
+^false</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	catabolic_rate">catabolic_rate
+	"Getter accessor with default value = 2.0 "
+	^catabolic_rate ifNil:[ catabolic_rate := 2.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="catabolic_rate_default">catabolic_rate_default 
+	"Return the default value of catabolic_rate attribute"	
+	^2.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	harvest_rate">harvest_rate
+	"Getter accessor with default value = 0.9 "
+	^harvest_rate ifNil:[ harvest_rate := 0.9] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="harvest_rate_default">harvest_rate_default 
+	"Return the default value of harvest_rate attribute"	
+	^0.9</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	Energy">Energy
+	"Getter accessor with default value = 50.0 "
+	^Energy ifNil:[ Energy := 50.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="Energy_default">Energy_default 
+	"Return the default value of Energy attribute"	
+	^50.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>accessing</category>
+	<body package="ECEC" selector="	Fertility_Threshold">Fertility_Threshold
+	"Getter accessor with default value = 100.0 "
+	^Fertility_Threshold ifNil:[ Fertility_Threshold := 100.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>- default value</category>
+
+<body package="ECEC" selector="Fertility_Threshold_default">Fertility_Threshold_default 
+	"Return the default value of Fertility_Threshold attribute"	
+	^100.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Unrestrained class</class-id> <category>pov symbols</category>
+
+<body package="ECEC" selector="VectorialPOV_Unrestrained">VectorialPOV_Unrestrained
+"Returns an array containing the settings of a Situated entity vectorial pov symbol in the following order:
+(color red) (color green) (color blue) (lineColor red) (lineColor green) (lineColor blue) lineWidth sizeratio position (array of outline vertices)"
+^#(1.0 0.0 0.0 0.0 0.0 0.0 1 0.7 #center #(-5.51429@-9.78095 10.6417@-9.64286 24.8307@-13.6217 18.6732@2.5 16.7069@24.7857 5.23787@4.63757 -2.0748@10.3571 -7.66472@24.1561 -8.62047@10.3042 -11.9656@2.74868 -24.8307@-1.07143 -26.1693@-8.92857 -13.3992@-13.6217 -11.0098@-26.2143 -11.0098@-14.2513 -5.51429@-9.78095))</body>
+</methods>
+
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC</class-id> <category>accessing</category>
+
+<body package="ECEC" selector="RestrainedInitialNumber">RestrainedInitialNumber
+	"Getter accessor with default value = 10.0"
+	^RestrainedInitialNumber : ifNil:[RestrainedInitialNumber := 10.0]</body>
+
+<body package="ECEC" selector="restrainedInitialNumber">restrainedInitialNumber: anObject
+	"Setter accessor of attribute RestrainedInitialNumber"
+	RestrainedInitialNumber :=anObject</body>
+
+<body package="ECEC" selector="theRestrained">theRestrained
+^ self theRestraineds isEmpty ifTrue:[nil]  ifFalse: [self theRestraineds first]</body>
+
+<body package="ECEC" selector="therestraineds">theRestraineds
+^theRestraineds ifNil:[theRestraineds := IndexedSet new]</body>
+
+<body package="ECEC" selector="theRestraineds:">theRestraineds: x
+theRestraineds := x</body>
+
+<body package="ECEC" selector="UnrestrainedInitialNumber">UnrestrainedInitialNumber
+	"Getter accessor with default value = 10.0"
+	^UnrestrainedInitialNumber : ifNil:[UnrestrainedInitialNumber := 10.0]</body>
+
+<body package="ECEC" selector="unrestrainedInitialNumber">unrestrainedInitialNumber: anObject
+	"Setter accessor of attribute UnrestrainedInitialNumber"
+	UnrestrainedInitialNumber :=anObject</body>
+
+<body package="ECEC" selector="theUnrestrained">theUnrestrained
+^ self theUnrestraineds isEmpty ifTrue:[nil]  ifFalse: [self theUnrestraineds first]</body>
+
+<body package="ECEC" selector="theunrestraineds">theUnrestraineds
+^theUnrestraineds ifNil:[theUnrestraineds := IndexedSet new]</body>
+
+<body package="ECEC" selector="theUnrestraineds:">theUnrestraineds: x
+theUnrestraineds := x</body>
+
+<body package="ECEC" selector="theForager">theForagers
+	"Returns a collection of all the instances of aClass (and sub classes) collected by cormasModel"
+   ^self allTheEntities: Forager</body>
+</methods> 
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC</class-id> <category>control</category>
+<body package="ECEC" selector="step:">step: t
+	self stepEntities: self thePlants.
+	self askRandom: Forager toDo: #step</body>
+	self askRandom: Forager toDo: #step</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC</class-id> <category>init</category>
+
+<body package="ECEC" selector="fragmentedEnv">fragmentedEnv
+	"initialize an fragmented space (from fragmented.env file)"
+	self spaceModel loadEnvironmentFromFile: 'fragmented.env'.
+	self initAgents</body>
+
+<body package="ECEC" selector="homogeneousEnv">homogeneousEnv
+	"initialize an homogeneous space (from poor.env file) "
+	self spaceModel loadEnvironmentFromFile: 'poor.env'.
+	self initAgents</body>
+
+<body package="ECEC" selector="noAgent">noAgent
+	"initialize the space (from poor.env file) without agent"
+	self spaceModel loadEnvironmentFromFile: 'poor.env' </body>
+</methods>
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC</class-id> <category>instance-creation</category>
+
+<body package="ECEC" selector="homogeneousEnv2">homogeneousEnv2
+self spaceModel initializeRegularX: 20.0 Y: 20.0 shape: #squared nbNeighbours: #eight boundaries: #toroidal.
+self thePlants do:[: cell | cell initRandomBiomass].
+self initAgents
+</body>
+
+<body package="ECEC" selector="initAgents">initAgents
+self createN: self restrainedInitialNumber randomlyLocatedAloneEntities:Restrained 
+
+self createN: self unrestrainedInitialNumber randomlyLocatedAloneEntities:Unrestrained 
+</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC</class-id> <category>probes</category>
+<body package="ECEC" selector="restrainedSize">RestrainedSize
+^self theRestraineds size
+</body>
+<body package="ECEC" selector="unrestrainedSize">UnrestrainedSize
+^self theUnrestraineds size
+</body>
+
+<body package="ECEC" selector="plantBiomass">plantBiomass
+^self thePlants size
+</body>
+</methods>
+	
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC class</class-id> <category>description</category>
+
+<body package="ECEC" selector="authors">authors
+^ 'Mr. Robot'	</body>
+
+<body package="ECEC" selector="comments">comments
+^ 'This model was automatic generated'	</body>
+
+<body package="ECEC" selector="cormasCompatibleVersion">cormasCompatibleVersion
+^ #(2013 2 16 12 38 55)</body>
+
+<body package="ECEC" selector="creationDate">creationDate
+^ 'Tue 1 Nov 2016'	</body>
+
+<body package="ECEC" selector="currentDeveloperName">currentDeveloperName
+^ 'Alonzo Church'	</body>
+
+<body package="ECEC" selector="emails">emails
+^ 'church@entscheidungsproblem.com'	</body>
+
+<body package="ECEC" selector="lastUpdate">lastUpdate
+^ 'Tue 1 Nov 2016'	</body>
+
+<body package="ECEC" selector="version">version
+^ 'ECEC.pcl'	</body>
+
+<body package="ECEC" selector="versionComments">versionComments
+^ 
+'<body package="ECEC" selector="vwCompatibleVersion">vwCompatibleVersion
+^ '7.6'	</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC class</class-id> <category>- default value</category>
+	<body package="ECEC" selector="foragerInitialNumber_default">foragerInitialNumber_default 
+	"Return the default value of foragerInitialNumber attribute"	
+	^10.0</body>
+	<body package="ECEC" selector="foragerInitialNumber_default">foragerInitialNumber_default 
+	"Return the default value of foragerInitialNumber attribute"	
+	^10.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC class</class-id> <category>- probes</category>
+	<body package="ECEC" selector="colorOfProbe_plantSize">colorOfProbe_plantSize
+  	^ (ColorValue red: 0.959592 green: 0.959592 blue: 0.959592)</body>
+	<body package="ECEC" selector="colorOfProbe_foragerSize">colorOfProbe_foragerSize
+  	^ (ColorValue red: 0.886908 green: 0.886908 blue: 0.886908)</body>
+</methods>
+--Class Methods Generation --

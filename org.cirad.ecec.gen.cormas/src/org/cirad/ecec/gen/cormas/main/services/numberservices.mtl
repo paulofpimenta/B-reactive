@@ -1,0 +1,7 @@
+[comment encoding = Cp1252 /]
+[module numberservices('http://www.cirad.org/dsl/ecec')/]
+
+[query public getRandomDouble(anOclAny: OclAny) : String
+	= invoke('org.cirad.ecec.gen.cormas.main.services.NumberServices', 'getRandomDouble()', Sequence{})
+/]
+

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecec_cormas="http://www.cirad.org/dsl/ecec" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_20tZ0EVWEeSEqpeFKdwLqQ" type="Ecec_cormas" name="default.ecec_cormas_diagram" measurementUnit="Pixel">
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_20tZ0UVWEeSEqpeFKdwLqQ"/>
+  <element xmi:type="ecec_cormas:Model" href="default.ecec_cormas#/"/>
+</notation:Diagram>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.cirad.dsl.metamodel/src" modelPluginID="org.cirad.dsl.metamodel"
+    modelName="Ecec_cormas" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>ecec_cormas.ecore</foreignModel>
+  <genPackages prefix="Ecec_cormas" disposableProviderFactory="true" ecorePackage="ecec_cormas.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ecec_cormas.ecore#//CormasClassType">
+      <genEnumLiterals ecoreEnumLiteral="ecec_cormas.ecore#//CormasClassType/AgentLocation"/>
+      <genEnumLiterals ecoreEnumLiteral="ecec_cormas.ecore#//CormasClassType/SpatialEntityCell"/>
+      <genEnumLiterals ecoreEnumLiteral="ecec_cormas.ecore#//CormasClassType/Initializator"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ecec_cormas.ecore#//BooleanType">
+      <genEnumLiterals ecoreEnumLiteral="ecec_cormas.ecore#//BooleanType/Yes"/>
+      <genEnumLiterals ecoreEnumLiteral="ecec_cormas.ecore#//BooleanType/No"/>
+    </genEnums>
+    <genClasses ecoreClass="ecec_cormas.ecore#//DiagramElement"/>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Space">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Space/path"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Space/Name"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Class">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Class/protocols"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Class/attributes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Class/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Class/Type"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Method">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Method/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Method/useAttributes"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Attribute/Value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Attribute/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Attribute/InstanceType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Attribute/NotifyObservers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Attribute/SetterAcessor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Attribute/GetterAcessor"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Protocol">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Protocol/methods"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Enviromment">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Enviromment/Name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Enviromment/Path"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Enviromment/LoadEnviroment"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Model/elements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Model/parameters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Model/relations"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//ModelParameters">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//ModelParameters/Author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//ModelParameters/ModelName"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//VegetationUnit">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//VegetationUnit/k"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//VegetationUnit/r"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//VegetationUnit/Biomass"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Forager">
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Forager/CatabolicRate"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Forager/FertilityThreshold"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Forager/HaverstRate"/>
+      <genFeatures property="Readonly" createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Forager/Energy"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//LogisticGrowth"/>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Init"/>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Control"/>
+    <genClasses ecoreClass="ecec_cormas.ecore#//CustomProtocol">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//CustomProtocol/ProtocolName"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//PoV">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//PoV/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//PoV/pov"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Probe">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Probe/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Probe/classes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Probe/attributes"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Scheduler">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Scheduler/Attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Scheduler/InitModel"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//Relation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//Relation/Name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Relation/to"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//Relation/from"/>
+    </genClasses>
+    <genClasses ecoreClass="ecec_cormas.ecore#//ProbeInit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//ProbeInit/probeInitScheduler"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ecec_cormas.ecore#//ProbeInit/probeInitAtt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ecec_cormas.ecore#//ProbeInit/Name"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

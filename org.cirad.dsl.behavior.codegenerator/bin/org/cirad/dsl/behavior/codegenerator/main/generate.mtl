@@ -1,0 +1,24 @@
+[comment encoding = UTF-8 /]
+[module generate('http://www.cirad.org/dsl/BehaviorDsl')]
+
+[template public generate(m : Model)]
+[comment @main/]
+[file ('generated_model'.concat('.nlogo'), false, 'UTF-8')]
+   
+[for (entity:EntityClass | m.eAllContents(EntityClass))]
+breed  [ '[' /] [entity.name/] [entity.name/]s [ ']' /] 
+[/for]
+
+[for (entity:EntityClass | m.eAllContents(EntityClass))]
+to-setup [entity.name/] 
+[/for]
+
+[for (equationbehavior:EquationBehaviour | m.eAllContents(EntityClass).eAllContents(EquationBehaviour))]
+    to-[equationbehavior.name/]
+[/for]
+
+[for (activity:ActivityBehavior | m.eAllContents(EntityClass).eAllContents(ActivityBehavior))]
+    to-[activity.name/]
+[/for]
+[/file]
+[/template]

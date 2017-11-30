@@ -1,0 +1,20 @@
+[module common('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[comment]
+[template public getModelParameters(m : Model)]
+[m.eAllContents("ModelParameters")/]
+[/template]
+[/comment]
+[template public getAllClasses(m : Model)]
+[m.eAllContents(Entity)/]
+[/template]
+
+[comment ]
+
+[template public getEnviromment(m : Model)]
+[m.eAllContents("Enviromment")/]
+[/template]
+
+[template public getProtocol(m : Model)]
+[m.eAllContents("Protocol")/]
+[/template]
+[/comment]

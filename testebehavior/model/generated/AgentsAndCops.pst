@@ -1,0 +1,603 @@
+<?xml version="1.0"?>
+
+<st-source>
+<!-- 
+Name: AGENTSANDCOPS
+PackageName: AGENTSANDCOPS
+Parcel: #('AGENTSANDCOPS')
+ParcelName: AGENTSANDCOPS
+Date: Thu 1 Sep 2016
+ -->
+<time-stamp>From VisualWorks® NonCommercial, 7.6 of lundi 3 mars 2008 on mardi 26 février 2013 at 9:29:12</time-stamp>
+
+<do-it>(Dialog confirm: 'You are filing-in a Parcel source file!\\While this is possible it will not have\the same effect as loading the parcel.\None of the Parcel''s prerequisites will\be loaded and none of its load actions\will be performed.\\Are you sure you want to file-in?' withCRs) ifFalse: [self error: 'Parcel file-in abandoned.  Choose terminate or close.']</do-it>
+
+<name-space>
+<name>AGENTSANDCOPS</name>
+<environment>CormasNS.Models</environment>
+<private>false</private>
+<imports>private Smalltalk.* 
+		 private CormasNS.Kernel.* </imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</name-space>
+
+<class>
+<name>AgentsAndCops</name>
+<environment>CormasNS.Models.AGENTSANDCOPS</environment>
+<super>CormasNS.Kernel.CormasModel</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>thePrisonerAgents prisoneragentInitialNumber theCopAgents copagentInitialNumber  theCells</inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</class>
+
+<class>
+<Name>Cop</Name>
+<environment>CormasNS.Models.AGENTSANDCOPS</environment>
+<super>CormasNS.Kernel.AgentLocation</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</class>
+<class>
+<Name>Agent</Name>
+<environment>CormasNS.Models.AGENTSANDCOPS</environment>
+<super>CormasNS.Kernel.AgentLocation</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</class>
+
+<class>
+<Name>PrisonerAgent</Name>
+<environment>CormasNS.Models.AGENTSANDCOPS</environment>
+<super>CormasNS.Models.AGENTSANDCOPS.agent</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</class>
+<class>
+<Name>CopAgent</Name>
+<environment>CormasNS.Models.AGENTSANDCOPS</environment>
+<super>CormasNS.Models.AGENTSANDCOPS.cop</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</class>
+
+<class>
+<Name>Cell</Name>
+<environment>CormasNS.Models.AGENTSANDCOPS</environment>
+<super>CormasNS.Kernel.SpatialEntityCell</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars></inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</class>
+
+
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.Cop</class-id> <category>accessing</category>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.Agent</class-id> <category>accessing</category>
+<body package="AGENTSANDCOPS" selector="active">active
+	"Getter accessor with default value = 0 "
+	^active ifNil:[ active := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="active:">active: anObject
+	"Setter accessor of attribute active "
+	active = anObject ifTrue:[^nil].   "for optimization"
+	active := anObject.
+	self changed</body>
+<body package="AGENTSANDCOPS" selector="movement">movement
+	"Getter accessor with default value = 0 "
+	^movement ifNil:[ movement := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="movement:">movement: anObject
+	"Setter accessor of attribute movement "
+	movement = anObject ifTrue:[^nil].   "for optimization"
+	movement := anObject.
+	self changed</body>
+<body package="AGENTSANDCOPS" selector="jailterm">jailterm
+	"Getter accessor with default value = 0 "
+	^jailterm ifNil:[ jailterm := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="jailterm:">jailterm: anObject
+	"Setter accessor of attribute jailterm "
+	jailterm = anObject ifTrue:[^nil].   "for optimization"
+	jailterm := anObject.
+	self changed</body>
+<body package="AGENTSANDCOPS" selector="arrestprobability">arrestProbability
+	"Getter accessor with default value = 0 "
+	^arrestprobability ifNil:[ arrestprobability := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="arrestProbability:">arrestProbability: anObject
+	"Setter accessor of attribute arrestprobability "
+	arrestprobability = anObject ifTrue:[^nil].   "for optimization"
+	arrestprobability := anObject.
+	self changed</body>
+<body package="AGENTSANDCOPS" selector="grievance">grievance
+	"Getter accessor with default value = 0 "
+	^grievance ifNil:[ grievance := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="grievance:">grievance: anObject
+	"Setter accessor of attribute grievance "
+	grievance = anObject ifTrue:[^nil].   "for optimization"
+	grievance := anObject.
+	self changed</body>
+<body package="AGENTSANDCOPS" selector="riskaversion">riskAversion
+	"Getter accessor with default value = 0 "
+	^riskaversion ifNil:[ riskaversion := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="riskAversion:">riskAversion: anObject
+	"Setter accessor of attribute riskaversion "
+	riskaversion = anObject ifTrue:[^nil].   "for optimization"
+	riskaversion := anObject.
+	self changed</body>
+<body package="AGENTSANDCOPS" selector="perceivedhardship">perceivedhardship
+	"Getter accessor with default value = 0 "
+	^perceivedhardship ifNil:[ perceivedhardship := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="perceivedhardship:">perceivedhardship: anObject
+	"Setter accessor of attribute perceivedhardship "
+	perceivedhardship = anObject ifTrue:[^nil].   "for optimization"
+	perceivedhardship := anObject.
+	self changed</body>
+<body package="AGENTSANDCOPS" selector="governmentlegitimacy">governmentlegitimacy
+	"Getter accessor with default value = 0 "
+	^governmentlegitimacy ifNil:[ governmentlegitimacy := 0]</body>
+
+<body package="AGENTSANDCOPS" selector="governmentlegitimacy:">governmentlegitimacy: anObject
+	"Setter accessor of attribute governmentlegitimacy "
+	governmentlegitimacy = anObject ifTrue:[^nil].   "for optimization"
+	governmentlegitimacy := anObject.
+	self changed</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.Cell</class-id> <category>accessing</category>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Forager</class-id> <category>GeneratedCopMethodsProtocol</category>
+
+<body package="enforce" selector="enforce">enforce
+	"The enforce method"
+	let suspect one-of agent neighbors active?
+	let numsuspect count suspect
+
+if numsuspect > 0.0 
+[self active false   	 self jailterm randommaxjailterm   	 move-to one-of suspect]
+
+
+</body>
+
+<body package="MoveCops" selector="MoveCops">MoveCops
+	"The MoveCops method"
+	let targets neighbors  with[not any? cops-here and all? agents-here  [ jailterm > 0.0] ]
+	let numtargets count targets
+
+if numtargets >= 1.0 
+[move-to one-of targets]
+
+
+</body>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Forager</class-id> <category>GeneratedAgentMethodsProtocol</category>
+
+<body package="DetermineBehavior" selector="DetermineBehavior">DetermineBehavior
+	"The DetermineBehavior method"
+	let test grievance  -riskaversion  *arrestprobability
+
+ifelse test > threshold 
+
+[self active true]  
+[self active false]
+
+
+</body>
+
+<body package="MoveAgent" selector="MoveAgent">MoveAgent
+	"The MoveAgent method"
+	let targets neighbors  with[not any? cops-here and all? agents-here  [ jailterm > 0.0] ]
+	let numtargets count targets
+
+if numtargets >= 1.0 
+[move-to one-of targets]
+
+
+</body>
+
+<body package="ReduceJailTerm" selector="ReduceJailTerm">ReduceJailTerm
+	"The ReduceJailTerm method"
+
+if jailterm > 1.0 
+[k self jailterm]
+
+
+</body>
+
+<body package="estimateArrestProbability" selector="estimateArrestProbability">estimateArrestProbability
+	"The estimateArrestProbability method"
+	let c count cops-on neighbors
+	let a count agents-on neighbors  with [ active?]
+		self arrestprobability 1.0  -expk  *floorc  /a  +1.0</body>
+
+
+<methods>
+<class-id>CormasNS.Models.ECEC.Forager</class-id> <category>GeneratedCellMethodsProtocol</category>
+</methods>
+<class>
+<Name>AGENTSANDCOPS</Name>
+<environment>CormasNS.Models.AGENTSANDCOPS</environment>
+<super>CormasNS.Kernel.CormasModel</super>
+<private>false</private>
+<indexed-type>none</indexed-type>
+<inst-vars>theAgents theCops theCells Probes for main class </inst-vars>
+<class-inst-vars></class-inst-vars>
+<imports></imports>
+<category>AGENTSANDCOPSCategory</category>
+<attributes>
+<package>AGENTSANDCOPS</package>
+</attributes>
+</class>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>testing</category>
+
+<body package="AGENTSANDCOPS" selector="isAbstract">isAbstract 
+^false</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	riskAversion">riskAversion
+	"Getter accessor with default value = 1.0 "
+	^riskAversion ifNil:[ riskAversion := 1.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="riskAversion_default">riskAversion_default 
+	"Return the default value of riskAversion attribute"	
+	^1.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	perceivedhardship">perceivedhardship
+	"Getter accessor with default value = 1.0 "
+	^perceivedhardship ifNil:[ perceivedhardship := 1.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="perceivedhardship_default">perceivedhardship_default 
+	"Return the default value of perceivedhardship attribute"	
+	^1.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	jailterm">jailterm
+	"Getter accessor with default value = 0.0 "
+	^jailterm ifNil:[ jailterm := 0.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="jailterm_default">jailterm_default 
+	"Return the default value of jailterm attribute"	
+	^0.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	governmentlegitimacy">governmentlegitimacy
+	"Getter accessor with default value = 0.83 "
+	^governmentlegitimacy ifNil:[ governmentlegitimacy := 0.83] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="governmentlegitimacy_default">governmentlegitimacy_default 
+	"Return the default value of governmentlegitimacy attribute"	
+	^0.83</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	active">active
+	"Getter accessor with default value =  "
+	^active ifNil:[ active := ] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="active_default">active_default 
+	"Return the default value of active attribute"	
+	^</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	k">k
+	"Getter accessor with default value = 2.3 "
+	^k ifNil:[ k := 2.3] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="k_default">k_default 
+	"Return the default value of k attribute"	
+	^2.3</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	threshold">threshold
+	"Getter accessor with default value = 0.1 "
+	^threshold ifNil:[ threshold := 0.1] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="threshold_default">threshold_default 
+	"Return the default value of threshold attribute"	
+	^0.1</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	grievance">grievance
+	"Getter accessor with default value = perceivedhardship  *1.0  -governmentlegitimacy "
+	^grievance ifNil:[ grievance := perceivedhardship  *1.0  -governmentlegitimacy] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="grievance_default">grievance_default 
+	"Return the default value of grievance attribute"	
+	^perceivedhardship  *1.0  -governmentlegitimacy</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.PrisonerAgent class</class-id> <category>pov symbols</category>
+
+<body package="AGENTSANDCOPS" selector="VectorialPOV_PrisonerAgent">VectorialPOV_PrisonerAgent
+"Returns an array containing the settings of a Situated entity vectorial pov symbol in the following order:
+(color red) (color green) (color blue) (lineColor red) (lineColor green) (lineColor blue) lineWidth sizeratio position (array of outline vertices)"
+^#(1.0 0.0 0.0 0.0 0.0 0.0 1 0.7 #center #(-5.51429@-9.78095 10.6417@-9.64286 24.8307@-13.6217 18.6732@2.5 16.7069@24.7857 5.23787@4.63757 -2.0748@10.3571 -7.66472@24.1561 -8.62047@10.3042 -11.9656@2.74868 -24.8307@-1.07143 -26.1693@-8.92857 -13.3992@-13.6217 -11.0098@-26.2143 -11.0098@-14.2513 -5.51429@-9.78095))</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.CopAgent class</class-id> <category>testing</category>
+
+<body package="AGENTSANDCOPS" selector="isAbstract">isAbstract 
+^false</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.CopAgent class</class-id> <category>accessing</category>
+	<body package="AGENTSANDCOPS" selector="	maxJailTerm">maxJailTerm
+	"Getter accessor with default value = 30.0 "
+	^maxJailTerm ifNil:[ maxJailTerm := 30.0] </body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.CopAgent class</class-id> <category>- default value</category>
+
+<body package="AGENTSANDCOPS" selector="maxJailTerm_default">maxJailTerm_default 
+	"Return the default value of maxJailTerm attribute"	
+	^30.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.CopAgent class</class-id> <category>pov symbols</category>
+
+<body package="AGENTSANDCOPS" selector="VectorialPOV_CopAgent">VectorialPOV_CopAgent
+"Returns an array containing the settings of a Situated entity vectorial pov symbol in the following order:
+(color red) (color green) (color blue) (lineColor red) (lineColor green) (lineColor blue) lineWidth sizeratio position (array of outline vertices)"
+^#(1.0 0.0 0.0 0.0 0.0 0.0 1 0.7 #center #(-5.51429@-9.78095 10.6417@-9.64286 24.8307@-13.6217 18.6732@2.5 16.7069@24.7857 5.23787@4.63757 -2.0748@10.3571 -7.66472@24.1561 -8.62047@10.3042 -11.9656@2.74868 -24.8307@-1.07143 -26.1693@-8.92857 -13.3992@-13.6217 -11.0098@-26.2143 -11.0098@-14.2513 -5.51429@-9.78095))</body>
+</methods>
+
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.AGENTSANDCOPS</class-id> <category>accessing</category>
+
+<body package="AGENTSANDCOPS" selector="copAgentInitialNumber">copAgentInitialNumber
+	"Getter accessor with default value = 20.0"
+	^copAgentInitialNumber : ifNil:[copAgentInitialNumber := 20.0]</body>
+
+<body package="AGENTSANDCOPS" selector="copAgentInitialNumber">copAgentInitialNumber: anObject
+	"Setter accessor of attribute copAgentInitialNumber"
+	copAgentInitialNumber :=anObject</body>
+
+<body package="AGENTSANDCOPS" selector="thecopAgent">thecopAgent
+^ self thecopAgents isEmpty ifTrue:[nil]  ifFalse: [self thecopAgents first]</body>
+
+<body package="AGENTSANDCOPS" selector="thecopAgents">thecopAgents
+^thecopAgents ifNil:[thecopAgents := IndexedSet new]</body>
+
+<body package="AGENTSANDCOPS" selector="thecopAgents:">thecopAgents: x
+thecopAgents := x</body>
+
+<body package="AGENTSANDCOPS" selector="prisonerAgentInitialNumber">prisonerAgentInitialNumber
+	"Getter accessor with default value = 20.0"
+	^prisonerAgentInitialNumber : ifNil:[prisonerAgentInitialNumber := 20.0]</body>
+
+<body package="AGENTSANDCOPS" selector="prisonerAgentInitialNumber">prisonerAgentInitialNumber: anObject
+	"Setter accessor of attribute prisonerAgentInitialNumber"
+	prisonerAgentInitialNumber :=anObject</body>
+
+<body package="AGENTSANDCOPS" selector="theprisonerAgent">theprisonerAgent
+^ self theprisonerAgents isEmpty ifTrue:[nil]  ifFalse: [self theprisonerAgents first]</body>
+
+<body package="AGENTSANDCOPS" selector="theprisonerAgents">theprisonerAgents
+^theprisonerAgents ifNil:[theprisonerAgents := IndexedSet new]</body>
+
+<body package="AGENTSANDCOPS" selector="theprisonerAgents:">theprisonerAgents: x
+theprisonerAgents := x</body>
+
+<body package="AGENTSANDCOPS" selector="theCop">theForagers
+	"Returns a collection of all the instances of aClass (and sub classes) collected by cormasModel"
+   ^self allTheEntities: Cop</body>
+
+<body package="AGENTSANDCOPS" selector="theAgent">theForagers
+	"Returns a collection of all the instances of aClass (and sub classes) collected by cormasModel"
+   ^self allTheEntities: Agent</body>
+</methods> 
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.AGENTSANDCOPS</class-id> <category>control</category>
+<body package="AGENTSANDCOPS" selector="step:">step: t
+	self stepEntities: self theCells.
+	self askRandom: Cop toDo: #step</body>
+	self askRandom: Agent toDo: #step</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.ECEC.ECEC</class-id> <category>init</category>
+
+<body package="AGENTSANDCOPS" selector="fragmentedEnv">fragmentedEnv
+	"initialize an fragmented space (from fragmented.env file)"
+	self spaceModel loadEnvironmentFromFile: 'fragmented.env'.
+	self initAgents</body>
+
+<body package="AGENTSANDCOPS" selector="homogeneousEnv">homogeneousEnv
+	"initialize an homogeneous space (from poor.env file) "
+	self spaceModel loadEnvironmentFromFile: 'poor.env'.
+	self initAgents</body>
+
+<body package="AGENTSANDCOPS" selector="noAgent">noAgent
+	"initialize the space (from poor.env file) without agent"
+	self spaceModel loadEnvironmentFromFile: 'poor.env' </body>
+</methods>
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.AGENTSANDCOPS</class-id> <category>instance-creation</category>
+
+<body package="AGENTSANDCOPS" selector="homogeneousEnv2">homogeneousEnv2
+self spaceModel initializeRegularX: 20.0 Y: 20.0 shape: #squared nbNeighbours: #eight boundaries: #toroidal.
+self initAgents
+</body>
+
+<body package="AGENTSANDCOPS" selector="initAgents">initAgents
+self createN: self prisoneragentInitialNumber randomlyLocatedAloneEntities:PrisonerAgent 
+
+self createN: self copagentInitialNumber randomlyLocatedAloneEntities:CopAgent 
+</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.AGENTSANDCOPS</class-id> <category>probes</category>
+<body package="AGENTSANDCOPS" selector="copagentSize">CopAgentSize
+^self theCopAgents size
+</body>
+<body package="AGENTSANDCOPS" selector="prisoneragentSize">PrisonerAgentSize
+^self thePrisonerAgents size
+</body>
+
+</methods>
+	
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.AGENTSANDCOPS class</class-id> <category>description</category>
+
+<body package="ECEC" selector="authors">authors
+^ 'Mr. Robot'	</body>
+
+<body package="ECEC" selector="comments">comments
+^ 'This model was automatic generated'	</body>
+
+<body package="ECEC" selector="cormasCompatibleVersion">cormasCompatibleVersion
+^ #(2013 2 16 12 38 55)</body>
+
+<body package="ECEC" selector="creationDate">creationDate
+^ 'Thu 1 Sep 2016'	</body>
+
+<body package="ECEC" selector="currentDeveloperName">currentDeveloperName
+^ 'Alonzo Church'	</body>
+
+<body package="ECEC" selector="emails">emails
+^ 'church@entscheidungsproblem.com'	</body>
+
+<body package="ECEC" selector="lastUpdate">lastUpdate
+^ 'Thu 1 Sep 2016'	</body>
+
+<body package="ECEC" selector="version">version
+^ 'AGENTSANDCOPS.pcl'	</body>
+
+<body package="ECEC" selector="versionComments">versionComments
+^ 
+'<body package="AGENTSANDCOPS" selector="vwCompatibleVersion">vwCompatibleVersion
+^ '7.6'	</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.AGENTSANDCOPS class</class-id> <category>- default value</category>
+	<body package="AGENTSANDCOPS" selector="agentInitialNumber_default">agentInitialNumber_default 
+	"Return the default value of agentInitialNumber attribute"	
+	^20.0</body>
+	<body package="AGENTSANDCOPS" selector="copInitialNumber_default">copInitialNumber_default 
+	"Return the default value of copInitialNumber attribute"	
+	^20.0</body>
+</methods>
+
+<methods>
+<class-id>CormasNS.Models.AGENTSANDCOPS.AGENTSANDCOPS class</class-id> <category>- probes</category>
+	<body package="AGENTSANDCOPS" selector="colorOfProbe_agentSize">colorOfProbe_agentSize
+  	^ (ColorValue red: 0.557572 green: 0.557572 blue: 0.557572)</body>
+	<body package="AGENTSANDCOPS" selector="colorOfProbe_copSize">colorOfProbe_copSize
+  	^ (ColorValue red: 0.803454 green: 0.803454 blue: 0.803454)</body>
+	<body package="AGENTSANDCOPS" selector="colorOfProbe_cellSize">colorOfProbe_cellSize
+  	^ (ColorValue red: 0.063370 green: 0.063370 blue: 0.063370)</body>
+</methods>
+--Class Methods Generation --

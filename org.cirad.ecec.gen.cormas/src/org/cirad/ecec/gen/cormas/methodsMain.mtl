@@ -1,0 +1,100 @@
+[module methodsMain('http://www.cirad.org/dsl/ecec')]
+[import org::cirad::ecec::gen::cormas::common/]
+[import org::cirad::ecec::gen::cormas::main::services::numberservices/]
+
+[template public generateInstanceCreationMain(m : Model)]
+[comment METHODS TO PUT ON THE SCHEDULER ??/]
+
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.parameters.ModelName/]</class-id> <category>instance-creation</category>
+<body package="[m.parameters.ModelName/]" selector="initAgents">initAgents
+"To be completed"</body>
+</methods>
+[/template]
+
+[template public generateInitMain(m : Model)]
+[if (m.eContents(Init).eContents(Enviromment).LoadEnviroment->size() > 0)]
+
+<methods>
+<class-id>[m.parameters.ModelName/].[m.parameters.ModelName/]</class-id> <category>init</category>
+[for (env : Enviromment | m.eAllContents(Enviromment))]
+	[if (current("Enviromment").LoadEnviroment->size() > 0)]
+	<body package="ECEC" selector="[current("Enviromment").Name/]">[current("Enviromment").Name/]
+	"initialize an space (from env file)"
+ 	 self spaceModel loadEnvironmentFromFile: '[current("Enviromment").Name/].env'.</body>
+	 [/if]
+[/for]
+</methods>
+[/if]
+[/template]
+
+[template public generateControlMain(m : Model)]
+
+<methods>
+<class-id>[m.parameters.ModelName/].[m.parameters.ModelName/]</class-id> <category>control</category>
+<body package="[m.parameters.ModelName/]" selector="step:">step: t
+"To be completed"</body>
+</methods>
+<methods>
+[/template]
+
+[template public generateAccessingMain(m : Model)]
+
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.parameters.ModelName/]</class-id> <category>accessing</category>
+[for (att : Attribute | m.eAllContents(Class).attributes)]
+	[if (att.InstanceType = 'No')]
+	
+	<body package="[m.parameters.ModelName/]" selector="[att.Name/]">[att.Name/]
+	"Getter accessor of attribute [att.Name/]" </body>
+
+	<body package="ECEC" selector="catabolicRate:">[att.Name/]: anObject
+	"Setter accessor of attribute [att.Name/]"</body>
+		
+	[/if]	
+[/for]
+[/template]
+[comment Probes are generated on the main class of model /]
+[template public generateProbes(m : Model)]
+[if (m.eContents(Probe).classes->size() > 0)]
+[for (p : Probe | m.eAllContents(Probe))]
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.eContents(Class).Name/]</class-id> <category>probes</category>
+	<body package="[m.parameters.ModelName/]" selector="[p.Name/]">[p.Name/]
+	"modify this instruction to calculate the number to be recorded"
+	^self the[p.classes.Name.toUpperFirst()/]s messageX</body>
+[/for]
+[/if]
+[/template]
+
+[template public generateDefaultValuesforMain(m : Model)]
+[comment  Generate for each attribute contained in the scheduler/]
+[if (m.eContents(Scheduler).Attributes->size() > 0)]
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.parameters.ModelName/] class</class-id> <category>- default value</category>
+[for (attsched : Attribute | m.eAllContents(Scheduler).Attributes)]
+<body package="[m.parameters.ModelName/]" selector="[attsched.Name/]_default">[attsched.Name/]_default 
+	"Return the default value of [attsched.Name/] attribute"	
+	^[attsched.Value/]</body>
+[/for]
+[/if]
+[/template]
+
+[template public generateColorProbes(m : Model)]
+[if (m.eContents(Probe).classes->size() > 0)]
+<methods>
+<class-id>CormasNS.Models.[m.parameters.ModelName/].[m.parameters.ModelName/] class</class-id> <category>- probes</category>
+[for (p : Probe | m.eAllContents(Probe))]
+	<body package="[m.parameters.ModelName/]" selector="colorOfProbe_[p.Name/]">colorOfProbe_[p.Name/]
+  	^ (ColorValue red: [getRandomDouble()/] green: [getRandomDouble()/] blue: [getRandomDouble()/])</body>
+[/for]
+</methods>
+[/if]
+[/template]
+
+[template public generateInstVariablesforMainClass(m : Model)]
+[for (c : Class | m.eAllContents("Class"))]the[c.Name.toUpperFirst()/]s [/for]
+[/template]
+
+[template public generateProbesNamesforMainClass(m : Model)]
+[if (m.eContents(Probe).classes->size() > 0)][for (p : Probe | m.eAllContents(Probe))][p.Name/] [/for][/if]
+[/template]

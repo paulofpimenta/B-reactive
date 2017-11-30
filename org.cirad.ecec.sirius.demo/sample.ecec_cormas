@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecec_cormas:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecec_cormas="http://www.cirad.org/dsl/ecec">
+  <elements xsi:type="ecec_cormas:Class" Name="c2" Type="SpatialEntityCell">
+    <protocols xsi:type="ecec_cormas:Init"/>
+    <protocols xsi:type="ecec_cormas:Control"/>
+    <attributes Value="10" Name="a"/>
+    <attributes Value="23" Name="b"/>
+    <attributes Value="47" Name="y" InstanceType="No"/>
+  </elements>
+  <elements xsi:type="ecec_cormas:Class" Name="c1">
+    <attributes Value="90" Name="z" InstanceType="No"/>
+  </elements>
+  <elements xsi:type="ecec_cormas:Scheduler" InitModel="//@parameters">
+    <Attributes Value="34" Name="unrestrainedNumber" InstanceType="No"/>
+    <Attributes Value="10" Name="restrained"/>
+    <Attributes/>
+  </elements>
+  <elements xsi:type="ecec_cormas:Enviromment" Name="myEnviromment" Path="" LoadEnviroment="//@elements.7"/>
+  <elements xsi:type="ecec_cormas:CustomProtocol" ProtocolName="myProtocolOutside">
+    <methods Name="methodTest" useAttributes="//@elements.0/@attributes.1"/>
+  </elements>
+  <elements xsi:type="ecec_cormas:Class" Name="c3">
+    <protocols xsi:type="ecec_cormas:CustomProtocol" ProtocolName="MyCustom">
+      <methods Name="MyMethod" useAttributes="//@elements.0/@attributes.0 //@elements.0/@attributes.1"/>
+    </protocols>
+  </elements>
+  <elements xsi:type="ecec_cormas:Enviromment" Name="Teste" Path="" LoadEnviroment="//@elements.7"/>
+  <elements xsi:type="ecec_cormas:Init"/>
+  <elements xsi:type="ecec_cormas:Enviromment" Name="myEnviroment" LoadEnviroment="//@elements.7"/>
+  <elements xsi:type="ecec_cormas:CustomProtocol" ProtocolName="otheroutsideprotocol"/>
+  <elements xsi:type="ecec_cormas:Protocol"/>
+  <elements xsi:type="ecec_cormas:Enviromment" Path="" LoadEnviroment="//@elements.7"/>
+  <elements xsi:type="ecec_cormas:Probe" Name="probeAttCustom" attributes="//@elements.0/@attributes.2">
+    <classes href="teste.ecec_cormas#//@elements.0"/>
+  </elements>
+  <elements xsi:type="ecec_cormas:ProbeInit" probeInitScheduler="//@elements.2" Name="testeprobeinit"/>
+  <elements xsi:type="ecec_cormas:Probe" Name="myProbeName" classes="//@elements.0"/>
+  <elements xsi:type="ecec_cormas:ProbeInit" probeInitAtt="//@elements.2/@Attributes.1" Name="testeninitprobe"/>
+  <elements xsi:type="ecec_cormas:Probe" classes="//@elements.5"/>
+  <elements xsi:type="ecec_cormas:Control"/>
+  <elements xsi:type="ecec_cormas:Probe" Name="myProbeOnAttDsl"/>
+  <elements xsi:type="ecec_cormas:Probe" Name="probeOnAttDsl" classes="//@elements.20"/>
+  <elements xsi:type="ecec_cormas:VegetationUnit" Name="myVegetUnit"/>
+  <elements xsi:type="ecec_cormas:Forager" Name="Restrained" Type="SpatialEntityCell"/>
+  <elements xsi:type="ecec_cormas:ProbeOnDslAtt" Name="teste3" dslAttributes="//@elements.20"/>
+  <elements xsi:type="ecec_cormas:Probe"/>
+  <parameters ModelName="ECEC"/>
+  <relations Name="eat" to="//@elements.0" from="//@elements.1"/>
+  <relations Name="teste" to="//@elements.0" from="//@elements.1"/>
+</ecec_cormas:Model>

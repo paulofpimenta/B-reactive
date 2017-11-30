@@ -1,0 +1,320 @@
+[comment encoding = UTF-8 /]
+[module generateExpressions('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[template public generateArithimeticExpressions(anExpression : Expression) post (replaceAll('\n','').trim())]
+
+[if (anExpression.oclIsKindOf(AttributeClass))][anExpression.oclAsType(AttributeClass).name.toLower()/][/if]
+[if (anExpression.oclIsKindOf(DeclaredAttributes))][anExpression.oclAsType(DeclaredAttributes).attributeclass.name.toLower()/][/if]
+[if (anExpression.oclIsKindOf(ParameterClass))][anExpression.oclAsType(ParameterClass).name.toLower()/][/if]
+[if (anExpression.oclIsKindOf(DeclaredParameter))][anExpression.oclAsType(DeclaredParameter).parameterclass.name.toLower()/][/if]
+[if (anExpression.oclIsKindOf(LocalVariable))][anExpression.oclAsType(LocalVariable).name.toLower()/][/if]
+[if (anExpression.oclIsKindOf(DeclaredLocalVariable))][anExpression.oclAsType(DeclaredLocalVariable).localvariable.name.toLower()/][/if]
+[if (anExpression.oclIsKindOf(ConstantExpression))][anExpression.oclAsType(ConstantExpression).value/][/if]
+[if (anExpression.oclIsKindOf(DeclaredEntities))][anExpression.oclAsType(DeclaredEntities).entity.name.toLower()/][/if]
+[if (anExpression.oclIsKindOf(DeclaredVariable))][anExpression.oclAsType(DeclaredVariable).variableclass.generateArithimeticExpressions()/][/if]
+[if (anExpression.oclIsKindOf(FunctionCallExpression))]
+
+[if (anExpression.eContents(NamedFunction)->first().name.toString()='+' or
+	anExpression.eContents(NamedFunction)->first().name.toString()='-' or
+	anExpression.eContents(NamedFunction)->first().name.toString()='/' or
+	anExpression.eContents(NamedFunction)->first().name.toString()='*')]
+[' '/][anExpression.oclAsType(FunctionCallExpression).arguments->first().generateArithimeticExpressions()/] 
+[' '/][anExpression.oclAsType(FunctionCallExpression).eContents(NamedFunction).name/]
+[/if]
+
+[if (anExpression.eContents(NamedFunction)->first().name.toString()='exp')]
+[' '/][anExpression.oclAsType(FunctionCallExpression).eContents(NamedFunction).name/]
+[/if]
+
+[if (anExpression.eContents(NamedFunction)->first().name.toString()='floor')]
+[' '/][anExpression.oclAsType(FunctionCallExpression).eContents(NamedFunction).name/]
+[/if]
+[anExpression.oclAsType(FunctionCallExpression).arguments->last().generateArithimeticExpressions()/]
+[/if]
+[/template]
+[comment ArithmethicFunctionCallExpression/]
+[template public generateFunctionCallExpressions(aFunctionCallExpression : Expression) post (replaceAll('\n','').trim()) ]
+[if (aFunctionCallExpression.eContents(NamedFunction)->isEmpty())]
+[aFunctionCallExpression.generateArithimeticExpressions()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='random')]
+[aFunctionCallExpression.randomMathFunction()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='>' or
+	aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='<' or
+	aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='>=' or
+	aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='<=' or
+	aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='=') ]
+[aFunctionCallExpression.generateBooleanFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='+' or
+	aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='-' or
+	aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='/' or
+	aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='*')]
+[aFunctionCallExpression.generateArithimeticExpressions()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='max-one-of')]
+	[aFunctionCallExpression.generateLocationFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='select location')]
+	[aFunctionCallExpression.generateLocationSetFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='union-location')]
+	[aFunctionCallExpression.generateLocationSetFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='NOT')]
+	[aFunctionCallExpression.generateBooleanFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='here')]
+	[aFunctionCallExpression.generateLocationFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='neighborhood')]
+	[aFunctionCallExpression.generateLocationFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='top')]
+	[aFunctionCallExpression.generateLocationFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='one-of')]
+	[aFunctionCallExpression.generateLocationFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='attribute')]
+	[aFunctionCallExpression.generateStringFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='local')]
+	[aFunctionCallExpression.generateStringFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='entity')]
+	[aFunctionCallExpression.generateStringFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='of')]
+	[aFunctionCallExpression.generateVariablefromEntity()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='exp')]
+	[aFunctionCallExpression.generateMathFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='floor')]
+	[aFunctionCallExpression.generateMathFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='count')]
+	[aFunctionCallExpression.generateMathFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='get')]
+	[aFunctionCallExpression.generateBooleanFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='all')]
+	[aFunctionCallExpression.generateBooleanFunctionCallExpression()/]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='true')]
+ true
+[/if]
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='false')]
+ false
+[/if]
+[/template]
+[template public randomMathFunction(aFunctionCallExpression : Expression) post (replaceAll('\n','').trim() )]
+[' '/][aFunctionCallExpression.eContents(NamedFunction).name/][aFunctionCallExpression.eContents(FunctionCallExpression).arguments->last().generateArithimeticExpressions()/]
+[/template]
+
+[comment For all location type functions/]
+[template public generateLocationFunctionCallExpression(aFunctionCallExpression : Expression) post (replaceAll('\n','').trim())]
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='one-of')]
+one-of [aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments.generateFunctionCallExpressions().toString().concat(' ')/]
+[/if]
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='max-one-of')]
+max-one-of 
+[if (aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(3)->notEmpty())]
+(patch-set [aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(3).generateFunctionCallExpressions()/] [aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(2).generateFunctionCallExpressions()/])
+[if (aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(1)->notEmpty())]
+[let allAttributesFromModel : Sequence(String) = aFunctionCallExpression.ancestors(Model).entities.attributes.generateArithimeticExpressions()->asSequence() ]
+[if (allAttributesFromModel->indexOf(aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(1).generateArithimeticExpressions()) > 0 )]
+[ '[' /][aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(1).generateArithimeticExpressions()/][']'/] of[aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(1).oclAsType(DeclaredAttributes).attributeclass.generateEntityNameFroAttributes().toLower()/]-here[']'/]  
+[elseif (allAttributesFromModel->indexOf(aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(1).generateArithimeticExpressions()) = 0 )]
+[ '[' /][aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(1).generateArithimeticExpressions()/][']'/]
+[/if]
+[/let]
+[/if]
+[elseif (aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(3)->isEmpty())]
+[aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(2).generateFunctionCallExpressions()/] [aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(2).generateFunctionCallExpressions()/])
+[/if]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='here')]
+ patch-here
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='top')]
+ fw
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='neighborhood')]
+ neighbors
+[/if]
+[/template]
+
+[template public generateLocationSetFunctionCallExpression(aFunctionCallExpression : Expression) post (replaceAll('\n', '').trim())]
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='grid')]
+patches [if (aFunctionCallExpression.eContainer(FunctionCallExpression).eContents(FunctionCallExpression).generateBooleanFunctionCallExpression()->notEmpty())]
+with [ '[' /][aFunctionCallExpression.eContainer(FunctionCallExpression).eContents(FunctionCallExpression).generateBooleanFunctionCallExpression()/][ ']' /][/if]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='union-location')]
+(patch-set 
+	[for (anotherFunctionCallExpression : FunctionCallExpression | aFunctionCallExpression.eAllContents(FunctionCallExpression))]
+[anotherFunctionCallExpression.generateFunctionCallExpressions()/]
+[anotherFunctionCallExpression.arguments.generateFunctionCallExpressions()/][' '/]
+	[/for])
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='neighborhood')]
+ neighbors [if (aFunctionCallExpression.eContainer(FunctionCallExpression).eContents(FunctionCallExpression).generateBooleanFunctionCallExpression()->notEmpty())]
+ [aFunctionCallExpression.eContainer(FunctionCallExpression).eContents(FunctionCallExpression).generateBooleanFunctionCallExpression()/][/if]
+[/if]
+
+[if (aFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='select location')]
+[for (args : FunctionCallExpression | aFunctionCallExpression.eContents(FunctionCallExpression)->asSequence())]
+
+[if (args.generateLocationSetFunctionCallExpression()->notEmpty())]
+ [args.generateLocationSetFunctionCallExpression()/]
+[/if]
+
+[/for]
+
+[/if]
+
+[/template]
+
+[template public generateBooleanFunctionCallExpression(aBooleanFunctionCallExpression : Expression) post (replaceAll('\n', '').trim())]
+[if (aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='>' or
+	aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='<' or
+	aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='>=' or
+	aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='<=' or
+	aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='=')]
+[aBooleanFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->first().generateArithimeticExpressions()/]
+ [aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()/]
+ [aBooleanFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->last().generateArithimeticExpressions()/]
+[/if]
+
+[if (aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='AND' or
+	 aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='OR')]
+ with[ '[' /][aBooleanFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->first().generateBooleanFunctionCallExpression()/]
+ [aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString().toLower()/]
+ [aBooleanFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->last().generateBooleanFunctionCallExpression()/]
+ [ ']' /]
+[/if]
+
+[if (aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='occupied')]
+[for (argumentFunctionCall : FunctionCallExpression | aBooleanFunctionCallExpression.eContents(FunctionCallExpression)->asSequence())]
+[if (argumentFunctionCall.generateBooleanFunctionCallExpression()->notEmpty())]
+ [for (notBool  : String | aBooleanFunctionCallExpression.eContents(NamedFunction).name->asSet())][if (notBool.toString()='NOT')]not [/if][/for][argumentFunctionCall.generateBooleanFunctionCallExpression()/]
+[/if]
+[/for]
+[/if]
+
+
+[if (aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()= 'any')]
+[' '/]any? [aBooleanFunctionCallExpression.eAllContents(DeclaredEntities).entity.name/]s-here[' '/]
+[aBooleanFunctionCallExpression.eContents(FunctionCallExpression).generateBooleanFunctionCallExpression()/]
+[/if]
+
+[if (aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()= 'all')]
+ all? [aBooleanFunctionCallExpression.eContents(DeclaredEntities).entity.name/]s-here[' '/]
+[if (aBooleanFunctionCallExpression.oclAsType(FunctionCallExpression).arguments.generateBooleanFunctionCallExpression()->size() > 0)]
+ [ '[' /] [aBooleanFunctionCallExpression.eAllContents(FunctionCallExpression).generateBooleanFunctionCallExpression()/][ ']' /] 
+[/if]
+[/if]
+
+[if (aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='NOT')]
+ not [aBooleanFunctionCallExpression.eAllContents(FunctionCallExpression).generateBooleanFunctionCallExpression()/]
+[/if]
+
+[if (aBooleanFunctionCallExpression.eContents(NamedFunction)->first().name.toString()='get')]
+ [aBooleanFunctionCallExpression.eAllContents(DeclaredVariable).generateArithimeticExpressions()/]?
+[/if]
+[/template]
+
+[template public generateStringFunctionCallExpression(aStringFunction : Expression ) post (replaceAll('\n', '').trim())]
+[if (aStringFunction.eContents(NamedFunction)->first().name.toString()='get')]
+ not
+[/if]
+[/template]
+
+[template public generateEntityNameFroAttributes(anAttribute : AttributeClass)]
+	[anAttribute.eContainer(Entity).name/]
+[/template]
+
+[template public generateVariablefromEntity(aFunctionCallExpression : Expression )post (replaceAll('\n', '').trim())]
+[ '[' /][aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(1).generateArithimeticExpressions()/][']'/] [aFunctionCallExpression.oclAsType(FunctionCallExpression).eContents(NamedFunction).name/]
+[comment If there is one-of /]
+[if (aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments.eContents(NamedFunction)->first().name = 'one-of')]
+ one-of [aFunctionCallExpression.oclAsType(FunctionCallExpression).eContents(FunctionCallExpression).arguments->first().generateArithimeticExpressions().toLower()/]
+[if (aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments.eContents(FunctionCallExpression).eContents(NamedFunction)->first().name='here')]s-here[/if]
+[/if]
+[comment  if there is not one-of/]
+[if (aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(2).oclIsTypeOf(DeclaredEntities))]
+ [aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(2).generateArithimeticExpressions().toLower()/]
+[if (aFunctionCallExpression.oclAsType(FunctionCallExpression).arguments->at(3).eContents(NamedFunction)->first().name='here')]-here[/if]
+[/if]
+[/template]
+
+[template public generateMathFunctionCallExpression(aMathFCExpression : Expression) post (replaceAll('\n', '').trim())]
+[if (aMathFCExpression.eContents(NamedFunction)->first().name.toString()='exp')]
+exp ( [aMathFCExpression.generateArithimeticExpressions()/] )
+[/if]
+
+[if (aMathFCExpression.eContents(NamedFunction)->first().name.toString()='floor')]
+floor ([aMathFCExpression.generateArithimeticExpressions()/] )
+[/if]
+
+[if (aMathFCExpression.eContents(NamedFunction)->first().name.toString()='count')]
+count 
+[if (aMathFCExpression.eContents(FunctionCallExpression).eContents(DeclaredEntities).toString()->size() > 0)]
+[aMathFCExpression.eContents(FunctionCallExpression).eContents(DeclaredEntities).generateArithimeticExpressions()/]s-on [aMathFCExpression.eContents(FunctionCallExpression).eContents(FunctionCallExpression).generateLocationPrimitives()/] 
+[comment If boolean /]
+[/if]
+[if (aMathFCExpression.eContents(FunctionCallExpression).eContents(FunctionCallExpression).generateBooleanFunctionCallExpression().toString()->size() > 1)]
+ with [ '[' /] [aMathFCExpression.eContents(FunctionCallExpression).eContents(FunctionCallExpression).generateBooleanFunctionCallExpression()/][ ']' /] 
+[/if]
+[if (aMathFCExpression.eContents(DeclaredVariable).generateArithimeticExpressions()->size() > 0)] [aMathFCExpression.eContents(DeclaredVariable).generateArithimeticExpressions()/]
+[/if]
+[/if]
+[/template]
+
+[template public generateEntitySetConditionalFCExpression (anEntityConditional : Expression) post (replaceAll('\n', '').trim())]
+	[anEntityConditional.oclAsType(FunctionCallExpression).arguments->at(1).generateArithimeticExpressions()/]
+[/template]
+
+[template public generateLocationPrimitives (aLocationPrimitive : FunctionCallExpression) post (replaceAll('\n', '').trim())]
+[if (aLocationPrimitive.oclAsType(FunctionCallExpression).eContents(NamedFunction)->first().name='neighborhood')]
+neighbors
+[/if]
+
+[if (aLocationPrimitive.oclAsType(FunctionCallExpression).eContents(NamedFunction)->first().name='here')]
+here
+[/if]
+[/template]
+[template public generateAssigmentValue(expression : Expression)post (replaceAll('\n', '').trim())]
+[expression.eContainer(Assignment).eContents(FunctionCallExpression).generateArithimeticExpressions()/]
+[/template]
+[template public generateInitialAgentNumbers(initFunction : FunctionCallExpression)post (replaceAll('\n', '').trim())]
+[initFunction.eAllContents(ConstantExpression).generateArithimeticExpressions()/]
+[/template]

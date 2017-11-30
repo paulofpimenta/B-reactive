@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:behaviorMetamodel="http://www.cirad.org/dsl/BehaviorMetamodel" xsi:schemaLocation="http://www.cirad.org/dsl/BehaviorMetamodel ../../org.cirad.dsl.behavior.metamodel/model/metamodel.ecore">
+  <behaviorMetamodel:Model name="ecec">
+    <entities name="Plant">
+      <behavior xsi:type="behaviorMetamodel:EquationBehavior" name="grow">
+        <parameters name="k" type="float"/>
+        <parameters name="r" type="float"/>
+        <equation>
+          <left name="biomass" type="float"/>
+          <right xsi:type="behaviorMetamodel:FunctionCallExpression">
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:AttributeClass" name="biomass" type="float"/>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:ParameterClass" name="r" type="float"/>
+                <arguments xsi:type="behaviorMetamodel:ParameterClass" name="k" type="float"/>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="*"/>
+              </arguments>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="+"/>
+            </arguments>
+            <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+              <arguments xsi:type="behaviorMetamodel:ConstantExpression" value="1.0"/>
+              <arguments xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:AttributeClass" name="biomass" type="float"/>
+                <arguments xsi:type="behaviorMetamodel:ParameterClass" name="k" type="float"/>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="/"/>
+              </arguments>
+              <function xsi:type="behaviorMetamodel:NamedFunction" name="-"/>
+            </arguments>
+            <function xsi:type="behaviorMetamodel:NamedFunction" name="+"/>
+          </right>
+        </equation>
+      </behavior>
+    </entities>
+    <entities name="Forager">
+      <behavior xsi:type="behaviorMetamodel:ActivityBehavior" name="ConsumeEnergy">
+        <parameters name="catabolic_rate" type="float"/>
+        <primitiveaactivities xsi:type="behaviorMetamodel:Remove" name="Remove">
+          <fromAttribute name="Energy" type="float"/>
+          <expression xsi:type="behaviorMetamodel:ParameterClass" name="catabolic_rate" type="float"/>
+        </primitiveaactivities>
+      </behavior>
+      <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="ToMove">
+        <elements xsi:type="behaviorMetamodel:Start" name="Start">
+          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+            <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+              <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+                <target_node xsi:type="behaviorMetamodel:Move" name="Move to "/>
+              </outcome_edge>
+              <outcome_edge xsi:type="behaviorMetamodel:IfFalseEdge" name="else">
+                <target_node xsi:type="behaviorMetamodel:Move" name="Move to "/>
+              </outcome_edge>
+              <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:LocalVariable"/>
+                <arguments xsi:type="behaviorMetamodel:ParameterClass" name="catabolic_rate" type="float"/>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name=">="/>
+              </booleanexpression>
+            </target_node>
+          </outcome_edge>
+        </elements>
+      </behavior>
+      <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="Eat">
+        <elements xsi:type="behaviorMetamodel:Start" name="Start">
+          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+            <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+              <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+                <target_node xsi:type="behaviorMetamodel:Add" name="Add" toAttribute="/0/@entities.1/@behavior.0/@primitiveaactivities.0/@fromAttribute">
+                  <expression xsi:type="behaviorMetamodel:ParameterClass" name="harvest_rate" type="float"/>
+                </target_node>
+              </outcome_edge>
+            </target_node>
+          </outcome_edge>
+        </elements>
+      </behavior>
+      <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="ToReproduce">
+        <parameters name="Fertility_Threshold" type="float"/>
+        <elements xsi:type="behaviorMetamodel:Start" name="Start">
+          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+            <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+              <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+                <target_node xsi:type="behaviorMetamodel:Reproduce" name="Reproduce"/>
+              </outcome_edge>
+              <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:AttributeClass" name="Energy" type="float"/>
+                <arguments xsi:type="behaviorMetamodel:ParameterClass" name="Fertility_Threshold" type="float"/>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name=">="/>
+              </booleanexpression>
+            </target_node>
+          </outcome_edge>
+        </elements>
+      </behavior>
+      <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="ToDie">
+        <elements xsi:type="behaviorMetamodel:Start" name="Start">
+          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+            <target_node xsi:type="behaviorMetamodel:Decision" name="Decide ">
+              <outcome_edge xsi:type="behaviorMetamodel:IfTrueEdge" name="then">
+                <target_node xsi:type="behaviorMetamodel:Die" name="Die"/>
+              </outcome_edge>
+              <booleanexpression xsi:type="behaviorMetamodel:FunctionCallExpression">
+                <arguments xsi:type="behaviorMetamodel:AttributeClass" name="Energy" type="float"/>
+                <arguments xsi:type="behaviorMetamodel:ConstantExpression"/>
+                <function xsi:type="behaviorMetamodel:NamedFunction" name="&lt;"/>
+              </booleanexpression>
+            </target_node>
+          </outcome_edge>
+        </elements>
+      </behavior>
+      <behavior xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="step">
+        <elements xsi:type="behaviorMetamodel:Start" name="Start">
+          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+            <target_node xsi:type="behaviorMetamodel:ActivityBehavior" name="ConsumeEnergy">
+              <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                <target_node xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="Eat">
+                  <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                    <target_node xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="ToMove">
+                      <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                        <target_node xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="ToReproduce">
+                          <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                            <target_node xsi:type="behaviorMetamodel:ActivityDiagramBehavior" name="ToDie">
+                              <outcome_edge xsi:type="behaviorMetamodel:UnconditionedEdge" name="->">
+                                <target_node xsi:type="behaviorMetamodel:End" name="End"/>
+                              </outcome_edge>
+                            </target_node>
+                          </outcome_edge>
+                        </target_node>
+                      </outcome_edge>
+                    </target_node>
+                  </outcome_edge>
+                </target_node>
+              </outcome_edge>
+            </target_node>
+          </outcome_edge>
+        </elements>
+      </behavior>
+    </entities>
+  </behaviorMetamodel:Model>
+  <behaviorMetamodel:LocalVariable name="aLocation"/>
+</xmi:XMI>

@@ -1,0 +1,102 @@
+Model ecec {
+
+Entity Plant  {
+  
+Attributes { biomass: Float }
+	   EquationBehaviour grow {
+    	Parameters (k : Float,r : Float)      
+    	Equation { biomass = biomass  + r* biomass * (1-biomass/k) }
+	}
+    
+}
+Entity Forager {
+      
+    Attributes {Energy: Float} 
+
+ActivityBehavior ConsumeEnergy {
+    
+     Parameters (catabolic_rate:Float)  
+   	 Remove catabolic_rate from Energy         
+}
+
+ActivityDiagramBehavior ToMove  {
+        
+        let aLocalVariable <- 5
+        let biomassOfPlant <- biomass of Plant from here   
+       	let aLocation <- max-one-of [ biomass , select location from [ neighborhood  ] 
+       			such that ( neighborhood is NOT occupied  by (any Forager here ) ) union-location ( here ) ]  
+        Start -> Decide  { if  ( biomassOfPlant >= catabolic_rate ) then  
+        						Move to  {aLocation} ->  End else 
+        						Move to  { one-of [union-location ( neighborhood, here )
+        						] } -> End
+ 						 }       
+ }   
+
+       
+ActivityBehavior Eat  {
+	  //Allow local variable to activity behaviors on metamodel
+       Parameters ( harvest_rate: Float )
+       let aPlantBiomass <- biomass of one-of (Plant from  here )  
+       Add harvest_rate * aPlantBiomass to Energy 
+       Remove harvest_rate * aPlantBiomass from biomass  
+
+} 
+ 
+ ActivityDiagramBehavior ToReproduce {
+ 	
+ 	  Parameters ( Fertility_Threshold: Float )       
+       Start -> Decide  { 
+       			if  ( Energy >= Fertility_Threshold )  then  
+       				Reproduce (1)  with  Energy (50) placed on one-of [neighborhood]  -> 
+       				Remove 50 from  Energy -> End  
+       			} 		   
+}
+  
+ActivityDiagramBehavior ToDie  { 
+          
+        Start -> Decide  { if  ( Energy < 0 )  then Die -> End }  
+}
+  
+}
+
+Run main as : ActivityDiagramBehavior Main {
+	
+	Start -> grow ->ConsumeEnergy -> Eat -> ToMove -> ToReproduce -> ToDie ->  End
+}
+//---------------------------------------------------------------------------------|
+//																				   |
+//                                  INITIALIZATION								   |
+//																				   |
+//---------------------------------------------------------------------------------|
+
+//----------------------------Space init------------------------------------ 
+Create Forager 10 as Restrained{ 	
+		each Forager {
+			position = one-of [ grid of Plant ] 
+			catabolic_rate := 2
+			harvest_rate := 0.5 
+			Energy := 50
+			Fertility_Threshold := 100
+	}
+	
+}
+
+Create  Forager 10 as Unrestrained {
+		each Forager {
+			position = one-of [ grid of Plant ] 
+			catabolic_rate := 2
+			harvest_rate := 0.9 
+			Energy := 50
+			Fertility_Threshold := 100
+		}
+}	
+//----------------------------Entity init------------------------------------ 
+	 Create grid of Plant (20,20) {
+		each Plant {
+			k := 10
+			r := 0.2
+			biomass := random (k) 			
+		}
+		
+	}
+}

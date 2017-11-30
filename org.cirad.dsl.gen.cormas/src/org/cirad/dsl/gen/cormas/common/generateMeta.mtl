@@ -1,0 +1,32 @@
+[module generateMeta('/org.cirad.dsl.behavior.metamodel/model/metamodel.ecore')]
+[import org::cirad::dsl::gen::cormas::services::numberservices /]
+[import org::cirad::dsl::gen::cormas::services::stringservices /]
+
+
+[template public generateMetaData(m : Model)]
+<?xml version="1.0"?>
+
+<st-source>
+<!-- 
+Name: [m.name.toUpper()/]
+PackageName: [m.name.toUpper()/]
+Parcel: #('[m.name.toUpper()/]')
+ParcelName: [m.name.toUpper()/]
+Date: [now()/]
+ -->
+<time-stamp>From VisualWorks® NonCommercial, 7.6 of lundi 3 mars 2008 on mardi 26 février 2013 at 9:29:12</time-stamp>
+
+<do-it>(Dialog confirm: 'You are filing-in a Parcel source file!\\While this is possible it will not have\the same effect as loading the parcel.\None of the Parcel''s prerequisites will\be loaded and none of its load actions\will be performed.\\Are you sure you want to file-in?' withCRs) ifFalse: [ '[' /]self error: 'Parcel file-in abandoned.  Choose terminate or close.'[ ']' /]</do-it>
+
+<name-space>
+<name>[m.name.toUpper()/]</name>
+<environment>CormasNS.Models</environment>
+<private>false</private>
+<imports>private Smalltalk.* 
+		 private CormasNS.Kernel.* </imports>
+<category>[m.name.toUpper()/]Category</category>
+<attributes>
+<package>[m.name.toUpper()/]</package>
+</attributes>
+</name-space>
+[/template]
